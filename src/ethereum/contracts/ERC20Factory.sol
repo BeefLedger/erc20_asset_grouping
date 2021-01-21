@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "./ERC20ForAssetGrouping.sol";
 
 
-contract ERC20Deployer is Ownable {
+contract ERC20Factory is Ownable {
 
     address[] public tokens;
 

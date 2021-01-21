@@ -14,7 +14,7 @@ contract ERC20ForAssetGrouping is Ownable, ERC20 {
 
     uint256 public chainId;
     
-    constructor(uint256 _chainId, string memory name, string memory symbol) ERC20(name, symbol) {
+    constructor(uint256 _chainId, string memory name, string memory symbol) ERC20(name, symbol) public {
         require(_chainId > 0, "Chain ID cannot be 0");
         chainId = _chainId;
     }
