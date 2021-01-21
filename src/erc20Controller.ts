@@ -36,7 +36,7 @@ export class ERC20Controller {
         }
 
         try {
-            //Connect to the contract with my signer
+            // Connect to the contract with my signer
             const contract = await getErc20Contract(this._erc20Address, this._signer)
             this._erc20Contract = contract;
             return contract

@@ -1,5 +1,4 @@
 import { Signer } from "ethers";
-import { BigNumberish } from "ethers/utils";
 import { getErc20Contract, getERC20FactoryContract } from "./chain/prefabContractFactory";
 import { Erc20Factory } from "./types/Erc20Factory";
 import { Erc20ForAssetGrouping } from "./types/Erc20ForAssetGrouping";
@@ -28,7 +27,7 @@ export class ERC20FactoryController {
         }
 
         try {
-            //Connect to the contract with my signer
+            // Connect to the contract with my signer
             const contract = await getERC20FactoryContract(this._erc20FactoryAddress, this._signer)
             this._erc20FactoryContract = contract;
             return contract

@@ -13,7 +13,7 @@ export async function deployContract <T extends Contract>(
         return (await contract.deployed()) as T;
     }
     catch (e) {
-        throw `deployContract(): ${e}`
+        throw Error(`deployContract(): ${e}`)
     }
 
 };
