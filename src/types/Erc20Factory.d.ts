@@ -32,6 +32,13 @@ interface Erc20FactoryInterface extends Interface {
   };
 
   events: {
+    NewERC20: TypedEventDescription<{
+      encodeTopics([tokenAddress, owner]: [
+        string | null,
+        string | null
+      ]): string[];
+    }>;
+
     OwnershipTransferred: TypedEventDescription<{
       encodeTopics([previousOwner, newOwner]: [
         string | null,
@@ -185,6 +192,8 @@ export class Erc20Factory extends Contract {
   ): Promise<ContractTransaction>;
 
   filters: {
+    NewERC20(tokenAddress: string | null, owner: string | null): EventFilter;
+
     OwnershipTransferred(
       previousOwner: string | null,
       newOwner: string | null

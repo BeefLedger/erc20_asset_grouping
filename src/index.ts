@@ -1,2 +1,2 @@
-export * from './erc20';
-export * from './erc20Factory';
+export * from './erc20Controller';
+export * from './erc20FactoryController';

@@ -1,13 +1,14 @@
 import { Signer } from "ethers";
 import { BigNumberish } from "ethers/utils";
-import { Ierc20 } from "./types/Ierc20";
+import { Erc20ForAssetGrouping } from "./types/Erc20ForAssetGrouping";
 import { getErc20Contract } from "./chain/prefabContractFactory";
+import { ContractReceipt } from "ethers/contract";
 
-export class ERC20 {
+export class ERC20Controller {
 
     private _erc20Address: string;
     private _signer: Signer;
-    private _erc20Contract? : Ierc20
+    private _erc20Contract? : Erc20ForAssetGrouping
 
     constructor(erc20Address: string, signer: Signer) {
         this._erc20Address = erc20Address;
@@ -19,7 +20,17 @@ export class ERC20 {
         return contract.balanceOf(await this._signer.getAddress())
     }
 
-    private async _getERC20Contract(): Promise<Ierc20> {
+    public async transfer(recipient: string, amount: string): Promise<ContractReceipt> {
+        const contract = await this._getERC20Contract();
+        return (await contract.functions.transfer(recipient, amount)).wait()
+    }
+
+    public async transferOwnership(newOwner: string): Promise<ContractReceipt> {
+        const contract = await this._getERC20Contract();
+        return  (await contract.functions.transferOwnership(newOwner)).wait()
+    }
+
+    private async _getERC20Contract(): Promise<Erc20ForAssetGrouping> {
         if(this._erc20Contract) {
             return this._erc20Contract
         }
