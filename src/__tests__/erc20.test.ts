@@ -1,12 +1,11 @@
 import { ethers, Signer } from "ethers";
-import { JsonRpcProvider } from "ethers/providers";
 
-import { Erc20Factory } from "../types/Erc20Factory";
-import { Erc20ForAssetGrouping } from "../types/Erc20ForAssetGrouping";
+import { ERC20Factory } from "../types/ERC20Factory";
+import { ERC20ForAssetGrouping } from "../types/ERC20ForAssetGrouping";
 import { ERC20FactoryController } from "../erc20FactoryController";
 import { ERC20Controller } from "../erc20Controller";
 
-let provider: JsonRpcProvider;
+let provider: ethers.providers.JsonRpcProvider;
 let signers: Signer[] = []
 
 const MINUTE_MS = 60 * 1000
@@ -24,12 +23,12 @@ describe("Deploy ERC20", () => {
 
   it("Deploys ERC20Factory and ERC20", async (): Promise<any> => {
     
-    const erc20FactoryContract: Erc20Factory = await ERC20FactoryController.deployERC20FactoryContract(signers[0]);
+    const erc20FactoryContract: ERC20Factory = await ERC20FactoryController.deployERC20FactoryContract(signers[0]);
     const erc20FactoryAddress = erc20FactoryContract.address;
     expect(erc20FactoryAddress.length).toEqual(42);
 
     const erc20Factory = new ERC20FactoryController(erc20FactoryAddress, signers[0]);
-    const erc20Contract: Erc20ForAssetGrouping = await erc20Factory.deployERC20Contract(18122, "RG05", "RG05");
+    const erc20Contract: ERC20ForAssetGrouping = await erc20Factory.deployERC20Contract(18122, "RG05", "RG05");
 
     const deployedContract = new ERC20Controller(erc20Contract.address, signers[0]);
 

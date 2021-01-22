@@ -1,10 +1,9 @@
 import { ethers, Signer } from "ethers";
-import { JsonRpcProvider } from "ethers/providers";
 
-import { Erc20Factory } from "../types/Erc20Factory";
+import { ERC20Factory } from "../types/ERC20Factory";
 import { ERC20FactoryController } from "../erc20FactoryController";
 
-let provider: JsonRpcProvider;
+let provider: ethers.providers.JsonRpcProvider;
 let signers: Signer[] = []
 
 const MINUTE_MS = 60 * 1000
@@ -22,7 +21,7 @@ describe("Deploy ERC20Factory", () => {
 
   it("Deploys ERC20Factory", async (): Promise<any> => {
     
-    const erc20FactoryContract: Erc20Factory = await ERC20FactoryController.deployERC20FactoryContract(signers[0]);
+    const erc20FactoryContract: ERC20Factory = await ERC20FactoryController.deployERC20FactoryContract(signers[0]);
     const erc20ContractAddress = erc20FactoryContract.address;
     expect(erc20ContractAddress.length).toEqual(42);
 
