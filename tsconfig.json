@@ -5,7 +5,8 @@
     "declaration": true,
     "outDir": "./lib",
     "resolveJsonModule": true,
-    "strict": false
+    "strict": false,
+    "typeRoots": ["types"],
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]

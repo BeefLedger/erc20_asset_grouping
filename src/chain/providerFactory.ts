@@ -1,7 +1,6 @@
 import { ethers } from "ethers"
-import { Web3Provider } from "ethers/providers"
 
-export function getProvider(web3Provider?: Web3Provider): ethers.providers.JsonRpcProvider {
+export function getProvider(web3Provider?: ethers.providers.ExternalProvider): ethers.providers.JsonRpcProvider {
     // return new ethers.providers.Web3Provider(ganache.provider())
     if (web3Provider) {
         return new ethers.providers.Web3Provider(web3Provider)

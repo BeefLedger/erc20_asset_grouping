@@ -1,7 +1,7 @@
 import { Signer } from "ethers";
 import { getErc20Contract, getERC20FactoryContract } from "./chain/prefabContractFactory";
-import { Erc20Factory } from "./types/Erc20Factory";
-import { Erc20ForAssetGrouping } from "./types/Erc20ForAssetGrouping";
+import { ERC20Factory } from "./types/ERC20Factory";
+import { ERC20ForAssetGrouping } from "./types/ERC20ForAssetGrouping";
 
 import { deployERC20Factory } from './ethereum/deploy/deploy'
 
@@ -10,18 +10,18 @@ export class ERC20FactoryController {
 
     private _erc20FactoryAddress: string;
     private _signer: Signer;
-    private _erc20FactoryContract? : Erc20Factory
+    private _erc20FactoryContract? : ERC20Factory
 
     constructor(erc20FactoryAddress: string, signer: Signer) {
         this._erc20FactoryAddress = erc20FactoryAddress;
         this._signer = signer
     }
 
-    public static async deployERC20FactoryContract(signer: Signer): Promise<Erc20Factory> {
+    public static async deployERC20FactoryContract(signer: Signer): Promise<ERC20Factory> {
         return deployERC20Factory(signer)
     }
 
-    private async _getERC20FactoryContract(): Promise<Erc20Factory> {
+    private async _getERC20FactoryContract(): Promise<ERC20Factory> {
         if(this._erc20FactoryContract) {
             return this._erc20FactoryContract
         }
@@ -42,7 +42,7 @@ export class ERC20FactoryController {
         return erc20FactoryContract.owner();
     }
 
-    public async deployERC20Contract(chainId: number, name: string, symbol: string): Promise<Erc20ForAssetGrouping> {
+    public async deployERC20Contract(chainId: number, name: string, symbol: string): Promise<ERC20ForAssetGrouping> {
 
         let erc20Address: string
 
