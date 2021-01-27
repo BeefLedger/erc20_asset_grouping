@@ -6,7 +6,6 @@ import { deployContract } from "../../chain/contractFactory"
 import { ERC20Factory } from "../../types/ERC20Factory"
 
 
-
 export async function deployERC20Factory(signer: Signer): Promise<ERC20Factory>  {
     const contract = await deployContract<ERC20Factory>(signer, artifactErc20Factory)  
     return contract

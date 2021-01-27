@@ -27,6 +27,7 @@ interface ERC20FactoryInterface extends ethers.utils.Interface {
     "tokens(uint256)": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
     "deploy(uint256,string,string)": FunctionFragment;
+    "getTokens()": FunctionFragment;
   };
 
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
@@ -46,6 +47,7 @@ interface ERC20FactoryInterface extends ethers.utils.Interface {
     functionFragment: "deploy",
     values: [BigNumberish, string, string]
   ): string;
+  encodeFunctionData(functionFragment: "getTokens", values?: undefined): string;
 
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(
@@ -58,6 +60,7 @@ interface ERC20FactoryInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "deploy", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getTokens", data: BytesLike): Result;
 
   events: {
     "NewERC20(address,address)": EventFragment;
@@ -138,6 +141,10 @@ export class ERC20Factory extends Contract {
       _symbol: string,
       overrides?: Overrides
     ): Promise<ContractTransaction>;
+
+    getTokens(overrides?: CallOverrides): Promise<[string[]]>;
+
+    "getTokens()"(overrides?: CallOverrides): Promise<[string[]]>;
   };
 
   /**
@@ -197,6 +204,10 @@ export class ERC20Factory extends Contract {
     overrides?: Overrides
   ): Promise<ContractTransaction>;
 
+  getTokens(overrides?: CallOverrides): Promise<string[]>;
+
+  "getTokens()"(overrides?: CallOverrides): Promise<string[]>;
+
   callStatic: {
     /**
      * Returns the address of the current owner.
@@ -254,6 +265,10 @@ export class ERC20Factory extends Contract {
       _symbol: string,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    getTokens(overrides?: CallOverrides): Promise<string[]>;
+
+    "getTokens()"(overrides?: CallOverrides): Promise<string[]>;
   };
 
   filters: {
@@ -322,6 +337,10 @@ export class ERC20Factory extends Contract {
       _symbol: string,
       overrides?: Overrides
     ): Promise<BigNumber>;
+
+    getTokens(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getTokens()"(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -384,5 +403,9 @@ export class ERC20Factory extends Contract {
       _symbol: string,
       overrides?: Overrides
     ): Promise<PopulatedTransaction>;
+
+    getTokens(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getTokens()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }

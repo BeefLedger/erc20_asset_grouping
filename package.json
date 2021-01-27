@@ -1,6 +1,6 @@
 {
   "name": "beefledger-asset-grouping",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "type-check:watch": "npm run type-check -- --watch",
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline --copy-files --no-copy-ignored",
     "test": "jest --runInBand",
     "contracts:build": "npm run contracts:clear && npm run contracts:compile && npm run contracts:type",
     "contracts:type": "typechain --target ethers-v5 --outDir ./src/types/ 'src/ethereum/abi/**/*.json'",

@@ -42,6 +42,11 @@ export class ERC20FactoryController {
         return erc20FactoryContract.owner();
     }
 
+    public async getTokens(): Promise<Array<string>> {
+        const erc20FactoryContract = await this._getERC20FactoryContract();
+        return erc20FactoryContract.getTokens();
+    }
+
     public async deployERC20Contract(chainId: number, name: string, symbol: string): Promise<ERC20ForAssetGrouping> {
 
         let erc20Address: string

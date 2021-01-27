@@ -18,4 +18,8 @@ contract ERC20Factory is Ownable {
         tokens.push(address(uToken));
         emit NewERC20(address(uToken), msg.sender);
     }
+
+    function getTokens() public view returns(address[] memory) {
+        return tokens;
+    }
 }
