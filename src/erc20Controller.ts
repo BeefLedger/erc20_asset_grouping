@@ -1,4 +1,4 @@
-import { BigNumberish, ContractReceipt, Signer } from "ethers";
+import { BigNumberish, ContractTransaction, Signer } from "ethers";
 import { ERC20ForAssetGrouping } from "./types/ERC20ForAssetGrouping";
 import { getErc20Contract } from "./chain/prefabContractFactory";
 
@@ -48,24 +48,24 @@ export class ERC20Controller {
         return contract.decimals();
     }
  
-    public async transfer(recipient: string, amount: string): Promise<ContractReceipt> {
+    public async transfer(recipient: string, amount: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return (await contract.functions.transfer(recipient, amount)).wait();
+        return contract.functions.transfer(recipient, amount)
     }
 
-    public async transferOwnership(newOwner: string): Promise<ContractReceipt> {
+    public async transferOwnership(newOwner: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return  (await contract.functions.transferOwnership(newOwner)).wait();
+        return  contract.functions.transferOwnership(newOwner)
     }
 
-    public async setGroupingContracts(address: string): Promise<ContractReceipt> {
+    public async setGroupingContracts(address: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return (await contract.functions.setAssetGrouping(address)).wait();
+        return contract.functions.setAssetGrouping(address)
     }
 
-    public async mint(receiver: string, amount: BigNumberish): Promise<ContractReceipt> {
+    public async mint(receiver: string, amount: BigNumberish): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return (await contract.functions.mint(receiver, amount)).wait();
+        return contract.functions.mint(receiver, amount)
     }
 
     private async _getERC20Contract(): Promise<ERC20ForAssetGrouping> {

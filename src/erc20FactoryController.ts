@@ -1,7 +1,6 @@
-import { Signer } from "ethers";
-import { getErc20Contract, getERC20FactoryContract } from "./chain/prefabContractFactory";
+import { ContractTransaction, Signer } from "ethers";
+import { getERC20FactoryContract } from "./chain/prefabContractFactory";
 import { ERC20Factory } from "./types/ERC20Factory";
-import { ERC20ForAssetGrouping } from "./types/ERC20ForAssetGrouping";
 
 import { deployERC20Factory } from './ethereum/deploy/deploy'
 
@@ -47,29 +46,8 @@ export class ERC20FactoryController {
         return erc20FactoryContract.getTokens();
     }
 
-    public async deployERC20Contract(chainId: number, name: string, symbol: string): Promise<ERC20ForAssetGrouping> {
-
-        let erc20Address: string
-
+    public async deployERC20Contract(chainId: number, name: string, symbol: string): Promise<ContractTransaction> {
         const erc20FactoryContract = await this._getERC20FactoryContract();
-        const tx = await erc20FactoryContract.functions.deploy(chainId, name, symbol)
-        const receipt = await tx.wait()
-
-        const newERC20Events = receipt.events?.filter(evt => evt.event === 'NewERC20')
-        if (newERC20Events) { 
-            if (newERC20Events.length > 0) {
-                if (newERC20Events.length === 1) {
-                    erc20Address = (newERC20Events[0]?.args as any).tokenAddress
-                } else {
-                    throw new Error("ERROR_MULTIPLE_EVENTS")
-                }
-            }
-        } else {
-            throw new Error("ERROR_NO_EVENT_FOUND")
-        } 
-
-
-        const erc20Contract = await getErc20Contract(erc20Address)
-        return erc20Contract;
+        return erc20FactoryContract.functions.deploy(chainId, name, symbol)
     }
 }

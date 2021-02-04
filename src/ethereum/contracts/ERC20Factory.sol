@@ -2,7 +2,7 @@
 
 pragma solidity >=0.6.0 <0.8.0;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "./Ownable.sol";
 import "./ERC20ForAssetGrouping.sol";
 
 
