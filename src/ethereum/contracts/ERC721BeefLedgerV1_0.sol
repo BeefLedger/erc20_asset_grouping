@@ -53,7 +53,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
         _;
     }
 
-    function setMultisigWallet(address payable multisig) public onlyOwner {
+    function setMultisigWallet(address payable multisig) virtual public onlyOwner {
         require(multisig != address(0), "Multisig Address cannot be 0");
         multisigWalletV1_0 = MultisigWalletV1_0(multisig);
         setOwner(multisig);
@@ -64,7 +64,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param owner address to query the balance of
      * return uint256 representing the amount owned by the passed address
      */
-    function balanceOf(address owner) public view returns (uint256) {
+    function balanceOf(address owner) virtual public view returns (uint256) {
         require(owner != address(0), "ERC721: balance query for the zero address");
         return _ownedTokensCount[owner].current();
     }
@@ -89,7 +89,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param to address to be approved for the given token ID
      * @param tokenId uint256 ID of the token to be approved
      */
-    function approve(address to, uint256 tokenId) public {
+    function approve(address to, uint256 tokenId) virtual public {
         address owner = ownerOf(tokenId);
         require(to != owner, "ERC721: approval to current owner");
 
@@ -107,7 +107,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenId uint256 ID of the token to query the approval of
      * return address currently approved for the given token ID
      */
-    function getApproved(uint256 tokenId) public view returns (address) {
+    function getApproved(uint256 tokenId) virtual public view returns (address) {
         require(exists(tokenId), "ERC721: approved query for nonexistent token");
 
         return _tokenApprovals[tokenId];
@@ -119,7 +119,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param to operator address to set the approval
      * @param approved representing the status of the approval to be set
      */
-    function setApprovalForAll(address to, bool approved) public {
+    function setApprovalForAll(address to, bool approved) virtual public {
         require(to != msg.sender, "ERC721: approve to caller");
 
         _operatorApprovals[msg.sender][to] = approved;
@@ -132,7 +132,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param operator operator address which you want to query the approval of
      * return bool whether the given operator is approved by the given owner
      */
-    function isApprovedForAll(address owner, address operator) public view returns (bool) {
+    function isApprovedForAll(address owner, address operator) virtual public view returns (bool) {
         return _operatorApprovals[owner][operator];
     }
 
@@ -144,7 +144,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param to address to receive the ownership of the given token ID
      * @param tokenId uint256 ID of the token to be transferred
      */
-    function transferFrom(address from, address to, uint256 tokenId) public {
+    function transferFrom(address from, address to, uint256 tokenId) virtual public {
         //solhint-disable-next-line max-line-length
         require(_isApprovedOrOwner(msg.sender, tokenId), "ERC721: transfer caller is not owner nor approved");
 
@@ -156,7 +156,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenId uint256 ID of the token to query the existence of
      * return bool whether the token exists
      */
-    function exists(uint256 tokenId) public view returns (bool) {
+    function exists(uint256 tokenId) virtual public view returns (bool) {
         address owner = _tokenOwner[tokenId];
         return owner != address(0);
     }
@@ -168,7 +168,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * return bool whether the msg.sender is approved for the given token ID,
      * is an operator of the owner, or is the owner of the token
      */
-    function _isApprovedOrOwner(address spender, uint256 tokenId) internal view returns (bool) {
+    function _isApprovedOrOwner(address spender, uint256 tokenId) virtual internal view returns (bool) {
         require(exists(tokenId), "ERC721: operator query for nonexistent token");
         address owner = ownerOf(tokenId);
         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));
@@ -180,7 +180,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenIds The array of token ids to mint, maximum 100 per call.
      * return A boolean that indicates if the operation was successful.
      */
-    function mint(address to, uint256[] memory tokenIds) public onlyMultisigV1_0 returns (bool) {
+    function mint(address to, uint256[] memory tokenIds) virtual public onlyMultisigV1_0 returns (bool) {
         require(tokenIds.length <= 100, "maximum of tokens to mint is 100");
         require(to != address(0), "ERC721: mint to the zero address");
         for(uint8 i = 0; i < tokenIds.length; i++) {
@@ -190,12 +190,12 @@ contract ERC721BeefLedgerV1_0 is Ownable {
     }
 
     /**
-     * @dev Internal function to mint a new token.
+     * @dev virtual Internal function to mint a new token.
      * Reverts if the given token ID already exists.
      * @param to The address that will own the minted token
      * @param tokenId uint256 ID of the token to be minted
      */
-    function _mint(address to, uint256 tokenId) internal {
+    function _mint(address to, uint256 tokenId) virtual internal {
         require(!exists(tokenId), "ERC721: token already minted");
         _tokenOwner[tokenId] = to;
         _ownedTokensCount[to].increment();
@@ -215,13 +215,13 @@ contract ERC721BeefLedgerV1_0 is Ownable {
     }
 
     /**
-     * @dev Internal function to burn a specific token.
+     * @dev virtual Internal function to burn a specific token.
      * Reverts if the token does not exist.
      * Deprecated, use {_burn} instead.
      * @param owner owner of the token to burn
      * @param tokenId uint256 ID of the token being burned
      */
-    function _burn(address owner, uint256 tokenId) internal {
+    function _burn(address owner, uint256 tokenId) virtual internal {
         require(ownerOf(tokenId) == owner, "ERC721: burn of token that is not own");
 
         _clearApproval(tokenId);
@@ -234,22 +234,22 @@ contract ERC721BeefLedgerV1_0 is Ownable {
     }
 
     /**
-     * @dev Internal function to burn a specific token.
+     * @dev virtual Internal function to burn a specific token.
      * Reverts if the token does not exist.
      * @param tokenId uint256 ID of the token being burned
      */
-    function _burn(uint256 tokenId) internal {
+    function _burn(uint256 tokenId) virtual internal {
         _burn(ownerOf(tokenId), tokenId);
     }
 
     /**
-     * @dev Internal function to transfer ownership of a given token ID to another address.
+     * @dev virtual Internal function to transfer ownership of a given token ID to another address.
      * As opposed to {transferFrom}, this imposes no restrictions on msg.sender.
      * @param from current owner of the token
      * @param to address to receive the ownership of the given token ID
      * @param tokenId uint256 ID of the token to be transferred
      */
-    function _transferFrom(address from, address to, uint256 tokenId) internal {
+    function _transferFrom(address from, address to, uint256 tokenId) virtual internal {
         require(ownerOf(tokenId) == from, "ERC721: transfer of token that is not own");
         require(to != address(0), "ERC721: transfer to the zero address");
 
@@ -267,7 +267,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @dev Private function to clear current approval of a given token ID.
      * @param tokenId uint256 ID of the token to be transferred
      */
-    function _clearApproval(uint256 tokenId) internal {
+    function _clearApproval(uint256 tokenId) virtual internal {
         if (_tokenApprovals[tokenId] != address(0)) {
             _tokenApprovals[tokenId] = address(0);
         }

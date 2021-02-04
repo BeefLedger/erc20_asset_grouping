@@ -39,17 +39,17 @@ contract ResourceActionsV1_0 is Ownable {
 
     /** Setters */
 
-    function setCompaniesContract(address _companies) public onlyOwner {
+    function setCompaniesContract(address _companies) virtual public onlyOwner {
         require(_companies != address(0), "companiesV1_0 address cannot be 0");
         companiesV1_0 = CompaniesV1_0(_companies);
     }
 
-    function setPermission(Actions _action, address _company, bool _allow) public onlyOwner {
+    function setPermission(Actions _action, address _company, bool _allow) virtual public onlyOwner {
         require(_company != address(0), "company address cannot be 0");
         permissions[_company][uint8(_action)] = _allow;
     }
 
-    function setPermissions(uint8[] memory _permissions, address _company, bool _allow) public onlyOwner {
+    function setPermissions(uint8[] memory _permissions, address _company, bool _allow) virtual public onlyOwner {
         require(_company != address(0), "company address cannot be 0");
         for(uint8 i = 0; i < _permissions.length; i++) {
              permissions[_company][_permissions[i]] = _allow;
@@ -58,40 +58,40 @@ contract ResourceActionsV1_0 is Ownable {
 
     /** Getters */
 
-    function getPermission(Actions _action, address _signatorie) public view returns (bool) {
+    function getPermission(Actions _action, address _signatorie) virtual public view returns (bool) {
         address company = getCompanyBySignatorie(_signatorie);
         return permissions[company][uint8(_action)];
     }
 
-    function getProduceAction() public pure returns (Actions) {
+    function getProduceAction() virtual public pure returns (Actions) {
         return Actions.PRODUCE;
     }
 
-    function getDropOffAction() public pure returns (Actions) {
+    function getDropOffAction() virtual public pure returns (Actions) {
         return (Actions.DROP_OFF);
     }
 
-    function getPickUpAction() public pure returns (Actions) {
+    function getPickUpAction() virtual public pure returns (Actions) {
         return (Actions.PICK_UP);
     }
 
-    function getModifyAction() public pure returns (Actions) {
+    function getModifyAction() virtual public pure returns (Actions) {
         return (Actions.MODIFY);
     }
 
-    function getMoveAction() public pure returns (Actions) {
+    function getMoveAction() virtual public pure returns (Actions) {
         return (Actions.MOVE);
     }
 
-    function getTransferCompleteAction() public pure returns (Actions) {
+    function getTransferCompleteAction() virtual public pure returns (Actions) {
         return (Actions.TRANSFER_COMPLETE);
     }
 
-    function getMeasureAction() public pure returns (Actions) {
+    function getMeasureAction() virtual public pure returns (Actions) {
         return (Actions.MEASURE);
     }
 
-    function getPermissions(address _signatorie) public view returns(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) {
+    function getPermissions(address _signatorie) virtual public view returns(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) {
         address company = getCompanyBySignatorie(_signatorie);
         return(
             getPermission(Actions.PRODUCE, company),
@@ -107,7 +107,7 @@ contract ResourceActionsV1_0 is Ownable {
         );
     }
 
-    function getAllActions() public pure returns (Actions, Actions, Actions, Actions, Actions, Actions, Actions,
+    function getAllActions() virtual public pure returns (Actions, Actions, Actions, Actions, Actions, Actions, Actions,
       Actions, Actions, Actions) {
         return (
             Actions.PRODUCE,
@@ -123,11 +123,11 @@ contract ResourceActionsV1_0 is Ownable {
         );
     }
 
-    function getCompaniesContract() public view returns(address) {
+    function getCompaniesContract() virtual public view returns(address) {
         return address(companiesV1_0);
     }
 
-    function getCompanyBySignatorie(address signatorie) internal view returns(address) {
+    function getCompanyBySignatorie(address signatorie) virtual internal view returns(address) {
         return companiesV1_0.getCompanyBySignatorie(signatorie);
     }
 }

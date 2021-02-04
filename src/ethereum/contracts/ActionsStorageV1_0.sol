@@ -87,25 +87,25 @@ contract ActionsStorageV1_0 is Ownable {
         _initialized = true;
     }
 
-    function setResourceActionsContract(address _resourceActions) public onlyOwner {
+    function setResourceActionsContract(address _resourceActions) virtual public onlyOwner {
         require(_resourceActions != address(0), "Companies contract cannot be 0");
         resourceActionsV1_0 = ResourceActionsV1_0(_resourceActions);
         companiesV1_0 = CompaniesV1_0(resourceActionsV1_0.getCompaniesContract());
     }
 
-    function setERC721(address _erc721) public onlyOwner {
+    function setERC721(address _erc721) virtual public onlyOwner {
         require(_erc721 != address(0), "ERC721 contract cannot be 0");
         erc721V1_0 = ERC721BeefLedgerV1_0(_erc721);
     }
 
-    function approveProduce(uint256 _entry) public onlyOwner {
+    function approveProduce(uint256 _entry) virtual public onlyOwner {
         EntryType storage entry = dataByEntry[_entry];
         require(!entry.approved, "Entry has already been approved");
         require(entry.requiresMultisig, "Multisig approve is not required");
         entry.approved = true;
     }
 
-    function produce(uint256[] memory _uids) public authorization(msg.sender) {
+    function produce(uint256[] memory _uids) virtual public authorization(msg.sender) {
         require(getProducePermission(), "Not authorized");
         require(_uids.length > 0, "No uids provided");
         address companyAddress = getCompanyBySignatorie(msg.sender);
@@ -131,7 +131,7 @@ contract ActionsStorageV1_0 is Ownable {
     }
 
 
-    function measure(uint256[] memory _uids, uint256 _required, address[] memory _companies) public authorization(msg.sender) {
+    function measure(uint256[] memory _uids, uint256 _required, address[] memory _companies) virtual public authorization(msg.sender) {
         require(getMeasurePermission(), "Not authorized");
         require(_uids.length > 0, "No uids provided");
         require(_required > 0, "Required signatures must be greater than 0");
@@ -157,7 +157,7 @@ contract ActionsStorageV1_0 is Ownable {
     }
 
     function pickUp(uint256[] memory _uids, uint256 _required, address[] memory _allowedCompanies)
-        public authorization(msg.sender) {
+        virtual public authorization(msg.sender) {
             require(getPickUpPermission(), "Not authorized");
             address companyAddress = getCompanyBySignatorie(msg.sender);
             require(companyAddress != address(0), "Company address cannot be 0");
@@ -169,7 +169,7 @@ contract ActionsStorageV1_0 is Ownable {
     }
 
     function dropOff(uint256[] memory _uids, uint256 _required, address[] memory _allowedCompanies,
-      uint256 _outputOf) public authorization(msg.sender) {
+      uint256 _outputOf) virtual public authorization(msg.sender) {
             require(_outputOf > 0, "Cannot dropoff without picking up");
             require(getDropOffPermission(), "Not authorized");
             address companyAddress = getCompanyBySignatorie(msg.sender);
@@ -178,7 +178,7 @@ contract ActionsStorageV1_0 is Ownable {
     }
 
     function transport(address companyAddress, Actions _entryType, uint256[] memory _uids, uint256 _required,
-      address[] memory _allowedCompanies, uint256 _inputOf, uint256 _outputOf) internal {
+      address[] memory _allowedCompanies, uint256 _inputOf, uint256 _outputOf) virtual internal {
         require(_uids.length > 0, "No uids provided");
         require(_required > 1, "Required signatures must be greater than 1");
 
@@ -222,7 +222,7 @@ contract ActionsStorageV1_0 is Ownable {
 
 
 
-    function validateEntry(uint256 _entry) public authorization(msg.sender) {
+    function validateEntry(uint256 _entry) virtual public authorization(msg.sender) {
         require(_entry >= 0, "entry must be greater than 0");
         require(!verifiedEntry[msg.sender][_entry], "User has already signed");
         address companyAddress = getCompanyBySignatorie(msg.sender);
@@ -243,15 +243,15 @@ contract ActionsStorageV1_0 is Ownable {
 
     /**Getters */
 
-    function getEntriesByCompany(address _company) public view returns(uint256[] memory) {
+    function getEntriesByCompany(address _company) virtual public view returns(uint256[] memory) {
         return entriesByCompany[_company];
     }
 
-    function getEntriesByUser(address _user) public view returns(uint256[] memory) {
+    function getEntriesByUser(address _user) virtual public view returns(uint256[] memory) {
         return entriesByUser[_user];
     }
 
-    function getEntryData(uint256 _entry) public view
+    function getEntryData(uint256 _entry) virtual public view
       returns(Actions, address, address, uint256[] memory, uint256, uint256, address[] memory, bool, bool, uint256, uint256) {
         EntryType memory entry = dataByEntry[_entry];
         return (
@@ -269,11 +269,11 @@ contract ActionsStorageV1_0 is Ownable {
         );
     }
 
-    function getNumOfValidations(uint256 _entry) public view returns (uint256) {
+    function getNumOfValidations(uint256 _entry) virtual public view returns (uint256) {
         return validations[_entry].length;
     }
 
-    function getValidation(uint256 _entry, uint256 _pos) public view returns (address, address, uint256) {
+    function getValidation(uint256 _entry, uint256 _pos) virtual public view returns (address, address, uint256) {
         Validation memory validation = validations[_entry][_pos];
         return(
             validation.company,
@@ -282,61 +282,61 @@ contract ActionsStorageV1_0 is Ownable {
         );
     }
 
-    function userHasValidated(address _user, uint256 _entry) public view returns (bool) {
+    function userHasValidated(address _user, uint256 _entry) virtual public view returns (bool) {
         return verifiedEntry[_user][_entry];
     }
 
-    function userCanValidate(uint256 _entry) public view returns (bool) {
+    function userCanValidate(uint256 _entry) virtual public view returns (bool) {
         address companyAddress = getCompanyBySignatorie(msg.sender);
         EntryType memory entry = dataByEntry[_entry];
         address[] memory allowedCompanies = entry.allowedCompanies;
         return indexOf(allowedCompanies, companyAddress) >= 0 && !verifiedEntry[msg.sender][_entry];
     }
 
-    function indexOf(address[] memory self, address value) public pure returns (uint8) {
+    function indexOf(address[] memory self, address value) virtual public pure returns (uint8) {
         for(uint8 i = 0; i <= self.length; i++) {
             if(self[i] == value) return i;
         }
         return uint8(-1);
     }
 
-    function isCompanyOwner(address companyAddress, uint256 uid) internal view returns (bool) {
+    function isCompanyOwner(address companyAddress, uint256 uid) virtual internal view returns (bool) {
         return (erc721V1_0.getOwner(uid) == companyAddress);
     }
 
-    function getResourceActionsContract() public view returns (address) {
+    function getResourceActionsContract() virtual public view returns (address) {
         return address(resourceActionsV1_0);
     }
 
-    function getERC721Contract() public view returns (address) {
+    function getERC721Contract() virtual public view returns (address) {
         return address(erc721V1_0);
     }
 
-    function getCompaniesContract() public view returns (address) {
+    function getCompaniesContract() virtual public view returns (address) {
         return address(companiesV1_0);
     }
 
-    function getProducePermission() internal view returns (bool) {
+    function getProducePermission() virtual internal view returns (bool) {
         return resourceActionsV1_0.getPermission(resourceActionsV1_0.getProduceAction(), msg.sender);
     }
 
-    function getMeasurePermission() internal view returns (bool) {
+    function getMeasurePermission() virtual internal view returns (bool) {
         return resourceActionsV1_0.getPermission(resourceActionsV1_0.getMeasureAction(), msg.sender);
     }
 
-    function getPickUpPermission() internal view returns (bool) {
+    function getPickUpPermission() virtual internal view returns (bool) {
         return resourceActionsV1_0.getPermission(resourceActionsV1_0.getPickUpAction(), msg.sender);
     }
 
-    function getDropOffPermission() internal view returns (bool) {
+    function getDropOffPermission() virtual internal view returns (bool) {
         return resourceActionsV1_0.getPermission(resourceActionsV1_0.getDropOffAction(), msg.sender);
     }
 
-    function getCompanyBySignatorie(address signatorie) internal view returns (address) {
+    function getCompanyBySignatorie(address signatorie) virtual internal view returns (address) {
         return companiesV1_0.getCompanyBySignatorie(signatorie);
     }
 
-    function isSignatorieAuthorized(address signatorie) internal view returns (bool) {
+    function isSignatorieAuthorized(address signatorie) virtual internal view returns (bool) {
         return companiesV1_0.isSignatorieAuthorized(signatorie);
     }
 

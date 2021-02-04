@@ -19,7 +19,7 @@ contract Grouping is Ownable {
     }
 
 
-    function addAssets(uint256[] memory _uids) external onlyOwner {
+    function addAssets(uint256[] memory _uids) virtual external onlyOwner {
         require(_uids.length <= 100, "Maximum of tokens to add is 100");
 
         for(uint8 i = 0; i < _uids.length; i++) {

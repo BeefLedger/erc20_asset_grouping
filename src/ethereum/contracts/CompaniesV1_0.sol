@@ -58,7 +58,7 @@ contract CompaniesV1_0 is Ownable {
         _initialized = true;
     }
 
-    function addCompany(address _company, string memory _name, bytes32 _ipfsLink) public onlyOwner {
+    function addCompany(address _company, string memory _name, bytes32 _ipfsLink) virtual public onlyOwner {
         require(_company != address(0), "Address cannot be 0");
         require(!isCompany[_company], "Company is already created");
         require(bytes(_name).length > 0, "Company name cannot be empty");
@@ -76,13 +76,13 @@ contract CompaniesV1_0 is Ownable {
         emit NewCompany(_company, _name);
     }
 
-    function removeCompany(address _company) public onlyOwner {
+    function removeCompany(address _company) virtual public onlyOwner {
         require(_company != address(0), "Address cannot be 0");
         isCompany[_company] = false;
         emit RemoveCompany(_company);
     }
 
-    function addSignatorie(address _signatorie) public onlyCompany {
+    function addSignatorie(address _signatorie) virtual public onlyCompany {
         require(_signatorie != address(0), "Signatorie address cannot be 0");
         require(signatorie[_signatorie] == address(0), "Signatorie already exists");
         Company storage company = companyData[msg.sender];
@@ -91,7 +91,7 @@ contract CompaniesV1_0 is Ownable {
         emit NewSignatorie(msg.sender, _signatorie);
     }
 
-    function removeSignatorie(address _signatorie) public onlyCompany {
+    function removeSignatorie(address _signatorie) virtual public onlyCompany {
         require(_signatorie != address(0), "Signatorie address cannot be 0");
         require(signatorie[_signatorie] != address(0), "Siganatorie does not exist");
         require(!isCompany[_signatorie], "Cannot remove owner from signatories");
@@ -109,7 +109,7 @@ contract CompaniesV1_0 is Ownable {
         emit RemoveSignatorie(msg.sender, _signatorie);
     }
 
-    function setCompanyData(string memory _name, bytes32 _ipfsLink) public onlyCompany {
+    function setCompanyData(string memory _name, bytes32 _ipfsLink) virtual public onlyCompany {
         Company storage company = companyData[msg.sender];
         if (bytes(_name).length != 0) {
             string memory lastName = company.name;
@@ -127,19 +127,19 @@ contract CompaniesV1_0 is Ownable {
     * Getters
     */
 
-    function getAllCompanies() public view returns(address[] memory) {
+    function getAllCompanies() virtual public view returns(address[] memory) {
         return companies;
     }
 
-    function isAddressCompany(address _company) public view returns(bool) {
+    function isAddressCompany(address _company) virtual public view returns(bool) {
         return isCompany[_company];
     }
 
-    function getCompanyBySignatorie(address _signatorie) public view returns(address) {
+    function getCompanyBySignatorie(address _signatorie) virtual public view returns(address) {
         return signatorie[_signatorie];
     }
 
-    function getCompanyByAddress(address _company) public view
+    function getCompanyByAddress(address _company) virtual public view
     returns(uint256, address[] memory, string memory, bytes32, bool) {
         Company memory company = companyData[_company];
         return(
@@ -151,7 +151,7 @@ contract CompaniesV1_0 is Ownable {
         );
     }
 
-    function getCompanyByName(string memory _stringName) public view
+    function getCompanyByName(string memory _stringName) virtual public view
     returns(uint256, address[] memory, string memory, bytes32, bool) {
         bytes20 _name = ripemd160(bytes(_stringName));
         address companyAddress = companyByName[_name];
@@ -165,7 +165,7 @@ contract CompaniesV1_0 is Ownable {
         );
     }
 
-    function isSignatorieAuthorized(address _signatorie) public view returns(bool) {
+    function isSignatorieAuthorized(address _signatorie) virtual public view returns(bool) {
         bool hasCompany = signatorie[_signatorie] != address(0);
         if(!hasCompany) return false;
         return(isCompany[signatorie[_signatorie]]);
