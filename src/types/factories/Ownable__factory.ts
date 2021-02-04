@@ -2,12 +2,29 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Signer } from "ethers";
+import { Provider, TransactionRequest } from "@ethersproject/providers";
+import { Contract, ContractFactory, Overrides } from "@ethersproject/contracts";
 
 import type { Ownable } from "../Ownable";
 
-export class Ownable__factory {
+export class Ownable__factory extends ContractFactory {
+  constructor(signer?: Signer) {
+    super(_abi, _bytecode, signer);
+  }
+
+  deploy(overrides?: Overrides): Promise<Ownable> {
+    return super.deploy(overrides || {}) as Promise<Ownable>;
+  }
+  getDeployTransaction(overrides?: Overrides): TransactionRequest {
+    return super.getDeployTransaction(overrides || {});
+  }
+  attach(address: string): Ownable {
+    return super.attach(address) as Ownable;
+  }
+  connect(signer: Signer): Ownable__factory {
+    return super.connect(signer) as Ownable__factory;
+  }
   static connect(
     address: string,
     signerOrProvider: Signer | Provider
@@ -18,16 +35,21 @@ export class Ownable__factory {
 
 const _abi = [
   {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
     anonymous: false,
     inputs: [
       {
-        indexed: true,
+        indexed: false,
         internalType: "address",
         name: "previousOwner",
         type: "address",
       },
       {
-        indexed: true,
+        indexed: false,
         internalType: "address",
         name: "newOwner",
         type: "address",
@@ -50,13 +72,6 @@ const _abi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "renounceOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -70,3 +85,6 @@ const _abi = [
     type: "function",
   },
 ];
+
+const _bytecode =
+  "0x608060405234801561001057600080fd5b5061001a3361001f565b610041565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6101fb806100506000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638da5cb5b1461003b578063f2fde38b1461005f575b600080fd5b610043610087565b604080516001600160a01b039092168252519081900360200190f35b6100856004803603602081101561007557600080fd5b50356001600160a01b0316610096565b005b6000546001600160a01b031690565b61009e610087565b6001600160a01b0316336001600160a01b0316146100f9576040805162461bcd60e51b815260206004820152601360248201527239b2b73232b91034b9903737ba1037bbb732b960691b604482015290519081900360640190fd5b6001600160a01b03811661014c576040805162461bcd60e51b815260206004820152601560248201527406e6577206f776e65722063616e6e6f74206265203605c1b604482015290519081900360640190fd5b7f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0610175610087565b604080516001600160a01b03928316815291841660208301528051918290030190a16101a0816101a3565b50565b600080546001600160a01b0319166001600160a01b039290921691909117905556fea2646970667358221220daee4dd2bc720790c218c7d3915789b06ae1452d1527d732bfa511c07653bca364736f6c63430007000033";

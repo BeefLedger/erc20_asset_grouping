@@ -5,7 +5,7 @@ pragma solidity >=0.7.0 <0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./Ownable.sol";
 
-contract ERC20ForAssetGroupingV1_0 is Ownable, ERC20 {
+contract ERC20ForAssetGrouping is Ownable, ERC20 {
 
     //using Address for address; 
 
@@ -31,12 +31,12 @@ contract ERC20ForAssetGroupingV1_0 is Ownable, ERC20 {
     /**
      * @dev Asset grouping contract address from the private chain.
      */
-    function setAssetGrouping(address _assetGrouping) virtual public onlyOwner {
+    function setAssetGrouping(address _assetGrouping) public onlyOwner {
         require(_assetGrouping != address(0), "Asset grouping address already set");
         assetGouping = _assetGrouping;
     }
 
-    function mint(address account, uint256 amount) virtual public onlyOwner canMint {
+    function mint(address account, uint256 amount) public onlyOwner canMint {
         _minted = false;
         _mint(account, amount);
     }

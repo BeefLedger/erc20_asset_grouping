@@ -32,7 +32,6 @@ interface ERC20ForAssetGroupingInterface extends ethers.utils.Interface {
     "increaseAllowance(address,uint256)": FunctionFragment;
     "name()": FunctionFragment;
     "owner()": FunctionFragment;
-    "renounceOwnership()": FunctionFragment;
     "symbol()": FunctionFragment;
     "totalSupply()": FunctionFragment;
     "transfer(address,uint256)": FunctionFragment;
@@ -67,10 +66,6 @@ interface ERC20ForAssetGroupingInterface extends ethers.utils.Interface {
   ): string;
   encodeFunctionData(functionFragment: "name", values?: undefined): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "renounceOwnership",
-    values?: undefined
-  ): string;
   encodeFunctionData(functionFragment: "symbol", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "totalSupply",
@@ -116,10 +111,6 @@ interface ERC20ForAssetGroupingInterface extends ethers.utils.Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "renounceOwnership",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "symbol", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "totalSupply",
@@ -279,24 +270,14 @@ export class ERC20ForAssetGrouping extends Contract {
     "name()"(overrides?: CallOverrides): Promise<[string]>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     owner(overrides?: CallOverrides): Promise<[string]>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<[string]>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    renounceOwnership(overrides?: Overrides): Promise<ContractTransaction>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    "renounceOwnership()"(overrides?: Overrides): Promise<ContractTransaction>;
 
     /**
      * Returns the symbol of the token, usually a shorter version of the name.
@@ -357,7 +338,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<ContractTransaction>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     transferOwnership(
       newOwner: string,
@@ -365,7 +347,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<ContractTransaction>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     "transferOwnership(address)"(
       newOwner: string,
@@ -515,24 +498,14 @@ export class ERC20ForAssetGrouping extends Contract {
   "name()"(overrides?: CallOverrides): Promise<string>;
 
   /**
-   * Returns the address of the current owner.
+   * Tells the address of the owner return the address of the owner
    */
   owner(overrides?: CallOverrides): Promise<string>;
 
   /**
-   * Returns the address of the current owner.
+   * Tells the address of the owner return the address of the owner
    */
   "owner()"(overrides?: CallOverrides): Promise<string>;
-
-  /**
-   * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-   */
-  renounceOwnership(overrides?: Overrides): Promise<ContractTransaction>;
-
-  /**
-   * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-   */
-  "renounceOwnership()"(overrides?: Overrides): Promise<ContractTransaction>;
 
   /**
    * Returns the symbol of the token, usually a shorter version of the name.
@@ -593,7 +566,8 @@ export class ERC20ForAssetGrouping extends Contract {
   ): Promise<ContractTransaction>;
 
   /**
-   * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+   * Allows the current owner to transfer control of the contract to a newOwner.
+   * @param newOwner The address to transfer ownership to.
    */
   transferOwnership(
     newOwner: string,
@@ -601,7 +575,8 @@ export class ERC20ForAssetGrouping extends Contract {
   ): Promise<ContractTransaction>;
 
   /**
-   * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+   * Allows the current owner to transfer control of the contract to a newOwner.
+   * @param newOwner The address to transfer ownership to.
    */
   "transferOwnership(address)"(
     newOwner: string,
@@ -751,24 +726,14 @@ export class ERC20ForAssetGrouping extends Contract {
     "name()"(overrides?: CallOverrides): Promise<string>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     owner(overrides?: CallOverrides): Promise<string>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<string>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    renounceOwnership(overrides?: CallOverrides): Promise<void>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    "renounceOwnership()"(overrides?: CallOverrides): Promise<void>;
 
     /**
      * Returns the symbol of the token, usually a shorter version of the name.
@@ -829,7 +794,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<boolean>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     transferOwnership(
       newOwner: string,
@@ -837,7 +803,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<void>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     "transferOwnership(address)"(
       newOwner: string,
@@ -880,10 +847,7 @@ export class ERC20ForAssetGrouping extends Contract {
       value: null
     ): EventFilter;
 
-    OwnershipTransferred(
-      previousOwner: string | null,
-      newOwner: string | null
-    ): EventFilter;
+    OwnershipTransferred(previousOwner: null, newOwner: null): EventFilter;
 
     Transfer(from: string | null, to: string | null, value: null): EventFilter;
   };
@@ -1003,24 +967,14 @@ export class ERC20ForAssetGrouping extends Contract {
     "name()"(overrides?: CallOverrides): Promise<BigNumber>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<BigNumber>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    renounceOwnership(overrides?: Overrides): Promise<BigNumber>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    "renounceOwnership()"(overrides?: Overrides): Promise<BigNumber>;
 
     /**
      * Returns the symbol of the token, usually a shorter version of the name.
@@ -1081,7 +1035,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<BigNumber>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     transferOwnership(
       newOwner: string,
@@ -1089,7 +1044,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<BigNumber>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     "transferOwnership(address)"(
       newOwner: string,
@@ -1243,24 +1199,14 @@ export class ERC20ForAssetGrouping extends Contract {
     "name()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     /**
-     * Returns the address of the current owner.
+     * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    renounceOwnership(overrides?: Overrides): Promise<PopulatedTransaction>;
-
-    /**
-     * Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.
-     */
-    "renounceOwnership()"(overrides?: Overrides): Promise<PopulatedTransaction>;
 
     /**
      * Returns the symbol of the token, usually a shorter version of the name.
@@ -1321,7 +1267,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<PopulatedTransaction>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     transferOwnership(
       newOwner: string,
@@ -1329,7 +1276,8 @@ export class ERC20ForAssetGrouping extends Contract {
     ): Promise<PopulatedTransaction>;
 
     /**
-     * Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.
+     * Allows the current owner to transfer control of the contract to a newOwner.
+     * @param newOwner The address to transfer ownership to.
      */
     "transferOwnership(address)"(
       newOwner: string,

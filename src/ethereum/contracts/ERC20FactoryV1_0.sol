@@ -3,7 +3,7 @@
 pragma solidity >=0.7.0 <0.8.0;
 
 import "./Ownable.sol";
-import "./ERC20ForAssetGroupingV1_0.sol";
+import "./ERC20ForAssetGrouping.sol";
 
 
 contract ERC20FactoryV1_0 is Ownable {
@@ -12,8 +12,16 @@ contract ERC20FactoryV1_0 is Ownable {
 
     address[] public tokens;
 
+    //upgradability
+    bool internal _initialized;
+
+    function initialize() public {
+        require(!_initialized, "conract already initialized");
+        _initialized = true;
+    }
+
     function deploy(uint256 _chainId, string memory _name, string memory _symbol) virtual public onlyOwner {
-        ERC20ForAssetGroupingV1_0 uToken = new ERC20ForAssetGroupingV1_0(_chainId, _name, _symbol);
+        ERC20ForAssetGrouping uToken = new ERC20ForAssetGrouping(_chainId, _name, _symbol);
         uToken.transferOwnership(msg.sender);
         tokens.push(address(uToken));
         emit NewERC20(address(uToken), msg.sender);

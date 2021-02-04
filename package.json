@@ -54,6 +54,7 @@
     "@babel/runtime": "^7.12.5",
     "@openzeppelin/contracts": "^3.3.0",
     "@typechain/ethers-v5": "^5.0.0",
+    "ethereumjs-abi": "^0.6.8",
     "ethers": "^5.0.26"
   },
   "files": [
