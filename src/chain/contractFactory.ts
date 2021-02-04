@@ -1,6 +1,8 @@
-import { Contract, ContractFactory, Signer } from "ethers";
+import { BytesLike, Contract, ContractFactory, Signer } from "ethers";
 import { getProvider } from "./providerFactory";
 import { getSigner } from "./signerFactory";
+import * as artifactOwnedUpgradeabilityProxy from "../ethereum/abi/OwnedUpgradeabilityProxy.json"
+import { OwnedUpgradeabilityProxy } from "../types/OwnedUpgradeabilityProxy";
 
 export async function deployContract <T extends Contract>(
     signer: Signer,
@@ -15,8 +17,44 @@ export async function deployContract <T extends Contract>(
     catch (e) {
         throw Error(`deployContract(): ${e}`)
     }
-
 };
+
+export async function initializeContract <T extends Contract> (
+        signer: Signer,
+        compilerOutput: any,
+        args?: string[] | [],
+        vals?: string[] | []
+    ): Promise<T> {
+        if(args && vals && args.length !== vals.length) {
+            throw Error(`initializeContract(): args lenght has to be the same as vals lenght`)
+        }
+        try {
+            const proxiedContract: T = await  deployContract(signer, compilerOutput);
+            const proxy: OwnedUpgradeabilityProxy = await deployContract(signer, artifactOwnedUpgradeabilityProxy);
+            const initializeData: BytesLike = encodeCall('initialize', args, vals)
+            await proxy.functions.upgradeToAndCall(proxiedContract.address, initializeData);
+            return proxiedContract.at(proxy.address);
+        }
+        catch (e) {
+            throw Error(`initializeContract(): ${e}`)
+        }
+}
+
+export async function upgradeContract<T extends Contract> (
+        signer: Signer,
+        compilerOutput: any,
+        proxyAddress: string
+    ): Promise<T> {
+        try {
+            const proxiedContract: T = await  deployContract(signer, compilerOutput);
+            const proxy: OwnedUpgradeabilityProxy = new OwnedUpgradeabilityProxy(proxyAddress, artifactOwnedUpgradeabilityProxy.abi, signer);
+            await proxy.upgradeTo(proxiedContract.address);
+            return proxiedContract.at(proxy.address);
+        } catch(e) {
+            throw Error(`upgradeContract(): ${e}`)
+        }
+    }
+)
 
 export async function getContract <T extends Contract>(
     address: string,
