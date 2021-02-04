@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.7.0 <0.8.0;
 
 import './Proxy.sol';
 
@@ -20,9 +20,9 @@ contract UpgradeabilityProxy is Proxy {
 
   /**
    * @dev Tells the address of the current implementation
-   * @return address of the current implementation
+   * return address of the current implementation
    */
-  function implementation() public view returns (address impl) {
+  function implementation() override public view returns (address impl) {
     bytes32 position = implementationPosition;
     assembly {
       impl := sload(position)

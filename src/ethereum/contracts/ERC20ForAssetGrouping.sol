@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.7.0 <0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./Ownable.sol";
@@ -14,7 +14,7 @@ contract ERC20ForAssetGrouping is Ownable, ERC20 {
 
     uint256 public chainId;
     
-    constructor(uint256 _chainId, string memory name, string memory symbol) ERC20(name, symbol) public {
+    constructor(uint256 _chainId, string memory name, string memory symbol) ERC20(name, symbol) {
         require(_chainId > 0, "Chain ID cannot be 0");
         chainId = _chainId;
     }

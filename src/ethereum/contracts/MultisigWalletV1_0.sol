@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.7.0 <0.8.0;
 
 import "./ResourceActionsV1_0.sol";
 
@@ -270,6 +270,7 @@ contract MultisigWalletV1_0  {
             if (count == required)
                 return true;
         }
+        return false;
     }
 
     /*

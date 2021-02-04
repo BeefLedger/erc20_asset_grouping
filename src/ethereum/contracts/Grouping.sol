@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.7.0 <0.8.0;
 
 import "./Ownable.sol";
 
@@ -11,7 +11,7 @@ contract Grouping is Ownable {
     mapping (uint256 => bool) internal _assets;
 
 
-    constructor(address _rgToken, address _erc721) public {
+    constructor(address _rgToken, address _erc721) {
         require(_rgToken != address(0), "RG Token address cannot be 0");
         require(_erc721 != address(0), "ERC721 address cannot be 0");
         rgToken = _rgToken;

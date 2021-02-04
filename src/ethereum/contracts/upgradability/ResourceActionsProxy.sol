@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.6.0 <0.8.0;
+pragma solidity >=0.7.0 <0.8.0;
 
 import './UpgradeabilityProxy.sol';
 
@@ -22,7 +22,7 @@ contract ResourceActionsProxy is UpgradeabilityProxy {
   /**
   * @dev the constructor sets the original owner of the contract to the sender account.
   */
-  constructor() public {
+  constructor() {
     setUpgradeabilityOwner(msg.sender);
   }
 
@@ -36,7 +36,7 @@ contract ResourceActionsProxy is UpgradeabilityProxy {
 
   /**
    * @dev Tells the address of the owner
-   * @return the address of the owner
+   * return the address of the owner
    */
   function proxyOwner() public view returns (address owner) {
     bytes32 position = proxyOwnerPosition;
@@ -80,8 +80,9 @@ contract ResourceActionsProxy is UpgradeabilityProxy {
    * @param data represents the msg.data to bet sent in the low level call. This parameter may include the function
    * signature of the implementation to be called with the needed payload
    */
-  function upgradeToAndCall(address implementation, bytes data) payable public onlyProxyOwner {
+  function upgradeToAndCall(address implementation, bytes memory data) payable public onlyProxyOwner {
     upgradeTo(implementation);
-    require(address(this).call.value(msg.value)(data), "error");
+    (bool success,  ) = address(this).call{value: msg.value}(data);
+    require(success, "error");
   }
 }
