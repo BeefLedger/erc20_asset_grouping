@@ -20,17 +20,29 @@ import { BytesLike } from "@ethersproject/bytes";
 import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 
-interface ERC20FactoryV10Interface extends ethers.utils.Interface {
+interface ERC20FactoryV11Interface extends ethers.utils.Interface {
   functions: {
-    "owner()": FunctionFragment;
-    "tokens(uint256)": FunctionFragment;
-    "transferOwnership(address)": FunctionFragment;
-    "initialize(address)": FunctionFragment;
     "deploy(uint256,string,string)": FunctionFragment;
     "getTokens()": FunctionFragment;
+    "initialize(address)": FunctionFragment;
+    "owner()": FunctionFragment;
+    "testVariable()": FunctionFragment;
+    "tokens(uint256)": FunctionFragment;
+    "transferOwnership(address)": FunctionFragment;
+    "getTestVariable()": FunctionFragment;
   };
 
+  encodeFunctionData(
+    functionFragment: "deploy",
+    values: [BigNumberish, string, string]
+  ): string;
+  encodeFunctionData(functionFragment: "getTokens", values?: undefined): string;
+  encodeFunctionData(functionFragment: "initialize", values: [string]): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "testVariable",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "tokens",
     values: [BigNumberish]
@@ -39,22 +51,28 @@ interface ERC20FactoryV10Interface extends ethers.utils.Interface {
     functionFragment: "transferOwnership",
     values: [string]
   ): string;
-  encodeFunctionData(functionFragment: "initialize", values: [string]): string;
   encodeFunctionData(
-    functionFragment: "deploy",
-    values: [BigNumberish, string, string]
+    functionFragment: "getTestVariable",
+    values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: "getTokens", values?: undefined): string;
 
+  decodeFunctionResult(functionFragment: "deploy", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getTokens", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "testVariable",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "tokens", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "transferOwnership",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "deploy", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "getTokens", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getTestVariable",
+    data: BytesLike
+  ): Result;
 
   events: {
     "NewERC20(address,address)": EventFragment;
@@ -65,7 +83,7 @@ interface ERC20FactoryV10Interface extends ethers.utils.Interface {
   getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
 }
 
-export class ERC20FactoryV10 extends Contract {
+export class ERC20FactoryV11 extends Contract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
@@ -76,9 +94,37 @@ export class ERC20FactoryV10 extends Contract {
   removeAllListeners(eventName: EventFilter | string): this;
   removeListener(eventName: any, listener: Listener): this;
 
-  interface: ERC20FactoryV10Interface;
+  interface: ERC20FactoryV11Interface;
 
   functions: {
+    deploy(
+      _chainId: BigNumberish,
+      _name: string,
+      _symbol: string,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
+    "deploy(uint256,string,string)"(
+      _chainId: BigNumberish,
+      _name: string,
+      _symbol: string,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
+    getTokens(overrides?: CallOverrides): Promise<[string[]]>;
+
+    "getTokens()"(overrides?: CallOverrides): Promise<[string[]]>;
+
+    initialize(
+      _owner: string,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
+    "initialize(address)"(
+      _owner: string,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -88,6 +134,10 @@ export class ERC20FactoryV10 extends Contract {
      * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<[string]>;
+
+    testVariable(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    "testVariable()"(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     tokens(arg0: BigNumberish, overrides?: CallOverrides): Promise<[string]>;
 
@@ -114,34 +164,38 @@ export class ERC20FactoryV10 extends Contract {
       overrides?: Overrides
     ): Promise<ContractTransaction>;
 
-    initialize(
-      _owner: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
+    getTestVariable(overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    "initialize(address)"(
-      _owner: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
-
-    deploy(
-      _chainId: BigNumberish,
-      _name: string,
-      _symbol: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
-
-    "deploy(uint256,string,string)"(
-      _chainId: BigNumberish,
-      _name: string,
-      _symbol: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
-
-    getTokens(overrides?: CallOverrides): Promise<[string[]]>;
-
-    "getTokens()"(overrides?: CallOverrides): Promise<[string[]]>;
+    "getTestVariable()"(overrides?: CallOverrides): Promise<[BigNumber]>;
   };
+
+  deploy(
+    _chainId: BigNumberish,
+    _name: string,
+    _symbol: string,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
+
+  "deploy(uint256,string,string)"(
+    _chainId: BigNumberish,
+    _name: string,
+    _symbol: string,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
+
+  getTokens(overrides?: CallOverrides): Promise<string[]>;
+
+  "getTokens()"(overrides?: CallOverrides): Promise<string[]>;
+
+  initialize(
+    _owner: string,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
+
+  "initialize(address)"(
+    _owner: string,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
 
   /**
    * Tells the address of the owner return the address of the owner
@@ -152,6 +206,10 @@ export class ERC20FactoryV10 extends Contract {
    * Tells the address of the owner return the address of the owner
    */
   "owner()"(overrides?: CallOverrides): Promise<string>;
+
+  testVariable(overrides?: CallOverrides): Promise<BigNumber>;
+
+  "testVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
 
   tokens(arg0: BigNumberish, overrides?: CallOverrides): Promise<string>;
 
@@ -178,35 +236,36 @@ export class ERC20FactoryV10 extends Contract {
     overrides?: Overrides
   ): Promise<ContractTransaction>;
 
-  initialize(
-    _owner: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
+  getTestVariable(overrides?: CallOverrides): Promise<BigNumber>;
 
-  "initialize(address)"(
-    _owner: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
-
-  deploy(
-    _chainId: BigNumberish,
-    _name: string,
-    _symbol: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
-
-  "deploy(uint256,string,string)"(
-    _chainId: BigNumberish,
-    _name: string,
-    _symbol: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
-
-  getTokens(overrides?: CallOverrides): Promise<string[]>;
-
-  "getTokens()"(overrides?: CallOverrides): Promise<string[]>;
+  "getTestVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
 
   callStatic: {
+    deploy(
+      _chainId: BigNumberish,
+      _name: string,
+      _symbol: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "deploy(uint256,string,string)"(
+      _chainId: BigNumberish,
+      _name: string,
+      _symbol: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    getTokens(overrides?: CallOverrides): Promise<string[]>;
+
+    "getTokens()"(overrides?: CallOverrides): Promise<string[]>;
+
+    initialize(_owner: string, overrides?: CallOverrides): Promise<void>;
+
+    "initialize(address)"(
+      _owner: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -216,6 +275,10 @@ export class ERC20FactoryV10 extends Contract {
      * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<string>;
+
+    testVariable(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "testVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
 
     tokens(arg0: BigNumberish, overrides?: CallOverrides): Promise<string>;
 
@@ -242,30 +305,9 @@ export class ERC20FactoryV10 extends Contract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    initialize(_owner: string, overrides?: CallOverrides): Promise<void>;
+    getTestVariable(overrides?: CallOverrides): Promise<BigNumber>;
 
-    "initialize(address)"(
-      _owner: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    deploy(
-      _chainId: BigNumberish,
-      _name: string,
-      _symbol: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    "deploy(uint256,string,string)"(
-      _chainId: BigNumberish,
-      _name: string,
-      _symbol: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    getTokens(overrides?: CallOverrides): Promise<string[]>;
-
-    "getTokens()"(overrides?: CallOverrides): Promise<string[]>;
+    "getTestVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   filters: {
@@ -275,6 +317,31 @@ export class ERC20FactoryV10 extends Contract {
   };
 
   estimateGas: {
+    deploy(
+      _chainId: BigNumberish,
+      _name: string,
+      _symbol: string,
+      overrides?: Overrides
+    ): Promise<BigNumber>;
+
+    "deploy(uint256,string,string)"(
+      _chainId: BigNumberish,
+      _name: string,
+      _symbol: string,
+      overrides?: Overrides
+    ): Promise<BigNumber>;
+
+    getTokens(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getTokens()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    initialize(_owner: string, overrides?: Overrides): Promise<BigNumber>;
+
+    "initialize(address)"(
+      _owner: string,
+      overrides?: Overrides
+    ): Promise<BigNumber>;
+
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -284,6 +351,10 @@ export class ERC20FactoryV10 extends Contract {
      * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    testVariable(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "testVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
 
     tokens(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -310,33 +381,40 @@ export class ERC20FactoryV10 extends Contract {
       overrides?: Overrides
     ): Promise<BigNumber>;
 
-    initialize(_owner: string, overrides?: Overrides): Promise<BigNumber>;
+    getTestVariable(overrides?: CallOverrides): Promise<BigNumber>;
 
-    "initialize(address)"(
-      _owner: string,
-      overrides?: Overrides
-    ): Promise<BigNumber>;
+    "getTestVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
+  };
 
+  populateTransaction: {
     deploy(
       _chainId: BigNumberish,
       _name: string,
       _symbol: string,
       overrides?: Overrides
-    ): Promise<BigNumber>;
+    ): Promise<PopulatedTransaction>;
 
     "deploy(uint256,string,string)"(
       _chainId: BigNumberish,
       _name: string,
       _symbol: string,
       overrides?: Overrides
-    ): Promise<BigNumber>;
+    ): Promise<PopulatedTransaction>;
 
-    getTokens(overrides?: CallOverrides): Promise<BigNumber>;
+    getTokens(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    "getTokens()"(overrides?: CallOverrides): Promise<BigNumber>;
-  };
+    "getTokens()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-  populateTransaction: {
+    initialize(
+      _owner: string,
+      overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
+    "initialize(address)"(
+      _owner: string,
+      overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -346,6 +424,10 @@ export class ERC20FactoryV10 extends Contract {
      * Tells the address of the owner return the address of the owner
      */
     "owner()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    testVariable(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "testVariable()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     tokens(
       arg0: BigNumberish,
@@ -375,32 +457,10 @@ export class ERC20FactoryV10 extends Contract {
       overrides?: Overrides
     ): Promise<PopulatedTransaction>;
 
-    initialize(
-      _owner: string,
-      overrides?: Overrides
+    getTestVariable(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getTestVariable()"(
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
-
-    "initialize(address)"(
-      _owner: string,
-      overrides?: Overrides
-    ): Promise<PopulatedTransaction>;
-
-    deploy(
-      _chainId: BigNumberish,
-      _name: string,
-      _symbol: string,
-      overrides?: Overrides
-    ): Promise<PopulatedTransaction>;
-
-    "deploy(uint256,string,string)"(
-      _chainId: BigNumberish,
-      _name: string,
-      _symbol: string,
-      overrides?: Overrides
-    ): Promise<PopulatedTransaction>;
-
-    getTokens(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    "getTokens()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }

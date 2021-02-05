@@ -15,8 +15,10 @@ contract ERC20FactoryV1_0 is Ownable {
     //upgradability
     bool internal _initialized;
 
-    function initialize() public {
-        require(!_initialized, "conract already initialized");
+    function initialize(address _owner) public {
+        require(!_initialized, "contract already initialized");
+        require(_owner != address(0), "Owner address cannot be 0");
+        setOwner(_owner);
         _initialized = true;
     }
 

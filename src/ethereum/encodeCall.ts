@@ -1,9 +1,8 @@
-const abi = require('ethereumjs-abi')
+import abi from 'ethereumjs-abi';
+import { ethers } from 'ethers';
 
-function encodeCall(name, arguments, values) {
-  const methodId = abi.methodID(name, arguments).toString('hex');
-  const params = abi.rawEncode(arguments, values).toString('hex');
-  return '0x' + methodId + params;
+export function encode(compilerOutput: any, functionName: string, args?: any[]) {
+  const iface = new ethers.utils.Interface(compilerOutput.abi)
+  const callData = iface.encodeFunctionData(functionName, args)
+  return callData;
 }
-
-module.exports = encodeCall;

@@ -1,9 +1,9 @@
 import { ethers, Signer } from "ethers";
 
-import { ERC20Factory } from "../types/ERC20Factory";
-import { ERC20ForAssetGrouping } from "../types/ERC20ForAssetGrouping";
-import { ERC20FactoryController } from "../erc20FactoryController";
-import { ERC20Controller } from "../erc20Controller";
+// import { ERC20Factory } from "../types/ERC20Factory";
+// import { ERC20ForAssetGrouping } from "../types/ERC20ForAssetGrouping";
+// import { ERC20FactoryController } from "../erc20FactoryController";
+// import { ERC20Controller } from "../erc20Controller";
 
 let provider: ethers.providers.JsonRpcProvider;
 let signers: Signer[] = []
@@ -23,18 +23,18 @@ describe("Deploy ERC20", () => {
 
   it("Deploys ERC20Factory and ERC20", async (): Promise<any> => {
     
-    const erc20FactoryContract: ERC20Factory = await ERC20FactoryController.deployERC20FactoryContract(signers[0]);
-    const erc20FactoryAddress = erc20FactoryContract.address;
-    expect(erc20FactoryAddress.length).toEqual(42);
+    // const erc20FactoryContract: ERC20Factory = await ERC20FactoryController.deployERC20FactoryContract(signers[0]);
+    // const erc20FactoryAddress = erc20FactoryContract.address;
+    // expect(erc20FactoryAddress.length).toEqual(42);
 
-    const erc20Factory = new ERC20FactoryController(erc20FactoryAddress, signers[0]);
-    const erc20Contract: ERC20ForAssetGrouping = await erc20Factory.deployERC20Contract(18122, "RG05", "RG05");
+    // const erc20Factory = new ERC20FactoryController(erc20FactoryAddress, signers[0]);
+    // const erc20Contract: ERC20ForAssetGrouping = await erc20Factory.deployERC20Contract(18122, "RG05", "RG05");
 
-    const deployedContract = new ERC20Controller(erc20Contract.address, signers[0]);
+    // const deployedContract = new ERC20Controller(erc20Contract.address, signers[0]);
 
-    const balance = await deployedContract.balanceOf();
+    // const balance = await deployedContract.balanceOf();
 
-    console.log(balance)
+    // console.log(balance)
 
     // const owner: string = await erc20Contract.getOwner();
 

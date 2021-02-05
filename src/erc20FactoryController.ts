@@ -1,26 +1,31 @@
 import { ContractTransaction, Signer } from "ethers";
 import { getERC20FactoryContract } from "./chain/prefabContractFactory";
-import { ERC20Factory } from "./types/ERC20Factory";
+import { ERC20FactoryV10 } from "./types/ERC20FactoryV10";
+import { ERC20FactoryV11 } from "./types/ERC20FactoryV11";
 
-import { deployERC20Factory } from './ethereum/deploy/deploy'
+import { initializeERC20Factory, upgradeERC20Factory } from './ethereum/deploy/deploy'
 
 
 export class ERC20FactoryController {
 
     private _erc20FactoryAddress: string;
     private _signer: Signer;
-    private _erc20FactoryContract? : ERC20Factory
+    private _erc20FactoryContract? : ERC20FactoryV10
 
     constructor(erc20FactoryAddress: string, signer: Signer) {
         this._erc20FactoryAddress = erc20FactoryAddress;
         this._signer = signer
     }
 
-    public static async deployERC20FactoryContract(signer: Signer): Promise<ERC20Factory> {
-        return deployERC20Factory(signer)
+    public static async deployERC20FactoryContract(signer: Signer): Promise<[ERC20FactoryV10, string]> {
+        return initializeERC20Factory(signer)
     }
 
-    private async _getERC20FactoryContract(): Promise<ERC20Factory> {
+    public async upgradeERC20FactoryContractV11(signer: Signer, proxyAddress: string): Promise<ERC20FactoryV11> {
+        return upgradeERC20Factory(signer, proxyAddress)
+    }
+
+    private async _getERC20FactoryContract(): Promise<ERC20FactoryV10 | ERC20FactoryV11> {
         if(this._erc20FactoryContract) {
             return this._erc20FactoryContract
         }
@@ -35,6 +40,8 @@ export class ERC20FactoryController {
             throw Error(`Failed to get DealRoom contract: ${e}`)
         }
     }
+
+
 
     public async getOwner(): Promise<string> {
         const erc20FactoryContract = await this._getERC20FactoryContract();

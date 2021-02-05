@@ -540,7 +540,7 @@
         "id": 1221,
         "nodeType": "ImportDirective",
         "scope": 1875,
-        "sourceUnit": 4095,
+        "sourceUnit": 4111,
         "src": "66:23:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -555,10 +555,10 @@
               "id": 1222,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4094,
+              "referencedDeclaration": 4110,
               "src": "117:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$4094",
+                "typeIdentifier": "t_contract$_Ownable_$4110",
                 "typeString": "contract Ownable"
               }
             },
@@ -568,7 +568,7 @@
           }
         ],
         "contractDependencies": [
-          4094
+          4110
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -576,7 +576,7 @@
         "id": 1874,
         "linearizedBaseContracts": [
           1874,
-          4094
+          4110
         ],
         "name": "CompaniesV1_0",
         "nodeType": "ContractDefinition",
@@ -1841,7 +1841,7 @@
                       "name": "setOwner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4064,
+                      "referencedDeclaration": 4080,
                       "src": "1571:8:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -3476,7 +3476,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 4034,
+                  "referencedDeclaration": 4050,
                   "src": "1731:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3915,7 +3915,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 4034,
+                  "referencedDeclaration": 4050,
                   "src": "2566:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -9197,7 +9197,7 @@
         "id": 1221,
         "nodeType": "ImportDirective",
         "scope": 1875,
-        "sourceUnit": 4095,
+        "sourceUnit": 4111,
         "src": "66:23:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -9212,10 +9212,10 @@
               "id": 1222,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 4094,
+              "referencedDeclaration": 4110,
               "src": "117:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$4094",
+                "typeIdentifier": "t_contract$_Ownable_$4110",
                 "typeString": "contract Ownable"
               }
             },
@@ -9225,7 +9225,7 @@
           }
         ],
         "contractDependencies": [
-          4094
+          4110
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -9233,7 +9233,7 @@
         "id": 1874,
         "linearizedBaseContracts": [
           1874,
-          4094
+          4110
         ],
         "name": "CompaniesV1_0",
         "nodeType": "ContractDefinition",
@@ -10498,7 +10498,7 @@
                       "name": "setOwner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4064,
+                      "referencedDeclaration": 4080,
                       "src": "1571:8:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -12133,7 +12133,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 4034,
+                  "referencedDeclaration": 4050,
                   "src": "1731:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -12572,7 +12572,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 4034,
+                  "referencedDeclaration": 4050,
                   "src": "2566:9:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -17829,7 +17829,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-04T17:40:51.237Z",
+  "updatedAt": "2021-02-05T21:05:31.517Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

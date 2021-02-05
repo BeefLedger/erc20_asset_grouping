@@ -40,23 +40,23 @@
   "bytecode": "0x608060405234801561001057600080fd5b50610149806100206000396000f3fe6080604052600436106100225760003560e01c80635c60da1b146100bd576100b3565b366100b35760006100316100ee565b90506001600160a01b03811661008e576040805162461bcd60e51b815260206004820152601a60248201527f696d706c656d656e746174696f6e2063616e6e6f742062652030000000000000604482015290519081900360640190fd5b60405136600082376000803683855af43d806000843e8180156100af578184f35b8184fd5b60006100316100ee565b3480156100c957600080fd5b506100d26100ee565b604080516001600160a01b039092168252519081900360200190f35b7f8237f1a37609e816d8836dccef0c0be98ff6956ffa4035934e1d39231985e7d8549056fea264697066735822122080d1af84fe2aa4139308ee5944605051a661ffb2490c8529245a55f3a7eedce564736f6c63430007000033",
   "deployedBytecode": "0x6080604052600436106100225760003560e01c80635c60da1b146100bd576100b3565b366100b35760006100316100ee565b90506001600160a01b03811661008e576040805162461bcd60e51b815260206004820152601a60248201527f696d706c656d656e746174696f6e2063616e6e6f742062652030000000000000604482015290519081900360640190fd5b60405136600082376000803683855af43d806000843e8180156100af578184f35b8184fd5b60006100316100ee565b3480156100c957600080fd5b506100d26100ee565b604080516001600160a01b039092168252519081900360200190f35b7f8237f1a37609e816d8836dccef0c0be98ff6956ffa4035934e1d39231985e7d8549056fea264697066735822122080d1af84fe2aa4139308ee5944605051a661ffb2490c8529245a55f3a7eedce564736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "243:1515:17:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "243:1515:17:-:0;;;;;;;;;;;;;;;;;;;;;;;1109:13:15;1125:16;:14;:16::i;:::-;1109:32;-1:-1:-1;;;;;;1155:19:15;;1147:58;;;;;-1:-1:-1;;;1147:58:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;1246:4;1240:11;1279:14;1276:1;1271:3;1258:36;1366:1;1363;1347:14;1342:3;1335:5;1328;1315:53;1387:16;1433:4;1430:1;1425:3;1410:28;1453:6;1466:28;;;;1523:4;1518:3;1511:17;1466:28;1487:4;1482:3;1475:17;243:1515:17;641:13:15;657:16;:14;:16::i;802:173:17:-;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;802:173:17;;;;;;;;;;;;;;;629:48;950:15;;934:37::o",
+  "sourceMap": "243:1515:13:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "243:1515:13:-:0;;;;;;;;;;;;;;;;;;;;;;;1109:13:11;1125:16;:14;:16::i;:::-;1109:32;-1:-1:-1;;;;;;1155:19:11;;1147:58;;;;;-1:-1:-1;;;1147:58:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;1246:4;1240:11;1279:14;1276:1;1271:3;1258:36;1366:1;1363;1347:14;1342:3;1335:5;1328;1315:53;1387:16;1433:4;1430:1;1425:3;1410:28;1453:6;1466:28;;;;1523:4;1518:3;1511:17;1466:28;1487:4;1482:3;1475:17;243:1515:13;641:13:11;657:16;:14;:16::i;802:173:13:-;;;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;802:173:13;;;;;;;;;;;;;;;629:48;950:15;;934:37::o",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.7.0 <0.8.0;\n\nimport './Proxy.sol';\n\n/**\n * @title UpgradeabilityProxy\n * @dev This contract represents a proxy where the implementation address to which it will delegate can be upgraded\n */\ncontract UpgradeabilityProxy is Proxy {\n  /**\n   * @dev This event will be emitted every time the implementation gets upgraded\n   * @param implementation representing the address of the upgraded implementation\n   */\n  event Upgraded(address indexed implementation);\n\n  // Storage position of the address of the current implementation\n  bytes32 private constant implementationPosition = keccak256(\"org.beefledger.proxy.implementation\");\n\n  /**\n   * @dev Tells the address of the current implementation\n   * return address of the current implementation\n   */\n  function implementation() override public view returns (address impl) {\n    bytes32 position = implementationPosition;\n    assembly {\n      impl := sload(position)\n    }\n  }\n\n  /**\n   * @dev Sets the address of the current implementation\n   * @param newImplementation address representing the new implementation to be set\n   */\n  function setImplementation(address newImplementation) internal {\n    bytes32 position = implementationPosition;\n    assembly {\n      sstore(position, newImplementation)\n    }\n  }\n\n  /**\n   * @dev Upgrades the implementation address\n   * @param newImplementation representing the address of the new implementation to be set\n   */\n  function _upgradeTo(address newImplementation) internal {\n    address currentImplementation = implementation();\n    require(currentImplementation != newImplementation, \"new implementation cannot be the same\");\n    setImplementation(newImplementation);\n    emit Upgraded(newImplementation);\n  }\n}\n",
   "sourcePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/upgradability/UpgradeabilityProxy.sol",
   "ast": {
     "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/upgradability/UpgradeabilityProxy.sol",
     "exportedSymbols": {
       "UpgradeabilityProxy": [
-        5637
+        4960
       ]
     },
-    "id": 5638,
+    "id": 4961,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 5570,
+        "id": 4893,
         "literals": [
           "solidity",
           ">=",
@@ -67,16 +67,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:17"
+        "src": "33:31:13"
       },
       {
         "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/upgradability/Proxy.sol",
         "file": "./Proxy.sol",
-        "id": 5571,
+        "id": 4894,
         "nodeType": "ImportDirective",
-        "scope": 5638,
-        "sourceUnit": 5427,
-        "src": "66:21:17",
+        "scope": 4961,
+        "sourceUnit": 4750,
+        "src": "66:21:13",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -87,36 +87,36 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 5573,
+              "id": 4896,
               "name": "Proxy",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5426,
-              "src": "275:5:17",
+              "referencedDeclaration": 4749,
+              "src": "275:5:13",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Proxy_$5426",
+                "typeIdentifier": "t_contract$_Proxy_$4749",
                 "typeString": "contract Proxy"
               }
             },
-            "id": 5574,
+            "id": 4897,
             "nodeType": "InheritanceSpecifier",
-            "src": "275:5:17"
+            "src": "275:5:13"
           }
         ],
         "contractDependencies": [
-          5426
+          4749
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 5572,
+          "id": 4895,
           "nodeType": "StructuredDocumentation",
-          "src": "89:153:17",
+          "src": "89:153:13",
           "text": " @title UpgradeabilityProxy\n @dev This contract represents a proxy where the implementation address to which it will delegate can be upgraded"
         },
         "fullyImplemented": true,
-        "id": 5637,
+        "id": 4960,
         "linearizedBaseContracts": [
-          5637,
-          5426
+          4960,
+          4749
         ],
         "name": "UpgradeabilityProxy",
         "nodeType": "ContractDefinition",
@@ -124,28 +124,28 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 5575,
+              "id": 4898,
               "nodeType": "StructuredDocumentation",
-              "src": "285:173:17",
+              "src": "285:173:13",
               "text": " @dev This event will be emitted every time the implementation gets upgraded\n @param implementation representing the address of the upgraded implementation"
             },
-            "id": 5579,
+            "id": 4902,
             "name": "Upgraded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 5578,
+              "id": 4901,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5577,
+                  "id": 4900,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "implementation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5579,
-                  "src": "476:30:17",
+                  "scope": 4902,
+                  "src": "476:30:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -153,10 +153,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5576,
+                    "id": 4899,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "476:7:17",
+                    "src": "476:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -167,19 +167,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "475:32:17"
+              "src": "475:32:13"
             },
-            "src": "461:47:17"
+            "src": "461:47:13"
           },
           {
             "constant": true,
-            "id": 5584,
+            "id": 4907,
             "mutability": "constant",
             "name": "implementationPosition",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 5637,
-            "src": "579:98:17",
+            "scope": 4960,
+            "src": "579:98:13",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -187,10 +187,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 5580,
+              "id": 4903,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "579:7:17",
+              "src": "579:7:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -202,14 +202,14 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "6f72672e626565666c65646765722e70726f78792e696d706c656d656e746174696f6e",
-                  "id": 5582,
+                  "id": 4905,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "639:37:17",
+                  "src": "639:37:13",
                   "subdenomination": null,
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_8237f1a37609e816d8836dccef0c0be98ff6956ffa4035934e1d39231985e7d8",
@@ -225,18 +225,18 @@
                     "typeString": "literal_string \"org.beefledger.proxy.implementation\""
                   }
                 ],
-                "id": 5581,
+                "id": 4904,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": -8,
-                "src": "629:9:17",
+                "src": "629:9:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 5583,
+              "id": 4906,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -244,7 +244,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "629:48:17",
+              "src": "629:48:13",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -255,27 +255,27 @@
           },
           {
             "baseFunctions": [
-              5384
+              4707
             ],
             "body": {
-              "id": 5596,
+              "id": 4919,
               "nodeType": "Block",
-              "src": "872:103:17",
+              "src": "872:103:13",
               "statements": [
                 {
                   "assignments": [
-                    5592
+                    4915
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5592,
+                      "id": 4915,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 5596,
-                      "src": "878:16:17",
+                      "scope": 4919,
+                      "src": "878:16:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -283,10 +283,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 5591,
+                        "id": 4914,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "878:7:17",
+                        "src": "878:7:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -296,52 +296,52 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5594,
+                  "id": 4917,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 5593,
+                    "id": 4916,
                     "name": "implementationPosition",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 5584,
-                    "src": "897:22:17",
+                    "referencedDeclaration": 4907,
+                    "src": "897:22:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "878:41:17"
+                  "src": "878:41:13"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "934:37:17",
+                    "src": "934:37:13",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "942:23:17",
+                        "src": "942:23:13",
                         "value": {
                           "arguments": [
                             {
                               "name": "position",
                               "nodeType": "YulIdentifier",
-                              "src": "956:8:17"
+                              "src": "956:8:13"
                             }
                           ],
                           "functionName": {
                             "name": "sload",
                             "nodeType": "YulIdentifier",
-                            "src": "950:5:17"
+                            "src": "950:5:13"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "950:15:17"
+                          "src": "950:15:13"
                         },
                         "variableNames": [
                           {
                             "name": "impl",
                             "nodeType": "YulIdentifier",
-                            "src": "942:4:17"
+                            "src": "942:4:13"
                           }
                         ]
                       }
@@ -350,64 +350,64 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 5589,
+                      "declaration": 4912,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "942:4:17",
+                      "src": "942:4:13",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 5592,
+                      "declaration": 4915,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "956:8:17",
+                      "src": "956:8:13",
                       "valueSize": 1
                     }
                   ],
-                  "id": 5595,
+                  "id": 4918,
                   "nodeType": "InlineAssembly",
-                  "src": "925:46:17"
+                  "src": "925:46:13"
                 }
               ]
             },
             "documentation": {
-              "id": 5585,
+              "id": 4908,
               "nodeType": "StructuredDocumentation",
-              "src": "682:117:17",
+              "src": "682:117:13",
               "text": " @dev Tells the address of the current implementation\n return address of the current implementation"
             },
             "functionSelector": "5c60da1b",
-            "id": 5597,
+            "id": 4920,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "implementation",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 5587,
+              "id": 4910,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "828:8:17"
+              "src": "828:8:13"
             },
             "parameters": {
-              "id": 5586,
+              "id": 4909,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "825:2:17"
+              "src": "825:2:13"
             },
             "returnParameters": {
-              "id": 5590,
+              "id": 4913,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5589,
+                  "id": 4912,
                   "mutability": "mutable",
                   "name": "impl",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5597,
-                  "src": "858:12:17",
+                  "scope": 4920,
+                  "src": "858:12:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -415,10 +415,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5588,
+                    "id": 4911,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "858:7:17",
+                    "src": "858:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -429,34 +429,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "857:14:17"
+              "src": "857:14:13"
             },
-            "scope": 5637,
-            "src": "802:173:17",
+            "scope": 4960,
+            "src": "802:173:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 5608,
+              "id": 4931,
               "nodeType": "Block",
-              "src": "1195:115:17",
+              "src": "1195:115:13",
               "statements": [
                 {
                   "assignments": [
-                    5604
+                    4927
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5604,
+                      "id": 4927,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 5608,
-                      "src": "1201:16:17",
+                      "scope": 4931,
+                      "src": "1201:16:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -464,10 +464,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 5603,
+                        "id": 4926,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1201:7:17",
+                        "src": "1201:7:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -477,27 +477,27 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5606,
+                  "id": 4929,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 5605,
+                    "id": 4928,
                     "name": "implementationPosition",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 5584,
-                    "src": "1220:22:17",
+                    "referencedDeclaration": 4907,
+                    "src": "1220:22:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1201:41:17"
+                  "src": "1201:41:13"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1257:49:17",
+                    "src": "1257:49:13",
                     "statements": [
                       {
                         "expression": {
@@ -505,57 +505,57 @@
                             {
                               "name": "position",
                               "nodeType": "YulIdentifier",
-                              "src": "1272:8:17"
+                              "src": "1272:8:13"
                             },
                             {
                               "name": "newImplementation",
                               "nodeType": "YulIdentifier",
-                              "src": "1282:17:17"
+                              "src": "1282:17:13"
                             }
                           ],
                           "functionName": {
                             "name": "sstore",
                             "nodeType": "YulIdentifier",
-                            "src": "1265:6:17"
+                            "src": "1265:6:13"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "1265:35:17"
+                          "src": "1265:35:13"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "1265:35:17"
+                        "src": "1265:35:13"
                       }
                     ]
                   },
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 5600,
+                      "declaration": 4923,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1282:17:17",
+                      "src": "1282:17:13",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 5604,
+                      "declaration": 4927,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1272:8:17",
+                      "src": "1272:8:13",
                       "valueSize": 1
                     }
                   ],
-                  "id": 5607,
+                  "id": 4930,
                   "nodeType": "InlineAssembly",
-                  "src": "1248:58:17"
+                  "src": "1248:58:13"
                 }
               ]
             },
             "documentation": {
-              "id": 5598,
+              "id": 4921,
               "nodeType": "StructuredDocumentation",
-              "src": "979:150:17",
+              "src": "979:150:13",
               "text": " @dev Sets the address of the current implementation\n @param newImplementation address representing the new implementation to be set"
             },
-            "id": 5609,
+            "id": 4932,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -563,18 +563,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 5601,
+              "id": 4924,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5600,
+                  "id": 4923,
                   "mutability": "mutable",
                   "name": "newImplementation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5609,
-                  "src": "1159:25:17",
+                  "scope": 4932,
+                  "src": "1159:25:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -582,10 +582,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5599,
+                    "id": 4922,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1159:7:17",
+                    "src": "1159:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -596,40 +596,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1158:27:17"
+              "src": "1158:27:13"
             },
             "returnParameters": {
-              "id": 5602,
+              "id": 4925,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1195:0:17"
+              "src": "1195:0:13"
             },
-            "scope": 5637,
-            "src": "1132:178:17",
+            "scope": 4960,
+            "src": "1132:178:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 5635,
+              "id": 4958,
               "nodeType": "Block",
-              "src": "1519:237:17",
+              "src": "1519:237:13",
               "statements": [
                 {
                   "assignments": [
-                    5616
+                    4939
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5616,
+                      "id": 4939,
                       "mutability": "mutable",
                       "name": "currentImplementation",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 5635,
-                      "src": "1525:29:17",
+                      "scope": 4958,
+                      "src": "1525:29:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -637,10 +637,10 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 5615,
+                        "id": 4938,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1525:7:17",
+                        "src": "1525:7:13",
                         "stateMutability": "nonpayable",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -651,26 +651,26 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5619,
+                  "id": 4942,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 5617,
+                      "id": 4940,
                       "name": "implementation",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5597
+                        4920
                       ],
-                      "referencedDeclaration": 5597,
-                      "src": "1557:14:17",
+                      "referencedDeclaration": 4920,
+                      "src": "1557:14:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                         "typeString": "function () view returns (address)"
                       }
                     },
-                    "id": 5618,
+                    "id": 4941,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -678,7 +678,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1557:16:17",
+                    "src": "1557:16:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -686,7 +686,7 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1525:48:17"
+                  "src": "1525:48:13"
                 },
                 {
                   "expression": {
@@ -698,19 +698,19 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 5623,
+                        "id": 4946,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 5621,
+                          "id": 4944,
                           "name": "currentImplementation",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5616,
-                          "src": "1587:21:17",
+                          "referencedDeclaration": 4939,
+                          "src": "1587:21:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -720,18 +720,18 @@
                         "operator": "!=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 5622,
+                          "id": 4945,
                           "name": "newImplementation",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5612,
-                          "src": "1612:17:17",
+                          "referencedDeclaration": 4935,
+                          "src": "1612:17:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1587:42:17",
+                        "src": "1587:42:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -740,14 +740,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "6e657720696d706c656d656e746174696f6e2063616e6e6f74206265207468652073616d65",
-                        "id": 5624,
+                        "id": 4947,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1631:39:17",
+                        "src": "1631:39:13",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b4c26cfc151605caafbbab19f282abaae7864d86fea8398bf9d5b43e01d36d6a",
@@ -767,7 +767,7 @@
                           "typeString": "literal_string \"new implementation cannot be the same\""
                         }
                       ],
-                      "id": 5620,
+                      "id": 4943,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -775,13 +775,13 @@
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "1579:7:17",
+                      "src": "1579:7:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 5625,
+                    "id": 4948,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -789,16 +789,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1579:92:17",
+                    "src": "1579:92:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5626,
+                  "id": 4949,
                   "nodeType": "ExpressionStatement",
-                  "src": "1579:92:17"
+                  "src": "1579:92:13"
                 },
                 {
                   "expression": {
@@ -806,12 +806,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 5628,
+                        "id": 4951,
                         "name": "newImplementation",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5612,
-                        "src": "1695:17:17",
+                        "referencedDeclaration": 4935,
+                        "src": "1695:17:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -825,18 +825,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 5627,
+                      "id": 4950,
                       "name": "setImplementation",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5609,
-                      "src": "1677:17:17",
+                      "referencedDeclaration": 4932,
+                      "src": "1677:17:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 5629,
+                    "id": 4952,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -844,16 +844,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1677:36:17",
+                    "src": "1677:36:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5630,
+                  "id": 4953,
                   "nodeType": "ExpressionStatement",
-                  "src": "1677:36:17"
+                  "src": "1677:36:13"
                 },
                 {
                   "eventCall": {
@@ -861,12 +861,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 5632,
+                        "id": 4955,
                         "name": "newImplementation",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5612,
-                        "src": "1733:17:17",
+                        "referencedDeclaration": 4935,
+                        "src": "1733:17:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -880,18 +880,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 5631,
+                      "id": 4954,
                       "name": "Upgraded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5579,
-                      "src": "1724:8:17",
+                      "referencedDeclaration": 4902,
+                      "src": "1724:8:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 5633,
+                    "id": 4956,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -899,26 +899,26 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1724:27:17",
+                    "src": "1724:27:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5634,
+                  "id": 4957,
                   "nodeType": "EmitStatement",
-                  "src": "1719:32:17"
+                  "src": "1719:32:13"
                 }
               ]
             },
             "documentation": {
-              "id": 5610,
+              "id": 4933,
               "nodeType": "StructuredDocumentation",
-              "src": "1314:146:17",
+              "src": "1314:146:13",
               "text": " @dev Upgrades the implementation address\n @param newImplementation representing the address of the new implementation to be set"
             },
-            "id": 5636,
+            "id": 4959,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -926,18 +926,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 5613,
+              "id": 4936,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5612,
+                  "id": 4935,
                   "mutability": "mutable",
                   "name": "newImplementation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5636,
-                  "src": "1483:25:17",
+                  "scope": 4959,
+                  "src": "1483:25:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -945,10 +945,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5611,
+                    "id": 4934,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1483:7:17",
+                    "src": "1483:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -959,40 +959,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1482:27:17"
+              "src": "1482:27:13"
             },
             "returnParameters": {
-              "id": 5614,
+              "id": 4937,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1519:0:17"
+              "src": "1519:0:13"
             },
-            "scope": 5637,
-            "src": "1463:293:17",
+            "scope": 4960,
+            "src": "1463:293:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 5638,
-        "src": "243:1515:17"
+        "scope": 4961,
+        "src": "243:1515:13"
       }
     ],
-    "src": "33:1726:17"
+    "src": "33:1726:13"
   },
   "legacyAST": {
     "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/upgradability/UpgradeabilityProxy.sol",
     "exportedSymbols": {
       "UpgradeabilityProxy": [
-        5637
+        4960
       ]
     },
-    "id": 5638,
+    "id": 4961,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 5570,
+        "id": 4893,
         "literals": [
           "solidity",
           ">=",
@@ -1003,16 +1003,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:31:17"
+        "src": "33:31:13"
       },
       {
         "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/upgradability/Proxy.sol",
         "file": "./Proxy.sol",
-        "id": 5571,
+        "id": 4894,
         "nodeType": "ImportDirective",
-        "scope": 5638,
-        "sourceUnit": 5427,
-        "src": "66:21:17",
+        "scope": 4961,
+        "sourceUnit": 4750,
+        "src": "66:21:13",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -1023,36 +1023,36 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 5573,
+              "id": 4896,
               "name": "Proxy",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5426,
-              "src": "275:5:17",
+              "referencedDeclaration": 4749,
+              "src": "275:5:13",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Proxy_$5426",
+                "typeIdentifier": "t_contract$_Proxy_$4749",
                 "typeString": "contract Proxy"
               }
             },
-            "id": 5574,
+            "id": 4897,
             "nodeType": "InheritanceSpecifier",
-            "src": "275:5:17"
+            "src": "275:5:13"
           }
         ],
         "contractDependencies": [
-          5426
+          4749
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 5572,
+          "id": 4895,
           "nodeType": "StructuredDocumentation",
-          "src": "89:153:17",
+          "src": "89:153:13",
           "text": " @title UpgradeabilityProxy\n @dev This contract represents a proxy where the implementation address to which it will delegate can be upgraded"
         },
         "fullyImplemented": true,
-        "id": 5637,
+        "id": 4960,
         "linearizedBaseContracts": [
-          5637,
-          5426
+          4960,
+          4749
         ],
         "name": "UpgradeabilityProxy",
         "nodeType": "ContractDefinition",
@@ -1060,28 +1060,28 @@
           {
             "anonymous": false,
             "documentation": {
-              "id": 5575,
+              "id": 4898,
               "nodeType": "StructuredDocumentation",
-              "src": "285:173:17",
+              "src": "285:173:13",
               "text": " @dev This event will be emitted every time the implementation gets upgraded\n @param implementation representing the address of the upgraded implementation"
             },
-            "id": 5579,
+            "id": 4902,
             "name": "Upgraded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 5578,
+              "id": 4901,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5577,
+                  "id": 4900,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "implementation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5579,
-                  "src": "476:30:17",
+                  "scope": 4902,
+                  "src": "476:30:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1089,10 +1089,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5576,
+                    "id": 4899,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "476:7:17",
+                    "src": "476:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1103,19 +1103,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "475:32:17"
+              "src": "475:32:13"
             },
-            "src": "461:47:17"
+            "src": "461:47:13"
           },
           {
             "constant": true,
-            "id": 5584,
+            "id": 4907,
             "mutability": "constant",
             "name": "implementationPosition",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 5637,
-            "src": "579:98:17",
+            "scope": 4960,
+            "src": "579:98:13",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1123,10 +1123,10 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 5580,
+              "id": 4903,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
-              "src": "579:7:17",
+              "src": "579:7:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
                 "typeString": "bytes32"
@@ -1138,14 +1138,14 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "6f72672e626565666c65646765722e70726f78792e696d706c656d656e746174696f6e",
-                  "id": 5582,
+                  "id": 4905,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "string",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "639:37:17",
+                  "src": "639:37:13",
                   "subdenomination": null,
                   "typeDescriptions": {
                     "typeIdentifier": "t_stringliteral_8237f1a37609e816d8836dccef0c0be98ff6956ffa4035934e1d39231985e7d8",
@@ -1161,18 +1161,18 @@
                     "typeString": "literal_string \"org.beefledger.proxy.implementation\""
                   }
                 ],
-                "id": 5581,
+                "id": 4904,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": -8,
-                "src": "629:9:17",
+                "src": "629:9:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 5583,
+              "id": 4906,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1180,7 +1180,7 @@
               "lValueRequested": false,
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "629:48:17",
+              "src": "629:48:13",
               "tryCall": false,
               "typeDescriptions": {
                 "typeIdentifier": "t_bytes32",
@@ -1191,27 +1191,27 @@
           },
           {
             "baseFunctions": [
-              5384
+              4707
             ],
             "body": {
-              "id": 5596,
+              "id": 4919,
               "nodeType": "Block",
-              "src": "872:103:17",
+              "src": "872:103:13",
               "statements": [
                 {
                   "assignments": [
-                    5592
+                    4915
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5592,
+                      "id": 4915,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 5596,
-                      "src": "878:16:17",
+                      "scope": 4919,
+                      "src": "878:16:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1219,10 +1219,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 5591,
+                        "id": 4914,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "878:7:17",
+                        "src": "878:7:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1232,52 +1232,52 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5594,
+                  "id": 4917,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 5593,
+                    "id": 4916,
                     "name": "implementationPosition",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 5584,
-                    "src": "897:22:17",
+                    "referencedDeclaration": 4907,
+                    "src": "897:22:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "878:41:17"
+                  "src": "878:41:13"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "934:37:17",
+                    "src": "934:37:13",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "942:23:17",
+                        "src": "942:23:13",
                         "value": {
                           "arguments": [
                             {
                               "name": "position",
                               "nodeType": "YulIdentifier",
-                              "src": "956:8:17"
+                              "src": "956:8:13"
                             }
                           ],
                           "functionName": {
                             "name": "sload",
                             "nodeType": "YulIdentifier",
-                            "src": "950:5:17"
+                            "src": "950:5:13"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "950:15:17"
+                          "src": "950:15:13"
                         },
                         "variableNames": [
                           {
                             "name": "impl",
                             "nodeType": "YulIdentifier",
-                            "src": "942:4:17"
+                            "src": "942:4:13"
                           }
                         ]
                       }
@@ -1286,64 +1286,64 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 5589,
+                      "declaration": 4912,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "942:4:17",
+                      "src": "942:4:13",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 5592,
+                      "declaration": 4915,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "956:8:17",
+                      "src": "956:8:13",
                       "valueSize": 1
                     }
                   ],
-                  "id": 5595,
+                  "id": 4918,
                   "nodeType": "InlineAssembly",
-                  "src": "925:46:17"
+                  "src": "925:46:13"
                 }
               ]
             },
             "documentation": {
-              "id": 5585,
+              "id": 4908,
               "nodeType": "StructuredDocumentation",
-              "src": "682:117:17",
+              "src": "682:117:13",
               "text": " @dev Tells the address of the current implementation\n return address of the current implementation"
             },
             "functionSelector": "5c60da1b",
-            "id": 5597,
+            "id": 4920,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "implementation",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 5587,
+              "id": 4910,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
-              "src": "828:8:17"
+              "src": "828:8:13"
             },
             "parameters": {
-              "id": 5586,
+              "id": 4909,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "825:2:17"
+              "src": "825:2:13"
             },
             "returnParameters": {
-              "id": 5590,
+              "id": 4913,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5589,
+                  "id": 4912,
                   "mutability": "mutable",
                   "name": "impl",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5597,
-                  "src": "858:12:17",
+                  "scope": 4920,
+                  "src": "858:12:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1351,10 +1351,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5588,
+                    "id": 4911,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "858:7:17",
+                    "src": "858:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1365,34 +1365,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "857:14:17"
+              "src": "857:14:13"
             },
-            "scope": 5637,
-            "src": "802:173:17",
+            "scope": 4960,
+            "src": "802:173:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 5608,
+              "id": 4931,
               "nodeType": "Block",
-              "src": "1195:115:17",
+              "src": "1195:115:13",
               "statements": [
                 {
                   "assignments": [
-                    5604
+                    4927
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5604,
+                      "id": 4927,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 5608,
-                      "src": "1201:16:17",
+                      "scope": 4931,
+                      "src": "1201:16:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1400,10 +1400,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 5603,
+                        "id": 4926,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1201:7:17",
+                        "src": "1201:7:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1413,27 +1413,27 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5606,
+                  "id": 4929,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 5605,
+                    "id": 4928,
                     "name": "implementationPosition",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 5584,
-                    "src": "1220:22:17",
+                    "referencedDeclaration": 4907,
+                    "src": "1220:22:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1201:41:17"
+                  "src": "1201:41:13"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1257:49:17",
+                    "src": "1257:49:13",
                     "statements": [
                       {
                         "expression": {
@@ -1441,57 +1441,57 @@
                             {
                               "name": "position",
                               "nodeType": "YulIdentifier",
-                              "src": "1272:8:17"
+                              "src": "1272:8:13"
                             },
                             {
                               "name": "newImplementation",
                               "nodeType": "YulIdentifier",
-                              "src": "1282:17:17"
+                              "src": "1282:17:13"
                             }
                           ],
                           "functionName": {
                             "name": "sstore",
                             "nodeType": "YulIdentifier",
-                            "src": "1265:6:17"
+                            "src": "1265:6:13"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "1265:35:17"
+                          "src": "1265:35:13"
                         },
                         "nodeType": "YulExpressionStatement",
-                        "src": "1265:35:17"
+                        "src": "1265:35:13"
                       }
                     ]
                   },
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 5600,
+                      "declaration": 4923,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1282:17:17",
+                      "src": "1282:17:13",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 5604,
+                      "declaration": 4927,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1272:8:17",
+                      "src": "1272:8:13",
                       "valueSize": 1
                     }
                   ],
-                  "id": 5607,
+                  "id": 4930,
                   "nodeType": "InlineAssembly",
-                  "src": "1248:58:17"
+                  "src": "1248:58:13"
                 }
               ]
             },
             "documentation": {
-              "id": 5598,
+              "id": 4921,
               "nodeType": "StructuredDocumentation",
-              "src": "979:150:17",
+              "src": "979:150:13",
               "text": " @dev Sets the address of the current implementation\n @param newImplementation address representing the new implementation to be set"
             },
-            "id": 5609,
+            "id": 4932,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1499,18 +1499,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 5601,
+              "id": 4924,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5600,
+                  "id": 4923,
                   "mutability": "mutable",
                   "name": "newImplementation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5609,
-                  "src": "1159:25:17",
+                  "scope": 4932,
+                  "src": "1159:25:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1518,10 +1518,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5599,
+                    "id": 4922,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1159:7:17",
+                    "src": "1159:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1532,40 +1532,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1158:27:17"
+              "src": "1158:27:13"
             },
             "returnParameters": {
-              "id": 5602,
+              "id": 4925,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1195:0:17"
+              "src": "1195:0:13"
             },
-            "scope": 5637,
-            "src": "1132:178:17",
+            "scope": 4960,
+            "src": "1132:178:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 5635,
+              "id": 4958,
               "nodeType": "Block",
-              "src": "1519:237:17",
+              "src": "1519:237:13",
               "statements": [
                 {
                   "assignments": [
-                    5616
+                    4939
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 5616,
+                      "id": 4939,
                       "mutability": "mutable",
                       "name": "currentImplementation",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 5635,
-                      "src": "1525:29:17",
+                      "scope": 4958,
+                      "src": "1525:29:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1573,10 +1573,10 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 5615,
+                        "id": 4938,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1525:7:17",
+                        "src": "1525:7:13",
                         "stateMutability": "nonpayable",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1587,26 +1587,26 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 5619,
+                  "id": 4942,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 5617,
+                      "id": 4940,
                       "name": "implementation",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        5597
+                        4920
                       ],
-                      "referencedDeclaration": 5597,
-                      "src": "1557:14:17",
+                      "referencedDeclaration": 4920,
+                      "src": "1557:14:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                         "typeString": "function () view returns (address)"
                       }
                     },
-                    "id": 5618,
+                    "id": 4941,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1614,7 +1614,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1557:16:17",
+                    "src": "1557:16:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1622,7 +1622,7 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1525:48:17"
+                  "src": "1525:48:13"
                 },
                 {
                   "expression": {
@@ -1634,19 +1634,19 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 5623,
+                        "id": 4946,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 5621,
+                          "id": 4944,
                           "name": "currentImplementation",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5616,
-                          "src": "1587:21:17",
+                          "referencedDeclaration": 4939,
+                          "src": "1587:21:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1656,18 +1656,18 @@
                         "operator": "!=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 5622,
+                          "id": 4945,
                           "name": "newImplementation",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5612,
-                          "src": "1612:17:17",
+                          "referencedDeclaration": 4935,
+                          "src": "1612:17:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           }
                         },
-                        "src": "1587:42:17",
+                        "src": "1587:42:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1676,14 +1676,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "6e657720696d706c656d656e746174696f6e2063616e6e6f74206265207468652073616d65",
-                        "id": 5624,
+                        "id": 4947,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1631:39:17",
+                        "src": "1631:39:13",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b4c26cfc151605caafbbab19f282abaae7864d86fea8398bf9d5b43e01d36d6a",
@@ -1703,7 +1703,7 @@
                           "typeString": "literal_string \"new implementation cannot be the same\""
                         }
                       ],
-                      "id": 5620,
+                      "id": 4943,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1711,13 +1711,13 @@
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "1579:7:17",
+                      "src": "1579:7:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 5625,
+                    "id": 4948,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1725,16 +1725,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1579:92:17",
+                    "src": "1579:92:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5626,
+                  "id": 4949,
                   "nodeType": "ExpressionStatement",
-                  "src": "1579:92:17"
+                  "src": "1579:92:13"
                 },
                 {
                   "expression": {
@@ -1742,12 +1742,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 5628,
+                        "id": 4951,
                         "name": "newImplementation",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5612,
-                        "src": "1695:17:17",
+                        "referencedDeclaration": 4935,
+                        "src": "1695:17:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1761,18 +1761,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 5627,
+                      "id": 4950,
                       "name": "setImplementation",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5609,
-                      "src": "1677:17:17",
+                      "referencedDeclaration": 4932,
+                      "src": "1677:17:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 5629,
+                    "id": 4952,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1780,16 +1780,16 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1677:36:17",
+                    "src": "1677:36:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5630,
+                  "id": 4953,
                   "nodeType": "ExpressionStatement",
-                  "src": "1677:36:17"
+                  "src": "1677:36:13"
                 },
                 {
                   "eventCall": {
@@ -1797,12 +1797,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 5632,
+                        "id": 4955,
                         "name": "newImplementation",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5612,
-                        "src": "1733:17:17",
+                        "referencedDeclaration": 4935,
+                        "src": "1733:17:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1816,18 +1816,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 5631,
+                      "id": 4954,
                       "name": "Upgraded",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5579,
-                      "src": "1724:8:17",
+                      "referencedDeclaration": 4902,
+                      "src": "1724:8:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
                       }
                     },
-                    "id": 5633,
+                    "id": 4956,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1835,26 +1835,26 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1724:27:17",
+                    "src": "1724:27:13",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 5634,
+                  "id": 4957,
                   "nodeType": "EmitStatement",
-                  "src": "1719:32:17"
+                  "src": "1719:32:13"
                 }
               ]
             },
             "documentation": {
-              "id": 5610,
+              "id": 4933,
               "nodeType": "StructuredDocumentation",
-              "src": "1314:146:17",
+              "src": "1314:146:13",
               "text": " @dev Upgrades the implementation address\n @param newImplementation representing the address of the new implementation to be set"
             },
-            "id": 5636,
+            "id": 4959,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1862,18 +1862,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 5613,
+              "id": 4936,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5612,
+                  "id": 4935,
                   "mutability": "mutable",
                   "name": "newImplementation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 5636,
-                  "src": "1483:25:17",
+                  "scope": 4959,
+                  "src": "1483:25:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1881,10 +1881,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 5611,
+                    "id": 4934,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1483:7:17",
+                    "src": "1483:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1895,26 +1895,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1482:27:17"
+              "src": "1482:27:13"
             },
             "returnParameters": {
-              "id": 5614,
+              "id": 4937,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1519:0:17"
+              "src": "1519:0:13"
             },
-            "scope": 5637,
-            "src": "1463:293:17",
+            "scope": 4960,
+            "src": "1463:293:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 5638,
-        "src": "243:1515:17"
+        "scope": 4961,
+        "src": "243:1515:13"
       }
     ],
-    "src": "33:1726:17"
+    "src": "33:1726:13"
   },
   "compiler": {
     "name": "solc",
@@ -1922,7 +1922,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-04T17:40:51.288Z",
+  "updatedAt": "2021-02-05T21:05:31.561Z",
   "devdoc": {
     "details": "This contract represents a proxy where the implementation address to which it will delegate can be upgraded",
     "events": {
