@@ -2,12 +2,14 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { ActionsStorageV10 } from "./ActionsStorageV10";
+export type { ActionsStorageV11 } from "./ActionsStorageV11";
 export type { CompaniesV10 } from "./CompaniesV10";
 export type { ERC20 } from "./ERC20";
 export type { ERC20FactoryV10 } from "./ERC20FactoryV10";
 export type { ERC20FactoryV11 } from "./ERC20FactoryV11";
 export type { ERC20ForAssetGrouping } from "./ERC20ForAssetGrouping";
 export type { ERC721BeefLedgerV10 } from "./ERC721BeefLedgerV10";
+export type { ERC721BeefLedgerV11 } from "./ERC721BeefLedgerV11";
 export type { Grouping } from "./Grouping";
 export type { IERC20 } from "./IERC20";
 export type { MultisigWalletV10 } from "./MultisigWalletV10";
@@ -18,12 +20,14 @@ export type { ResourceActionsV10 } from "./ResourceActionsV10";
 export type { UpgradeabilityProxy } from "./UpgradeabilityProxy";
 
 export { ActionsStorageV10__factory } from "./factories/ActionsStorageV10__factory";
+export { ActionsStorageV11__factory } from "./factories/ActionsStorageV11__factory";
 export { CompaniesV10__factory } from "./factories/CompaniesV10__factory";
 export { ERC20__factory } from "./factories/ERC20__factory";
 export { ERC20FactoryV10__factory } from "./factories/ERC20FactoryV10__factory";
 export { ERC20FactoryV11__factory } from "./factories/ERC20FactoryV11__factory";
 export { ERC20ForAssetGrouping__factory } from "./factories/ERC20ForAssetGrouping__factory";
 export { ERC721BeefLedgerV10__factory } from "./factories/ERC721BeefLedgerV10__factory";
+export { ERC721BeefLedgerV11__factory } from "./factories/ERC721BeefLedgerV11__factory";
 export { Grouping__factory } from "./factories/Grouping__factory";
 export { IERC20__factory } from "./factories/IERC20__factory";
 export { MultisigWalletV10__factory } from "./factories/MultisigWalletV10__factory";

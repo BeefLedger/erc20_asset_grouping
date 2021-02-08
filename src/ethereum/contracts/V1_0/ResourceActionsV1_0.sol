@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.8.0;
 
-import "./Ownable.sol";
+import "../Ownable.sol";
 import "./CompaniesV1_0.sol";
 
 contract ResourceActionsV1_0 is Ownable {

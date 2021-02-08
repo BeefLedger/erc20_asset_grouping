@@ -2,7 +2,7 @@
 
 pragma solidity >=0.7.0 <0.8.0;
 
-import "./Ownable.sol";
+import "../Ownable.sol";
 
 contract CompaniesV1_0 is Ownable {
 
@@ -54,8 +54,8 @@ contract CompaniesV1_0 is Ownable {
     function initialize(address _multisigWallet) public {
         require(!_initialized, "conract already initialized");
         require(_multisigWallet != address(0), "Multisig address cannot be 0");
-        setOwner(_multisigWallet);
         _initialized = true;
+        setOwner(_multisigWallet);
     }
 
     function addCompany(address _company, string memory _name, bytes32 _ipfsLink) virtual public onlyOwner {

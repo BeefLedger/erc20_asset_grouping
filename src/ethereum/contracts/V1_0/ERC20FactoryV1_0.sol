@@ -2,8 +2,8 @@
 
 pragma solidity >=0.7.0 <0.8.0;
 
-import "./Ownable.sol";
-import "./ERC20ForAssetGrouping.sol";
+import "../Ownable.sol";
+import "../ERC20ForAssetGrouping.sol";
 
 
 contract ERC20FactoryV1_0 is Ownable {

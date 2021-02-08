@@ -23,14 +23,22 @@ import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 interface GroupingInterface extends ethers.utils.Interface {
   functions: {
     "assets(uint256)": FunctionFragment;
+    "operators(uint256)": FunctionFragment;
     "owner()": FunctionFragment;
     "rgToken()": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
-    "addAssets(uint256[])": FunctionFragment;
+    "approveOperator(address)": FunctionFragment;
+    "isOperatorApproved(address)": FunctionFragment;
+    "addAsset(uint256)": FunctionFragment;
+    "isAssetAdded(uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
     functionFragment: "assets",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "operators",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
@@ -40,18 +48,43 @@ interface GroupingInterface extends ethers.utils.Interface {
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "addAssets",
-    values: [BigNumberish[]]
+    functionFragment: "approveOperator",
+    values: [string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "isOperatorApproved",
+    values: [string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "addAsset",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "isAssetAdded",
+    values: [BigNumberish]
   ): string;
 
   decodeFunctionResult(functionFragment: "assets", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "operators", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "rgToken", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "transferOwnership",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "addAssets", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "approveOperator",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "isOperatorApproved",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "addAsset", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "isAssetAdded",
+    data: BytesLike
+  ): Result;
 
   events: {
     "OwnershipTransferred(address,address)": EventFragment;
@@ -80,6 +113,19 @@ export class Grouping extends Contract {
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    operators(arg0: BigNumberish, overrides?: CallOverrides): Promise<[string]>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    "operators(uint256)"(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
 
     /**
      * Tells the address of the owner return the address of the owner
@@ -113,15 +159,45 @@ export class Grouping extends Contract {
       overrides?: Overrides
     ): Promise<ContractTransaction>;
 
-    addAssets(
-      _uids: BigNumberish[],
+    approveOperator(
+      _operator: string,
       overrides?: Overrides
     ): Promise<ContractTransaction>;
 
-    "addAssets(uint256[])"(
-      _uids: BigNumberish[],
+    "approveOperator(address)"(
+      _operator: string,
       overrides?: Overrides
     ): Promise<ContractTransaction>;
+
+    isOperatorApproved(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>;
+
+    "isOperatorApproved(address)"(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>;
+
+    addAsset(
+      _asset: BigNumberish,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
+    "addAsset(uint256)"(
+      _asset: BigNumberish,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
+    isAssetAdded(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>;
+
+    "isAssetAdded(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>;
   };
 
   assets(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
@@ -130,6 +206,19 @@ export class Grouping extends Contract {
     arg0: BigNumberish,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
+
+  /**
+   * operators are the erc721 owners that have been approved in this
+   */
+  operators(arg0: BigNumberish, overrides?: CallOverrides): Promise<string>;
+
+  /**
+   * operators are the erc721 owners that have been approved in this
+   */
+  "operators(uint256)"(
+    arg0: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<string>;
 
   /**
    * Tells the address of the owner return the address of the owner
@@ -163,15 +252,45 @@ export class Grouping extends Contract {
     overrides?: Overrides
   ): Promise<ContractTransaction>;
 
-  addAssets(
-    _uids: BigNumberish[],
+  approveOperator(
+    _operator: string,
     overrides?: Overrides
   ): Promise<ContractTransaction>;
 
-  "addAssets(uint256[])"(
-    _uids: BigNumberish[],
+  "approveOperator(address)"(
+    _operator: string,
     overrides?: Overrides
   ): Promise<ContractTransaction>;
+
+  isOperatorApproved(
+    _operator: string,
+    overrides?: CallOverrides
+  ): Promise<boolean>;
+
+  "isOperatorApproved(address)"(
+    _operator: string,
+    overrides?: CallOverrides
+  ): Promise<boolean>;
+
+  addAsset(
+    _asset: BigNumberish,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
+
+  "addAsset(uint256)"(
+    _asset: BigNumberish,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
+
+  isAssetAdded(
+    _asset: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<boolean>;
+
+  "isAssetAdded(uint256)"(
+    _asset: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<boolean>;
 
   callStatic: {
     assets(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
@@ -180,6 +299,19 @@ export class Grouping extends Contract {
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    operators(arg0: BigNumberish, overrides?: CallOverrides): Promise<string>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    "operators(uint256)"(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<string>;
 
     /**
      * Tells the address of the owner return the address of the owner
@@ -213,12 +345,42 @@ export class Grouping extends Contract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    addAssets(_uids: BigNumberish[], overrides?: CallOverrides): Promise<void>;
-
-    "addAssets(uint256[])"(
-      _uids: BigNumberish[],
+    approveOperator(
+      _operator: string,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    "approveOperator(address)"(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    isOperatorApproved(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<boolean>;
+
+    "isOperatorApproved(address)"(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<boolean>;
+
+    addAsset(_asset: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
+
+    "addAsset(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<boolean>;
+
+    isAssetAdded(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<boolean>;
+
+    "isAssetAdded(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<boolean>;
   };
 
   filters: {
@@ -229,6 +391,22 @@ export class Grouping extends Contract {
     assets(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
 
     "assets(uint256)"(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    operators(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    "operators(uint256)"(
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
@@ -265,11 +443,41 @@ export class Grouping extends Contract {
       overrides?: Overrides
     ): Promise<BigNumber>;
 
-    addAssets(_uids: BigNumberish[], overrides?: Overrides): Promise<BigNumber>;
-
-    "addAssets(uint256[])"(
-      _uids: BigNumberish[],
+    approveOperator(
+      _operator: string,
       overrides?: Overrides
+    ): Promise<BigNumber>;
+
+    "approveOperator(address)"(
+      _operator: string,
+      overrides?: Overrides
+    ): Promise<BigNumber>;
+
+    isOperatorApproved(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "isOperatorApproved(address)"(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    addAsset(_asset: BigNumberish, overrides?: Overrides): Promise<BigNumber>;
+
+    "addAsset(uint256)"(
+      _asset: BigNumberish,
+      overrides?: Overrides
+    ): Promise<BigNumber>;
+
+    isAssetAdded(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "isAssetAdded(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
   };
 
@@ -280,6 +488,22 @@ export class Grouping extends Contract {
     ): Promise<PopulatedTransaction>;
 
     "assets(uint256)"(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    operators(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    /**
+     * operators are the erc721 owners that have been approved in this
+     */
+    "operators(uint256)"(
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
@@ -316,14 +540,44 @@ export class Grouping extends Contract {
       overrides?: Overrides
     ): Promise<PopulatedTransaction>;
 
-    addAssets(
-      _uids: BigNumberish[],
+    approveOperator(
+      _operator: string,
       overrides?: Overrides
     ): Promise<PopulatedTransaction>;
 
-    "addAssets(uint256[])"(
-      _uids: BigNumberish[],
+    "approveOperator(address)"(
+      _operator: string,
       overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
+    isOperatorApproved(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "isOperatorApproved(address)"(
+      _operator: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    addAsset(
+      _asset: BigNumberish,
+      overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
+    "addAsset(uint256)"(
+      _asset: BigNumberish,
+      overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
+    isAssetAdded(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "isAssetAdded(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
 }
