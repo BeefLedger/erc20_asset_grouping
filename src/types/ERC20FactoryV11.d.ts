@@ -29,6 +29,7 @@ interface ERC20FactoryV11Interface extends ethers.utils.Interface {
     "testVariable()": FunctionFragment;
     "tokens(uint256)": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
+    "initializeV11(uint256)": FunctionFragment;
     "getTestVariable()": FunctionFragment;
   };
 
@@ -52,6 +53,10 @@ interface ERC20FactoryV11Interface extends ethers.utils.Interface {
     values: [string]
   ): string;
   encodeFunctionData(
+    functionFragment: "initializeV11",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "getTestVariable",
     values?: undefined
   ): string;
@@ -67,6 +72,10 @@ interface ERC20FactoryV11Interface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "tokens", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "transferOwnership",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "initializeV11",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -164,6 +173,16 @@ export class ERC20FactoryV11 extends Contract {
       overrides?: Overrides
     ): Promise<ContractTransaction>;
 
+    initializeV11(
+      _testVariable: BigNumberish,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
+    "initializeV11(uint256)"(
+      _testVariable: BigNumberish,
+      overrides?: Overrides
+    ): Promise<ContractTransaction>;
+
     getTestVariable(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     "getTestVariable()"(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -236,6 +255,16 @@ export class ERC20FactoryV11 extends Contract {
     overrides?: Overrides
   ): Promise<ContractTransaction>;
 
+  initializeV11(
+    _testVariable: BigNumberish,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
+
+  "initializeV11(uint256)"(
+    _testVariable: BigNumberish,
+    overrides?: Overrides
+  ): Promise<ContractTransaction>;
+
   getTestVariable(overrides?: CallOverrides): Promise<BigNumber>;
 
   "getTestVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
@@ -302,6 +331,16 @@ export class ERC20FactoryV11 extends Contract {
      */
     "transferOwnership(address)"(
       newOwner: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    initializeV11(
+      _testVariable: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "initializeV11(uint256)"(
+      _testVariable: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -381,6 +420,16 @@ export class ERC20FactoryV11 extends Contract {
       overrides?: Overrides
     ): Promise<BigNumber>;
 
+    initializeV11(
+      _testVariable: BigNumberish,
+      overrides?: Overrides
+    ): Promise<BigNumber>;
+
+    "initializeV11(uint256)"(
+      _testVariable: BigNumberish,
+      overrides?: Overrides
+    ): Promise<BigNumber>;
+
     getTestVariable(overrides?: CallOverrides): Promise<BigNumber>;
 
     "getTestVariable()"(overrides?: CallOverrides): Promise<BigNumber>;
@@ -454,6 +503,16 @@ export class ERC20FactoryV11 extends Contract {
      */
     "transferOwnership(address)"(
       newOwner: string,
+      overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
+    initializeV11(
+      _testVariable: BigNumberish,
+      overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
+    "initializeV11(uint256)"(
+      _testVariable: BigNumberish,
       overrides?: Overrides
     ): Promise<PopulatedTransaction>;
 

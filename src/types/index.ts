@@ -14,7 +14,6 @@ export type { MultisigWalletV10 } from "./MultisigWalletV10";
 export type { Ownable } from "./Ownable";
 export type { OwnedUpgradeabilityProxy } from "./OwnedUpgradeabilityProxy";
 export type { Proxy } from "./Proxy";
-export type { ResourceActionsProxy } from "./ResourceActionsProxy";
 export type { ResourceActionsV10 } from "./ResourceActionsV10";
 export type { UpgradeabilityProxy } from "./UpgradeabilityProxy";
 
@@ -31,6 +30,5 @@ export { MultisigWalletV10__factory } from "./factories/MultisigWalletV10__facto
 export { Ownable__factory } from "./factories/Ownable__factory";
 export { OwnedUpgradeabilityProxy__factory } from "./factories/OwnedUpgradeabilityProxy__factory";
 export { Proxy__factory } from "./factories/Proxy__factory";
-export { ResourceActionsProxy__factory } from "./factories/ResourceActionsProxy__factory";
 export { ResourceActionsV10__factory } from "./factories/ResourceActionsV10__factory";
 export { UpgradeabilityProxy__factory } from "./factories/UpgradeabilityProxy__factory";

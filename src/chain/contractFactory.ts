@@ -23,14 +23,15 @@ export async function deployContract <T extends Contract>(
 export async function initializeContract <T extends Contract> (
         signer: Signer,
         compilerOutput: any,
-        args?: string[] | []
+        initializer: string,
+        args?: any[] | []
     ): Promise<[T, string]> {    
 
         try {
             const proxiedContract: T = await  deployContract(signer, compilerOutput);
             const proxy: OwnedUpgradeabilityProxy = await deployContract(signer, artifactOwnedUpgradeabilityProxy);
-            console.log(proxy.address)
-            const initializeData = encode(compilerOutput, "initialize", args)
+           
+            const initializeData = encode(compilerOutput, initializer, args)
            
             await proxy.functions.upgradeToAndCall(proxiedContract.address, initializeData);
             
@@ -44,12 +45,19 @@ export async function initializeContract <T extends Contract> (
 export async function upgradeContract<T extends Contract> (
     signer: Signer,
     compilerOutput: any,
-    proxyAddress: string
+    proxyAddress: string,
+    initializer?: string,
+    args?: any[] | []
 ): Promise<T> {
     try {
         const proxiedContract: T = await  deployContract(signer, compilerOutput);
         const proxy: OwnedUpgradeabilityProxy = await getContract(proxyAddress, artifactOwnedUpgradeabilityProxy.abi, signer);
-        await proxy.functions.upgradeTo(proxiedContract.address);
+        if(args && initializer) {
+            const initializeData = encode(compilerOutput, initializer, args)
+            await proxy.functions.upgradeToAndCall(proxiedContract.address, initializeData);
+        } else {
+            await proxy.functions.upgradeTo(proxiedContract.address);
+        }
         return getContract(proxy.address, compilerOutput.abi, signer)
     } catch(e) {
         throw Error(`upgradeContract(): ${e}`)
