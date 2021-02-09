@@ -2,9 +2,14 @@ import { Signer } from "ethers"
 
 import * as ERC20ForAssetGroupingCompiled  from "../ethereum/abi/ERC20ForAssetGrouping.json"
 import * as Erc20FactoryCompiled  from "../ethereum/abi/ERC20FactoryV1_0.json"
+import * as Erc721Compiled  from "../ethereum/abi/ERC721BeefLedgerV1_0.json"
+import * as MultisigCompiled  from "../ethereum/abi/MultisigWalletV1_0.json"
+import * as GroupingCompiled  from "../ethereum/abi/Grouping.json"
+
+
 import { getContract } from "./contractFactory"
-import { ERC20ForAssetGrouping } from "../types/ERC20ForAssetGrouping"
-import { ERC20FactoryV10 } from "../types/ERC20FactoryV10"
+import { MultisigWalletV10, ERC20ForAssetGrouping, ERC20FactoryV10, Grouping } from "../types"
+import { ERC721BeefLedgerV11 } from "../types/ERC721BeefLedgerV11"
 
 export async function getERC20FactoryContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ERC20FactoryV10> {
     return getContract<ERC20FactoryV10>(address, Erc20FactoryCompiled.abi, signerIdxOrAddressOrSigner)
@@ -12,4 +17,16 @@ export async function getERC20FactoryContract(address: string, signerIdxOrAddres
 
 export async function getErc20Contract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ERC20ForAssetGrouping> {
     return getContract<ERC20ForAssetGrouping>(address, ERC20ForAssetGroupingCompiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getERC721Contract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ERC721BeefLedgerV11> {
+    return getContract<ERC721BeefLedgerV11>(address, Erc721Compiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getMultisigContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<MultisigWalletV10> {
+    return getContract<MultisigWalletV10>(address, MultisigCompiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getGroupingContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<Grouping> {
+    return getContract<Grouping>(address, GroupingCompiled.abi, signerIdxOrAddressOrSigner)
 }

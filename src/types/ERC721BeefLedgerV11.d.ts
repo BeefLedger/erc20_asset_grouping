@@ -39,6 +39,7 @@ interface ERC721BeefLedgerV11Interface extends ethers.utils.Interface {
     "transferOwnership(address)": FunctionFragment;
     "initializeV11()": FunctionFragment;
     "addAssetsToGrouping(uint256[],address)": FunctionFragment;
+    "getGroupingAddress(uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
@@ -97,6 +98,10 @@ interface ERC721BeefLedgerV11Interface extends ethers.utils.Interface {
     functionFragment: "addAssetsToGrouping",
     values: [BigNumberish[], string]
   ): string;
+  encodeFunctionData(
+    functionFragment: "getGroupingAddress",
+    values: [BigNumberish]
+  ): string;
 
   decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
@@ -140,6 +145,10 @@ interface ERC721BeefLedgerV11Interface extends ethers.utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "addAssetsToGrouping",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getGroupingAddress",
     data: BytesLike
   ): Result;
 
@@ -420,6 +429,16 @@ export class ERC721BeefLedgerV11 extends Contract {
       _groupingAddress: string,
       overrides?: Overrides
     ): Promise<ContractTransaction>;
+
+    getGroupingAddress(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
+
+    "getGroupingAddress(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
   };
 
   /**
@@ -667,6 +686,16 @@ export class ERC721BeefLedgerV11 extends Contract {
     overrides?: Overrides
   ): Promise<ContractTransaction>;
 
+  getGroupingAddress(
+    _asset: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<string>;
+
+  "getGroupingAddress(uint256)"(
+    _asset: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<string>;
+
   callStatic: {
     /**
      * Approves another address to transfer the given token ID The zero address indicates there is no approved address. There can only be one approved address per token at a given time. Can only be called by the token owner or an approved operator.
@@ -906,6 +935,16 @@ export class ERC721BeefLedgerV11 extends Contract {
       _groupingAddress: string,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    getGroupingAddress(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<string>;
+
+    "getGroupingAddress(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<string>;
   };
 
   filters: {
@@ -1175,6 +1214,16 @@ export class ERC721BeefLedgerV11 extends Contract {
       _groupingAddress: string,
       overrides?: Overrides
     ): Promise<BigNumber>;
+
+    getGroupingAddress(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "getGroupingAddress(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -1432,6 +1481,16 @@ export class ERC721BeefLedgerV11 extends Contract {
       _assets: BigNumberish[],
       _groupingAddress: string,
       overrides?: Overrides
+    ): Promise<PopulatedTransaction>;
+
+    getGroupingAddress(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "getGroupingAddress(uint256)"(
+      _asset: BigNumberish,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
 }

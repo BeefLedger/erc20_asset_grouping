@@ -22,39 +22,15 @@ import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 
 interface GroupingInterface extends ethers.utils.Interface {
   functions: {
-    "assets(uint256)": FunctionFragment;
-    "operators(uint256)": FunctionFragment;
-    "owner()": FunctionFragment;
     "rgToken()": FunctionFragment;
-    "transferOwnership(address)": FunctionFragment;
-    "approveOperator(address)": FunctionFragment;
-    "isOperatorApproved(address)": FunctionFragment;
     "addAsset(uint256)": FunctionFragment;
     "isAssetAdded(uint256)": FunctionFragment;
+    "getAssets()": FunctionFragment;
+    "getRGToken()": FunctionFragment;
+    "getERC721Address()": FunctionFragment;
   };
 
-  encodeFunctionData(
-    functionFragment: "assets",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "operators",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(functionFragment: "rgToken", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "transferOwnership",
-    values: [string]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "approveOperator",
-    values: [string]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "isOperatorApproved",
-    values: [string]
-  ): string;
   encodeFunctionData(
     functionFragment: "addAsset",
     values: [BigNumberish]
@@ -63,34 +39,30 @@ interface GroupingInterface extends ethers.utils.Interface {
     functionFragment: "isAssetAdded",
     values: [BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "getAssets", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "getRGToken",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getERC721Address",
+    values?: undefined
+  ): string;
 
-  decodeFunctionResult(functionFragment: "assets", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "operators", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "rgToken", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "transferOwnership",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "approveOperator",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "isOperatorApproved",
-    data: BytesLike
-  ): Result;
   decodeFunctionResult(functionFragment: "addAsset", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "isAssetAdded",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "getAssets", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getRGToken", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getERC721Address",
+    data: BytesLike
+  ): Result;
 
-  events: {
-    "OwnershipTransferred(address,address)": EventFragment;
-  };
-
-  getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
+  events: {};
 }
 
 export class Grouping extends Contract {
@@ -107,77 +79,9 @@ export class Grouping extends Contract {
   interface: GroupingInterface;
 
   functions: {
-    assets(arg0: BigNumberish, overrides?: CallOverrides): Promise<[BigNumber]>;
-
-    "assets(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<[BigNumber]>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    operators(arg0: BigNumberish, overrides?: CallOverrides): Promise<[string]>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    "operators(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<[string]>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    owner(overrides?: CallOverrides): Promise<[string]>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    "owner()"(overrides?: CallOverrides): Promise<[string]>;
-
     rgToken(overrides?: CallOverrides): Promise<[string]>;
 
     "rgToken()"(overrides?: CallOverrides): Promise<[string]>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    transferOwnership(
-      newOwner: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    "transferOwnership(address)"(
-      newOwner: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
-
-    approveOperator(
-      _operator: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
-
-    "approveOperator(address)"(
-      _operator: string,
-      overrides?: Overrides
-    ): Promise<ContractTransaction>;
-
-    isOperatorApproved(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>;
-
-    "isOperatorApproved(address)"(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>;
 
     addAsset(
       _asset: BigNumberish,
@@ -198,79 +102,23 @@ export class Grouping extends Contract {
       _asset: BigNumberish,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
+
+    getAssets(overrides?: CallOverrides): Promise<[BigNumber[]]>;
+
+    "getAssets()"(overrides?: CallOverrides): Promise<[BigNumber[]]>;
+
+    getRGToken(overrides?: CallOverrides): Promise<[string]>;
+
+    "getRGToken()"(overrides?: CallOverrides): Promise<[string]>;
+
+    getERC721Address(overrides?: CallOverrides): Promise<[string]>;
+
+    "getERC721Address()"(overrides?: CallOverrides): Promise<[string]>;
   };
-
-  assets(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
-
-  "assets(uint256)"(
-    arg0: BigNumberish,
-    overrides?: CallOverrides
-  ): Promise<BigNumber>;
-
-  /**
-   * operators are the erc721 owners that have been approved in this
-   */
-  operators(arg0: BigNumberish, overrides?: CallOverrides): Promise<string>;
-
-  /**
-   * operators are the erc721 owners that have been approved in this
-   */
-  "operators(uint256)"(
-    arg0: BigNumberish,
-    overrides?: CallOverrides
-  ): Promise<string>;
-
-  /**
-   * Tells the address of the owner return the address of the owner
-   */
-  owner(overrides?: CallOverrides): Promise<string>;
-
-  /**
-   * Tells the address of the owner return the address of the owner
-   */
-  "owner()"(overrides?: CallOverrides): Promise<string>;
 
   rgToken(overrides?: CallOverrides): Promise<string>;
 
   "rgToken()"(overrides?: CallOverrides): Promise<string>;
-
-  /**
-   * Allows the current owner to transfer control of the contract to a newOwner.
-   * @param newOwner The address to transfer ownership to.
-   */
-  transferOwnership(
-    newOwner: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
-
-  /**
-   * Allows the current owner to transfer control of the contract to a newOwner.
-   * @param newOwner The address to transfer ownership to.
-   */
-  "transferOwnership(address)"(
-    newOwner: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
-
-  approveOperator(
-    _operator: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
-
-  "approveOperator(address)"(
-    _operator: string,
-    overrides?: Overrides
-  ): Promise<ContractTransaction>;
-
-  isOperatorApproved(
-    _operator: string,
-    overrides?: CallOverrides
-  ): Promise<boolean>;
-
-  "isOperatorApproved(address)"(
-    _operator: string,
-    overrides?: CallOverrides
-  ): Promise<boolean>;
 
   addAsset(
     _asset: BigNumberish,
@@ -292,78 +140,22 @@ export class Grouping extends Contract {
     overrides?: CallOverrides
   ): Promise<boolean>;
 
+  getAssets(overrides?: CallOverrides): Promise<BigNumber[]>;
+
+  "getAssets()"(overrides?: CallOverrides): Promise<BigNumber[]>;
+
+  getRGToken(overrides?: CallOverrides): Promise<string>;
+
+  "getRGToken()"(overrides?: CallOverrides): Promise<string>;
+
+  getERC721Address(overrides?: CallOverrides): Promise<string>;
+
+  "getERC721Address()"(overrides?: CallOverrides): Promise<string>;
+
   callStatic: {
-    assets(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
-
-    "assets(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    operators(arg0: BigNumberish, overrides?: CallOverrides): Promise<string>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    "operators(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<string>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    owner(overrides?: CallOverrides): Promise<string>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    "owner()"(overrides?: CallOverrides): Promise<string>;
-
     rgToken(overrides?: CallOverrides): Promise<string>;
 
     "rgToken()"(overrides?: CallOverrides): Promise<string>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    transferOwnership(
-      newOwner: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    "transferOwnership(address)"(
-      newOwner: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    approveOperator(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    "approveOperator(address)"(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    isOperatorApproved(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<boolean>;
-
-    "isOperatorApproved(address)"(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<boolean>;
 
     addAsset(_asset: BigNumberish, overrides?: CallOverrides): Promise<boolean>;
 
@@ -381,87 +173,26 @@ export class Grouping extends Contract {
       _asset: BigNumberish,
       overrides?: CallOverrides
     ): Promise<boolean>;
+
+    getAssets(overrides?: CallOverrides): Promise<BigNumber[]>;
+
+    "getAssets()"(overrides?: CallOverrides): Promise<BigNumber[]>;
+
+    getRGToken(overrides?: CallOverrides): Promise<string>;
+
+    "getRGToken()"(overrides?: CallOverrides): Promise<string>;
+
+    getERC721Address(overrides?: CallOverrides): Promise<string>;
+
+    "getERC721Address()"(overrides?: CallOverrides): Promise<string>;
   };
 
-  filters: {
-    OwnershipTransferred(previousOwner: null, newOwner: null): EventFilter;
-  };
+  filters: {};
 
   estimateGas: {
-    assets(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
-
-    "assets(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    operators(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    "operators(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    owner(overrides?: CallOverrides): Promise<BigNumber>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    "owner()"(overrides?: CallOverrides): Promise<BigNumber>;
-
     rgToken(overrides?: CallOverrides): Promise<BigNumber>;
 
     "rgToken()"(overrides?: CallOverrides): Promise<BigNumber>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    transferOwnership(
-      newOwner: string,
-      overrides?: Overrides
-    ): Promise<BigNumber>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    "transferOwnership(address)"(
-      newOwner: string,
-      overrides?: Overrides
-    ): Promise<BigNumber>;
-
-    approveOperator(
-      _operator: string,
-      overrides?: Overrides
-    ): Promise<BigNumber>;
-
-    "approveOperator(address)"(
-      _operator: string,
-      overrides?: Overrides
-    ): Promise<BigNumber>;
-
-    isOperatorApproved(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
-    "isOperatorApproved(address)"(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
 
     addAsset(_asset: BigNumberish, overrides?: Overrides): Promise<BigNumber>;
 
@@ -479,86 +210,24 @@ export class Grouping extends Contract {
       _asset: BigNumberish,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
+
+    getAssets(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getAssets()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getRGToken(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getRGToken()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getERC721Address(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getERC721Address()"(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
-    assets(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    "assets(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    operators(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    /**
-     * operators are the erc721 owners that have been approved in this
-     */
-    "operators(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    /**
-     * Tells the address of the owner return the address of the owner
-     */
-    "owner()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
     rgToken(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     "rgToken()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    transferOwnership(
-      newOwner: string,
-      overrides?: Overrides
-    ): Promise<PopulatedTransaction>;
-
-    /**
-     * Allows the current owner to transfer control of the contract to a newOwner.
-     * @param newOwner The address to transfer ownership to.
-     */
-    "transferOwnership(address)"(
-      newOwner: string,
-      overrides?: Overrides
-    ): Promise<PopulatedTransaction>;
-
-    approveOperator(
-      _operator: string,
-      overrides?: Overrides
-    ): Promise<PopulatedTransaction>;
-
-    "approveOperator(address)"(
-      _operator: string,
-      overrides?: Overrides
-    ): Promise<PopulatedTransaction>;
-
-    isOperatorApproved(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    "isOperatorApproved(address)"(
-      _operator: string,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
 
     addAsset(
       _asset: BigNumberish,
@@ -577,6 +246,20 @@ export class Grouping extends Contract {
 
     "isAssetAdded(uint256)"(
       _asset: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    getAssets(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getAssets()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getRGToken(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getRGToken()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getERC721Address(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getERC721Address()"(
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
