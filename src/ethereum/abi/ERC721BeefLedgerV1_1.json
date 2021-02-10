@@ -130,7 +130,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -162,7 +163,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -181,7 +183,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -200,7 +203,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -213,7 +217,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -250,7 +255,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -287,7 +293,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -398,7 +405,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"_assets\",\"type\":\"uint256[]\"},{\"internalType\":\"address\",\"name\":\"_groupingAddress\",\"type\":\"address\"}],\"name\":\"addAssetsToGrouping\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"exists\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_asset\",\"type\":\"uint256\"}],\"name\":\"getGroupingAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotalTokens\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initializeV11\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"tokenIds\",\"type\":\"uint256[]\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"multisig\",\"type\":\"address\"}],\"name\":\"setMultisigWallet\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"Approves another address to transfer the given token ID The zero address indicates there is no approved address. There can only be one approved address per token at a given time. Can only be called by the token owner or an approved operator.\",\"params\":{\"to\":\"address to be approved for the given token ID\",\"tokenId\":\"uint256 ID of the token to be approved\"}},\"balanceOf(address)\":{\"details\":\"Gets the balance of the specified address.\",\"params\":{\"owner\":\"address to query the balance of return uint256 representing the amount owned by the passed address\"}},\"burn(uint256)\":{\"details\":\"Burns a specific ERC721 token.\",\"params\":{\"tokenId\":\"uint256 id of the ERC721 token to be burned.\"}},\"exists(uint256)\":{\"details\":\"Returns whether the specified token exists.\",\"params\":{\"tokenId\":\"uint256 ID of the token to query the existence of return bool whether the token exists\"}},\"getApproved(uint256)\":{\"details\":\"Gets the approved address for a token ID, or zero if no address set Reverts if the token ID does not exist.\",\"params\":{\"tokenId\":\"uint256 ID of the token to query the approval of return address currently approved for the given token ID\"}},\"isApprovedForAll(address,address)\":{\"details\":\"Tells whether an operator is approved by a given owner.\",\"params\":{\"operator\":\"operator address which you want to query the approval of return bool whether the given operator is approved by the given owner\",\"owner\":\"owner address which you want to query the approval of\"}},\"owner()\":{\"details\":\"Tells the address of the owner return the address of the owner\"},\"setApprovalForAll(address,bool)\":{\"details\":\"Sets or unsets the approval of a given operator An operator is allowed to transfer all tokens of the sender on their behalf.\",\"params\":{\"approved\":\"representing the status of the approval to be set\",\"to\":\"operator address to set the approval\"}},\"transferFrom(address,address,uint256)\":{\"details\":\"Transfers the ownership of a given token ID to another address. Usage of this method is discouraged, use {safeTransferFrom} whenever possible. Requires the msg.sender to be the owner, approved, or operator.\",\"params\":{\"from\":\"current owner of the token\",\"to\":\"address to receive the ownership of the given token ID\",\"tokenId\":\"uint256 ID of the token to be transferred\"}},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol\":\"ERC721BeefLedgerV1_1\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Grouping.sol\":{\"keccak256\":\"0xd35f6c3e4459b18deffc1a0459170ce233fcdbbe189555d65f35223981abd55f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://72f945c2f8f2ce5ebce6dac942cc8cbf1dcc7815891b2309b1bdee193bc6d742\",\"dweb:/ipfs/QmeekCsezSGUGZ6XzgSC7jc1B9tYqQcH23ZfpKGze5iAdf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Ownable.sol\":{\"keccak256\":\"0x964303431ae2c14ab2872dccd3a47f1ada16eeaa306fc3af3fdd9b7e111ca6a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40d290c1b5ef186710d0ea1b04e584cf083d7aa62fd67cc9c7ce1326854e5438\",\"dweb:/ipfs/QmWPXb9BzihgZU92xVGJxYqELRj36Wbq2tf3kLhWHuaXLc\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/CompaniesV1_0.sol\":{\"keccak256\":\"0xaafe12654f198c20675c643d6297ab8e5dfefd26b391313b6a380ab8d68f4f26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d467b7be4e67c0c3b78f3bde36123098f3690f6b3307da318c65a4c77e1cef90\",\"dweb:/ipfs/QmdmN6ut5X5FD4qTZWAmhcx8QTKBRcawUJFXAnkhrSEnHN\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ERC721BeefLedgerV1_0.sol\":{\"keccak256\":\"0xee0b059fa25e559c7463007fb2c6ff3338e2c5ea277db82181a596229d36c00c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9f6be3b41b225e3a0415ef55044fa9371e420e4f0ee1217b41dcca6ac2961d25\",\"dweb:/ipfs/QmZ5k4kjGxNhJQjre4cfHQoLyt3fzF82LJBtubr4K7u5Ug\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/MultisigWalletV1_0.sol\":{\"keccak256\":\"0x028d206cad0f30356d78720422a2eb31b3f397cb970feba78b3a7633c412857a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b232d48dc22cef22337260588d4a24c2f33c22896b5d444486696e5ebc59dd9f\",\"dweb:/ipfs/QmQw1EaPszfvSnpoNiynD2SNCtE5caojUcRxP8Xsp92DN7\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ResourceActionsV1_0.sol\":{\"keccak256\":\"0x4d17aa3f1f7cc68cd232f2fd46310aa18c350797d4354eec12cbd94e75075859\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1043e4e78ce44bb0ecc04a29b979803fde6206b23eb2fdfca955e69d382f3226\",\"dweb:/ipfs/QmPQEabkPWDn3jeRJAQ2tN7EHXymJqrmkimEjKx3hP1MYf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol\":{\"keccak256\":\"0x6df8f09a6a85e4af9079184eb598247c611810071ae30bd502519ba5e62c7d70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4bb84ae2cf10e18a26e9aa30a4c7327756851dd4caa758daae38326c46bbf3a9\",\"dweb:/ipfs/QmdRxF442cj8JsBpjyVTm6ML6VkXMsZnWkSRArAaVKp2zM\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x3b21f2c8d626de3b9925ae33e972d8bf5c8b1bffb3f4ee94daeed7d0679036e6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7f8d45329fecbf0836ad7543330c3ecd0f8d0ffa42d4016278c3eb2215fdcdfe\",\"dweb:/ipfs/QmXWLT7GcnHtA5NiD6MFi2CV3EWJY4wv5mLNnypqYDrxL3\"]},\"@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0x21662e4254ce4ac8570b30cc7ab31435966b3cb778a56ba4d09276881cfb2437\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://acce8fe6adc670f9987a8b6aedc4cc0abcd0dcd2e152d649a12099d735bd7bad\",\"dweb:/ipfs/QmXAk17oK3daBmA8CGyVcU56L496jW3U6Ef1WkfHyB1JAV\"]}},\"version\":1}",
@@ -3543,9 +3551,112 @@
     "name": "solc",
     "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1612983065984": {
+      "events": {
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "approved",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        },
+        "0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "approved",
+              "type": "bool"
+            }
+          ],
+          "name": "ApprovalForAll",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x4cCF93dbF3C9F3DfC1e6A014f6C59d2D19141500",
+      "transactionHash": "0x5616ba27c386c2b802b48771fcf86b7e6800d5ec7cb810196b1006b2de625073"
+    }
+  },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-10T16:59:26.707Z",
+  "updatedAt": "2021-02-10T18:52:05.728Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {
