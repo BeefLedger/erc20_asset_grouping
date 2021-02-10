@@ -13,6 +13,23 @@ export class ERC20Controller {
         this._signer = signer;
     }
 
+    private async _getERC20Contract(): Promise<ERC20ForAssetGrouping> {
+        if(this._erc20Contract) {
+            return this._erc20Contract;
+        }
+
+        try {
+            // Connect to the contract with my signer
+            const contract = await getErc20Contract(this._erc20Address, this._signer);
+            this._erc20Contract = contract;
+            return contract;
+        }
+        catch (e) {
+            throw Error(`Failed to get DealRoom contract: ${e}`);
+        }
+    }
+
+    /**Getters */
     public async balanceOf(): Promise<BigNumberish> {
         const contract = await this._getERC20Contract();
         return contract.balanceOf(await this._signer.getAddress());
@@ -47,7 +64,9 @@ export class ERC20Controller {
         const contract = await this._getERC20Contract();
         return contract.decimals();
     }
- 
+
+
+    /** Setters */
     public async transfer(recipient: string, amount: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
         return contract.functions.transfer(recipient, amount)
@@ -68,19 +87,5 @@ export class ERC20Controller {
         return contract.functions.mint(receiver, amount)
     }
 
-    private async _getERC20Contract(): Promise<ERC20ForAssetGrouping> {
-        if(this._erc20Contract) {
-            return this._erc20Contract;
-        }
-
-        try {
-            // Connect to the contract with my signer
-            const contract = await getErc20Contract(this._erc20Address, this._signer);
-            this._erc20Contract = contract;
-            return contract;
-        }
-        catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`);
-        }
-    }
+    
 }

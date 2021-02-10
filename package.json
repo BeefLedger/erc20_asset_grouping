@@ -1,6 +1,6 @@
 {
-  "name": "beefledger-asset-grouping",
-  "version": "1.1.4",
+  "name": "beefledger-contracts",
+  "version": "1.2.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline --copy-files --no-copy-ignored",
     "test": "jest --runInBand",
+    "upgrade-on-test": "jest -- grouping",
     "contracts:build": "npm run contracts:clear && npm run contracts:compile && npm run contracts:type",
     "contracts:type": "typechain --target ethers-v5 --outDir ./src/types/ 'src/ethereum/abi/**/*.json'",
     "contracts:clear": "rm -rf ./src/ethereum/abi && rm -rf ./src/types",
