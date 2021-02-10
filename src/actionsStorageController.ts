@@ -98,6 +98,7 @@ export class ActionsStorageController {
         return actionsStorageContract.indexOf(allowedCompanies, companyAddress);
     }
 
+    /** Overriden in V1_1 */
     public async isCompanyOwner(companyAddress: string, assetId: BigNumberish): Promise<boolean> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.isCompanyOwner(companyAddress, assetId);
@@ -108,6 +109,7 @@ export class ActionsStorageController {
         return actionsStorageContract.getResourceActionsContract();
     }
 
+     /** Overriden in V1_1 */
     public async getERC721Contract(): Promise<string> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.getERC721Contract();
@@ -118,12 +120,14 @@ export class ActionsStorageController {
         return actionsStorageContract.getCompaniesContract();
     }
 
+
     /**Setters */
     public async setResourceActionsContract(newAddress: string): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.functions.setResourceActionsContract(newAddress);
     }
 
+    /** Overriden in V1_1 */
     public async setERC721(newAddress: string): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.functions.setERC721(newAddress);

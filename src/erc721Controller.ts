@@ -72,10 +72,12 @@ export class ERC721Controller {
         return erc721Contract.getOwner(tokenId);
     }
 
+    /** Version 1_1 */
     public async getGroupingAddress(tokenId: BigNumberish): Promise<string> {
         const erc721Contract = await this._getERC721Contract();
         return erc721Contract.getGroupingAddress(tokenId);
     }
+    
 
     /**Setters */
     public async setMultisigWallet(newAddress: string): Promise<ContractTransaction> {
@@ -108,6 +110,7 @@ export class ERC721Controller {
         return erc721Contract.functions.burn(tokenId);
     }
 
+    /** Version 1_1 */
     public async addAssetsToGrouping(tokenIds: Array<BigNumberish>, groupingAddress: string): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
         return erc721Contract.functions.addAssetsToGrouping(tokenIds, groupingAddress);
