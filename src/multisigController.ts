@@ -1,4 +1,4 @@
-import { BigNumberish, BytesLike, ContractTransaction, Signer } from "ethers";
+import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer } from "ethers";
 import { getMultisigContract } from "./chain/prefabContractFactory";
 import { initializeMultisig } from "./ethereum/deploy/deploy";
 import { MultisigWalletV10 } from "./types";
@@ -8,9 +8,14 @@ export class MultisigController {
     private _multisigAddress : string
     private _multisigContract? : MultisigWalletV10
 
-    constructor(multisigAddress: string, signer: Signer) {
+    constructor(multisigAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
         this._multisigAddress = multisigAddress;
-        this._signer = signer
+        if(signerOrProvider instanceof Signer) {
+            this._signer = signerOrProvider;
+        } else {
+            const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider as any) 
+            this._signer = web3Wrapper.getSigner()
+        }
     }
 
     public static async deployMultisigContract(signer: Signer, owners: Array<string>, requirement: BigNumberish): Promise<[MultisigWalletV10, string]> {
@@ -35,43 +40,48 @@ export class MultisigController {
 
     /**Getters */
     public async isConfirmed(transactionId: BigNumberish): Promise<boolean> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.isConfirmed(transactionId);
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.isConfirmed(transactionId);
     }
 
     public async getConfirmationCount(transactionId: BigNumberish): Promise<BigNumberish> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.getConfirmationCount(transactionId);
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.getConfirmationCount(transactionId);
     }
 
     public async getTransactionCount(pending: boolean, executed: boolean): Promise<BigNumberish> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.getTransactionCount(pending, executed);
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.getTransactionCount(pending, executed);
     }
 
     public async getConfirmations(transactionId: BigNumberish): Promise<Array<string>> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.getConfirmations(transactionId);
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.getConfirmations(transactionId);
     }
 
     public async getTransactionIds(from: BigNumberish, to: BigNumberish, pending: boolean, executed: boolean): Promise<Array<BigNumberish>> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.getTransactionIds(from, to, pending, executed);
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.getTransactionIds(from, to, pending, executed);
     }
 
     public async getOwners(): Promise<Array<string>> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.getOwners();
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.getOwners();
     }
 
     public async getTransaction(transactionId: BigNumberish): Promise<[string, string, boolean, BigNumberish]> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.getTransaction(transactionId);
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.getTransaction(transactionId);
     }
 
     public async getResourceActionsContract(): Promise<string> {
-        const erc721Contract = await this._getMultisigContract();
-        return erc721Contract.getResourceActionsContract();
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.getResourceActionsContract();
+    }
+
+    public async getRequiredSignatures(): Promise<BigNumberish> {
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.required();
     }
 
 

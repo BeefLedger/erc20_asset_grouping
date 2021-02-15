@@ -72,9 +72,14 @@ export class ERC721Controller {
         return erc721Contract.getTotalTokens();
     }
 
-    public async getOwner(tokenId: BigNumberish): Promise<string> {
+    public async getOwnerOf(tokenId: BigNumberish): Promise<string> {
         const erc721Contract = await this._getERC721Contract();
         return erc721Contract.getOwner(tokenId);
+    }
+
+    public async getOwner(): Promise<string> {
+        const erc721Contract = await this._getERC721Contract();
+        return erc721Contract.owner();
     }
 
     /** Version 1_1 */

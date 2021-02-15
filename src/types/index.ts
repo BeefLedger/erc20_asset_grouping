@@ -12,6 +12,7 @@ export type { ERC721BeefLedgerV10 } from "./ERC721BeefLedgerV10";
 export type { ERC721BeefLedgerV11 } from "./ERC721BeefLedgerV11";
 export type { Grouping } from "./Grouping";
 export type { IERC20 } from "./IERC20";
+export type { Migrations } from "./Migrations";
 export type { MultisigWalletV10 } from "./MultisigWalletV10";
 export type { Ownable } from "./Ownable";
 export type { OwnedUpgradeabilityProxy } from "./OwnedUpgradeabilityProxy";
@@ -30,6 +31,7 @@ export { ERC721BeefLedgerV10__factory } from "./factories/ERC721BeefLedgerV10__f
 export { ERC721BeefLedgerV11__factory } from "./factories/ERC721BeefLedgerV11__factory";
 export { Grouping__factory } from "./factories/Grouping__factory";
 export { IERC20__factory } from "./factories/IERC20__factory";
+export { Migrations__factory } from "./factories/Migrations__factory";
 export { MultisigWalletV10__factory } from "./factories/MultisigWalletV10__factory";
 export { Ownable__factory } from "./factories/Ownable__factory";
 export { OwnedUpgradeabilityProxy__factory } from "./factories/OwnedUpgradeabilityProxy__factory";
