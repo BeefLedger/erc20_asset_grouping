@@ -4,7 +4,7 @@ import { CompaniesV10 } from "./types";
 import { getCompaniesContract } from "./chain/prefabContractFactory";
 
 
-export class companiesController {
+export class CompaniesController {
 
     private _signer: Signer;
     private _companiesAddress : string

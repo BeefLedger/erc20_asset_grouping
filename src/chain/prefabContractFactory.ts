@@ -7,6 +7,7 @@ import * as MultisigCompiled  from "../ethereum/abi/MultisigWalletV1_0.json"
 import * as GroupingCompiled  from "../ethereum/abi/Grouping.json"
 import * as ActionsStorageCompiled  from "../ethereum/abi/ActionsStorageV1_1.json"
 import * as CompaniesCompiled  from "../ethereum/abi/CompaniesV1_0.json"
+import * as ResourceActionsCompiled  from "../ethereum/abi/ResourceActionsV1_0.json"
 
 import { getContract } from "./contractFactory"
 import { 
@@ -15,7 +16,8 @@ import {
     ERC20FactoryV10, Grouping, 
     ERC721BeefLedgerV11, 
     ActionsStorageV11,
-    CompaniesV10
+    CompaniesV10,
+    ResourceActionsV10
 } from "../types"
 
 export async function getERC20FactoryContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ERC20FactoryV10> {
@@ -44,4 +46,8 @@ export async function getActionsStorageContract(address: string, signerIdxOrAddr
 
 export async function getCompaniesContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<CompaniesV10> {
     return getContract<CompaniesV10>(address, CompaniesCompiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getResourceActionsContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ResourceActionsV10> {
+    return getContract<ResourceActionsV10>(address, ResourceActionsCompiled.abi, signerIdxOrAddressOrSigner)
 }
