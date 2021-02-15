@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, Signer } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { getActionsStorageContract } from "./chain/prefabContractFactory";
 import { ActionsStorageV10 } from "./types";
 
@@ -22,9 +22,14 @@ export class ActionsStorageController {
     private _signer: Signer;
     private _actionsStorageContract? : ActionsStorageV10
 
-    constructor(actionsStorageAddress: string, signer: Signer) {
+    constructor(actionsStorageAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
         this._actionsStorageAddress = actionsStorageAddress;
-        this._signer = signer;
+        if(signerOrProvider instanceof Signer) {
+            this._signer = signerOrProvider;
+        } else {
+            const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 
+            this._signer = web3Wrapper.getSigner()
+        }
     }
 
     private async _getActionsStorageContract(): Promise<ActionsStorageV10> {

@@ -1,4 +1,4 @@
-import { BigNumberish, Signer } from "ethers";
+import { BigNumberish, ethers, Signer } from "ethers";
 import { getGroupingContract } from "./chain/prefabContractFactory";
 import { deployGrouping } from "./ethereum/deploy/deploy";
 import { Grouping } from "./types";
@@ -10,10 +10,17 @@ export class GroupingController {
     private _groupingAddress : string
     private _groupingContract? : Grouping
 
-    constructor(groupingAddress: string, signer: Signer) {
+    constructor(groupingAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
         this._groupingAddress = groupingAddress;
-        this._signer = signer
+        if(signerOrProvider instanceof Signer) {
+            this._signer = signerOrProvider;
+        } else {
+            const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 
+            this._signer = web3Wrapper.getSigner()
+        }
     }
+
+    
 
     public static async deployGroupingContract(signer: Signer, rgTokenAddress: string, erc721Address: string): Promise<Grouping> {
         return deployGrouping(signer, rgTokenAddress, erc721Address)

@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, Signer } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { getERC721Contract } from "./chain/prefabContractFactory";
 
 import { initializeERC721, upgradeERC721 } from './ethereum/deploy/deploy'
@@ -12,9 +12,14 @@ export class ERC721Controller {
     private _erc721Address : string
     private _erc721Contract? : ERC721BeefLedgerV11
 
-    constructor(erc721Address: string, signer: Signer) {
+    constructor(erc721Address: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
         this._erc721Address = erc721Address;
-        this._signer = signer
+        if(signerOrProvider instanceof Signer) {
+            this._signer = signerOrProvider;
+        } else {
+            const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 
+            this._signer = web3Wrapper.getSigner()
+        }
     }
 
     public static async deployERC721Contract(signer: Signer, multisigAddress: string): Promise<[ERC721BeefLedgerV10, string]> {

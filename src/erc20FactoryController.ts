@@ -1,4 +1,4 @@
-import { ContractTransaction, Signer } from "ethers";
+import { ContractTransaction, ethers, Signer } from "ethers";
 import { getERC20FactoryContract } from "./chain/prefabContractFactory";
 import { ERC20FactoryV10 } from "./types/ERC20FactoryV10";
 import { ERC20FactoryV11 } from "./types/ERC20FactoryV11";
@@ -12,9 +12,14 @@ export class ERC20FactoryController {
     private _signer: Signer;
     private _erc20FactoryContract? : ERC20FactoryV10
 
-    constructor(erc20FactoryAddress: string, signer: Signer) {
+    constructor(erc20FactoryAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
         this._erc20FactoryAddress = erc20FactoryAddress;
-        this._signer = signer
+        if(signerOrProvider instanceof Signer) {
+            this._signer = signerOrProvider;
+        } else {
+            const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 
+            this._signer = web3Wrapper.getSigner()
+        }
     }
 
     public static async deployERC20FactoryContract(signer: Signer): Promise<[ERC20FactoryV10, string]> {

@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, Signer } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { ERC20ForAssetGrouping } from "./types/ERC20ForAssetGrouping";
 import { getErc20Contract } from "./chain/prefabContractFactory";
 
@@ -8,9 +8,14 @@ export class ERC20Controller {
     private _signer: Signer;
     private _erc20Contract? : ERC20ForAssetGrouping
 
-    constructor(erc20Address: string, signer: Signer) {
+    constructor(erc20Address: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
         this._erc20Address = erc20Address;
-        this._signer = signer;
+        if(signerOrProvider instanceof Signer) {
+            this._signer = signerOrProvider;
+        } else {
+            const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 
+            this._signer = web3Wrapper.getSigner()
+        }
     }
 
     private async _getERC20Contract(): Promise<ERC20ForAssetGrouping> {
