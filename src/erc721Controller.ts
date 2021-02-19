@@ -4,6 +4,8 @@ import { getERC721Contract } from "./chain/prefabContractFactory";
 import { initializeERC721, upgradeERC721 } from './ethereum/deploy/deploy'
 import { ERC721BeefLedgerV10 } from "./types";
 import { ERC721BeefLedgerV11 } from "./types/ERC721BeefLedgerV11";
+import * as artifact from "./ethereum/abi/ERC721BeefLedgerV1_1.json"
+import { encode } from "./ethereum/encodeCall";
 
 
 export class ERC721Controller {
@@ -42,11 +44,16 @@ export class ERC721Controller {
             return contract
         }
         catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`)
+            throw Error(`Failed to get ERC721 contract: ${e}`)
         }
     }
 
     /** Getters */
+    public async getContract(): Promise<ERC721BeefLedgerV11> {
+        const erc721Contract = await this._getERC721Contract();
+        return erc721Contract
+    }
+
     public async balanceOf(user: string): Promise<BigNumberish> {
         const erc721Contract = await this._getERC721Contract();
         return erc721Contract.balanceOf(user);
@@ -90,6 +97,10 @@ export class ERC721Controller {
     
 
     /**Setters */
+    public encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
     public async setMultisigWallet(newAddress: string): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
         return erc721Contract.functions.setMultisigWallet(newAddress);

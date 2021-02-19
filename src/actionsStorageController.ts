@@ -1,6 +1,8 @@
 import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { getActionsStorageContract } from "./chain/prefabContractFactory";
 import { ActionsStorageV10 } from "./types";
+import * as artifact from "./ethereum/abi/ActionsStorageV1_1.json"
+import { encode } from "./ethereum/encodeCall";
 
 interface EntryData {
     entryType: BigNumberish,
@@ -44,11 +46,16 @@ export class ActionsStorageController {
             return contract;
         }
         catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`);
+            throw Error(`Failed to get ActionsStorageContract contract: ${e}`);
         }
     }
 
     /** Getters */
+    public async getContract(): Promise<ActionsStorageV10> {
+        const actionsStorageContract = await this._getActionsStorageContract();
+        return actionsStorageContract
+    }
+
     public async getEntriesByCompany(companyAddress: string): Promise<Array<BigNumberish>> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.getEntriesByCompany(companyAddress);
@@ -127,6 +134,10 @@ export class ActionsStorageController {
 
 
     /**Setters */
+    public encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
     public async setResourceActionsContract(newAddress: string): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.functions.setResourceActionsContract(newAddress);

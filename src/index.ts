@@ -7,6 +7,7 @@ export * from './groupingController';
 export * from './multisigController';
 export * from './actionsStorageController';
 export * from './companiesController';
+export * from './resourceActionsController';
 export * from './ethereum/index';
 
 export * from './types'

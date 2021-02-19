@@ -3913,7 +3913,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-15T23:29:41.204Z",
+  "updatedAt": "2021-02-18T17:05:49.748Z",
   "devdoc": {
     "details": "This contract combines an upgradeability proxy with basic authorization control functionalities",
     "events": {

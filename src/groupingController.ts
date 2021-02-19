@@ -1,8 +1,10 @@
 import { BigNumberish, ethers, Signer } from "ethers";
+
 import { getGroupingContract } from "./chain/prefabContractFactory";
 import { deployGrouping } from "./ethereum/deploy/deploy";
 import { Grouping } from "./types";
-
+import * as artifact from "./ethereum/abi/Grouping.json"
+import { encode } from "./ethereum/encodeCall";
 
 export class GroupingController {
 
@@ -38,12 +40,17 @@ export class GroupingController {
             return contract
         }
         catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`)
+            throw Error(`Failed to get Grouping contract: ${e}`)
         }
     }
 
 
     /** Getters */
+    public async getContract(): Promise<Grouping> {
+        const groupingContract = await this._getGroupingContract();
+        return groupingContract
+    }
+
     public async isAssetAdded(assetId: BigNumberish): Promise<boolean> {
         const erc721Contract = await this._getGroupingContract();
         return erc721Contract.isAssetAdded(assetId);
@@ -62,5 +69,10 @@ export class GroupingController {
     public async getERC721Address(): Promise<string> {
         const erc721Contract = await this._getGroupingContract();
         return erc721Contract.getERC721Address();
+    }
+
+    /** Setters */
+    public encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
     }
 }

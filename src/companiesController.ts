@@ -2,6 +2,8 @@ import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer } from "et
 
 import { CompaniesV10 } from "./types";
 import { getCompaniesContract } from "./chain/prefabContractFactory";
+import * as artifact from "./ethereum/abi/CompaniesV1_0.json"
+import { encode } from "./ethereum/encodeCall";
 
 
 export class CompaniesController {
@@ -32,11 +34,16 @@ export class CompaniesController {
             return contract
         }
         catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`)
+            throw Error(`Failed to get Companies contract: ${e}`)
         }
     }
 
     /**Getters */
+    public async getContract(): Promise<CompaniesV10> {
+        const companiesContract = await this._getCompaniesContract();
+        return companiesContract
+    }
+
     public async getAllCompanies(): Promise<Array<string>> {
         const companiesContract = await this._getCompaniesContract();
         return companiesContract.getAllCompanies();
@@ -69,6 +76,10 @@ export class CompaniesController {
 
 
     /**Setters */
+    public encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
     public async addCompany(address: string, name: string, ipfsLink: BytesLike): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
         return companiesContract.functions.addCompany(address, name, ipfsLink);

@@ -1,9 +1,10 @@
 import { ContractTransaction, ethers, Signer } from "ethers";
+
 import { getERC20FactoryContract } from "./chain/prefabContractFactory";
 import { ERC20FactoryV10 } from "./types/ERC20FactoryV10";
-import { ERC20FactoryV11 } from "./types/ERC20FactoryV11";
-
-import { initializeERC20Factory, upgradeERC20Factory } from './ethereum/deploy/deploy'
+import { initializeERC20Factory } from './ethereum/deploy/deploy'
+import * as artifact from "./ethereum/abi/ERC20FactoryV1_0.json"
+import { encode } from "./ethereum/encodeCall";
 
 
 export class ERC20FactoryController {
@@ -26,11 +27,7 @@ export class ERC20FactoryController {
         return initializeERC20Factory(signer)
     }
 
-    public async upgradeERC20FactoryContractV11(signer: Signer, proxyAddress: string): Promise<ERC20FactoryV11> {
-        return upgradeERC20Factory(signer, proxyAddress)
-    }
-
-    private async _getERC20FactoryContract(): Promise<ERC20FactoryV10 | ERC20FactoryV11> {
+    private async _getERC20FactoryContract(): Promise<ERC20FactoryV10> {
         if(this._erc20FactoryContract) {
             return this._erc20FactoryContract
         }
@@ -42,11 +39,17 @@ export class ERC20FactoryController {
             return contract
         }
         catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`)
+            throw Error(`Failed to get ERC20Factory contract: ${e}`)
         }
     }
 
 
+
+    /** Getters */
+    public async getContract(): Promise<ERC20FactoryV10> {
+        const erc20FactoryContract = await this._getERC20FactoryContract();
+        return erc20FactoryContract
+    }
 
     public async getOwner(): Promise<string> {
         const erc20FactoryContract = await this._getERC20FactoryContract();
@@ -61,5 +64,10 @@ export class ERC20FactoryController {
     public async deployERC20Contract(chainId: number, name: string, symbol: string): Promise<ContractTransaction> {
         const erc20FactoryContract = await this._getERC20FactoryContract();
         return erc20FactoryContract.functions.deploy(chainId, name, symbol)
+    }
+
+    /** Setters */
+    public encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
     }
 }

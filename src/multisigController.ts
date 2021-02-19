@@ -3,6 +3,9 @@ import { getMultisigContract } from "./chain/prefabContractFactory";
 import { initializeMultisig } from "./ethereum/deploy/deploy";
 import { MultisigWalletV10 } from "./types";
 
+import * as artifact from "./ethereum/abi/MultisigWalletV1_0.json"
+import { encode } from "./ethereum/encodeCall";
+
 export class MultisigController {
     private _signer: Signer;
     private _multisigAddress : string
@@ -34,11 +37,16 @@ export class MultisigController {
             return contract
         }
         catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`)
+            throw Error(`Failed to get Multisig contract: ${e}`)
         }
     }
 
     /**Getters */
+    public async getContract(): Promise<MultisigWalletV10> {
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract
+    }
+
     public async isConfirmed(transactionId: BigNumberish): Promise<boolean> {
         const multisigContract = await this._getMultisigContract();
         return multisigContract.isConfirmed(transactionId);
@@ -87,6 +95,10 @@ export class MultisigController {
 
 
      /**Setters */
+     public encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+    
      public async setResourceActionsContract(newAddress: string): Promise<ContractTransaction> {
         const multisigContract = await this._getMultisigContract();
         return multisigContract.functions.setResourceActionsContract(newAddress);

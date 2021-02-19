@@ -1,6 +1,8 @@
 import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { ERC20ForAssetGrouping } from "./types/ERC20ForAssetGrouping";
 import { getErc20Contract } from "./chain/prefabContractFactory";
+import * as artifact from "./ethereum/abi/ERC20ForAssetGrouping.json"
+import { encode } from "./ethereum/encodeCall";
 
 export class ERC20Controller {
 
@@ -30,11 +32,16 @@ export class ERC20Controller {
             return contract;
         }
         catch (e) {
-            throw Error(`Failed to get DealRoom contract: ${e}`);
+            throw Error(`Failed to get ERC20 contract: ${e}`);
         }
     }
 
     /**Getters */
+    public async getContract(): Promise<ERC20ForAssetGrouping> {
+        const erc20Contract = await this._getERC20Contract();
+        return erc20Contract
+    }
+
     public async balanceOf(): Promise<BigNumberish> {
         const contract = await this._getERC20Contract();
         return contract.balanceOf(await this._signer.getAddress());
@@ -72,6 +79,10 @@ export class ERC20Controller {
 
 
     /** Setters */
+    public encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+    
     public async transfer(recipient: string, amount: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
         return contract.functions.transfer(recipient, amount)
