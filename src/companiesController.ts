@@ -1,4 +1,4 @@
-import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer } from "ethers";
+import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer, Overrides } from "ethers";
 
 import { CompaniesV10 } from "./types";
 import { getCompaniesContract } from "./chain/prefabContractFactory";
@@ -80,28 +80,33 @@ export class CompaniesController {
         return encode(artifact, functionName, args)
     }
 
-    public async addCompany(address: string, name: string, ipfsLink: BytesLike): Promise<ContractTransaction> {
+    public async addCompany(
+        address: string, 
+        name: string, 
+        ipfsLink: BytesLike, 
+        overrides?: Overrides
+    ): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
         return companiesContract.functions.addCompany(address, name, ipfsLink);
     }
 
-    public async removeCompany(address: string): Promise<ContractTransaction> {
+    public async removeCompany(address: string, overrides?: Overrides): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
-        return companiesContract.functions.removeCompany(address);
+        return companiesContract.functions.removeCompany(address, overrides);
     }
 
-    public async addSignatorie(address: string): Promise<ContractTransaction> {
+    public async addSignatorie(address: string, overrides?: Overrides): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
-        return companiesContract.functions.addSignatorie(address);
+        return companiesContract.functions.addSignatorie(address, overrides);
     }
 
-    public async removeSignatorie(address: string): Promise<ContractTransaction> {
+    public async removeSignatorie(address: string, overrides?: Overrides): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
-        return companiesContract.functions.removeSignatorie(address);
+        return companiesContract.functions.removeSignatorie(address, overrides);
     }
 
-    public async setCompanyData(name: string, ipfsLink: BytesLike): Promise<ContractTransaction> {
+    public async setCompanyData(name: string, ipfsLink: BytesLike, overrides?: Overrides): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
-        return companiesContract.functions.setCompanyData(name, ipfsLink);
+        return companiesContract.functions.setCompanyData(name, ipfsLink, overrides);
     }
 }

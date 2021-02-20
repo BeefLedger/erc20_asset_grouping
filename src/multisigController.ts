@@ -1,4 +1,4 @@
-import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer } from "ethers";
+import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer, Overrides } from "ethers";
 import { getMultisigContract } from "./chain/prefabContractFactory";
 import { initializeMultisig } from "./ethereum/deploy/deploy";
 import { MultisigWalletV10 } from "./types";
@@ -98,50 +98,31 @@ export class MultisigController {
      public encodeCall(functionName: string, args?: any[]): string {
         return encode(artifact, functionName, args)
     }
+
     
-     public async setResourceActionsContract(newAddress: string): Promise<ContractTransaction> {
+    public async submitTransaction(
+        destination: string, 
+        value: BigNumberish, 
+        data: BytesLike,
+        overrides: Overrides
+    ): Promise<ContractTransaction> {
         const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.setResourceActionsContract(newAddress);
+        return multisigContract.functions.submitTransaction(destination, value, data, overrides);
     }
 
-    public async addOwner(newOwner: string): Promise<ContractTransaction> {
+    public async confirmTransaction(transactionId: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
         const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.addOwner(newOwner);
+        return multisigContract.functions.confirmTransaction(transactionId, overrides);
     }
 
-    public async removeOwner(newOwner: string): Promise<ContractTransaction> {
+    public async revokeConfirmation(transactionId: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
         const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.removeOwner(newOwner);
+        return multisigContract.functions.revokeConfirmation(transactionId, overrides);
     }
 
-    public async replaceOwner(owner: string, newOwner: string): Promise<ContractTransaction> {
+    public async executeTransaction(transactionId: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
         const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.replaceOwner(owner, newOwner);
-    }
-
-    public async changeRequirement(newRequirement: BigNumberish): Promise<ContractTransaction> {
-        const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.changeRequirement(newRequirement);
-    }
-
-    public async submitTransaction(destination: string, value: BigNumberish, data: BytesLike): Promise<ContractTransaction> {
-        const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.submitTransaction(destination, value, data);
-    }
-
-    public async confirmTransaction(transactionId: BigNumberish): Promise<ContractTransaction> {
-        const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.confirmTransaction(transactionId);
-    }
-
-    public async revokeConfirmation(transactionId: BigNumberish): Promise<ContractTransaction> {
-        const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.revokeConfirmation(transactionId);
-    }
-
-    public async executeTransaction(transactionId: BigNumberish): Promise<ContractTransaction> {
-        const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.executeTransaction(transactionId);
+        return multisigContract.functions.executeTransaction(transactionId, overrides);
     }
 
 

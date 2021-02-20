@@ -142,7 +142,7 @@ contract MultisigWalletV1_0  {
         validRequirement(owners.length + 1, required)
     {
         isOwner[owner] = true;
-        owners.push(owner);
+        //owners.push(owner);
         emit OwnerAddition(owner);
     }
 

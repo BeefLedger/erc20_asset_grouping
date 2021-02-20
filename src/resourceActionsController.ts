@@ -1,4 +1,4 @@
-import { ContractTransaction, ethers, Signer } from "ethers";
+import { ContractTransaction, ethers, Signer, Overrides } from "ethers";
 import { ResourceActionsV10 } from "./types";
 import { getResourceActionsContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/ResourceActionsV1_0.json"
@@ -146,18 +146,28 @@ export class ResourceActionsController {
         return encode(artifact, functionName, args)
     }
 
-    public async setCompaniesContract(address: string): Promise<ContractTransaction> {
+    public async setCompaniesContract(address: string, overrides?: Overrides): Promise<ContractTransaction> {
         const resourceActionsContract = await this._getResourceActionsContract();
-        return resourceActionsContract.functions.setCompaniesContract(address);
+        return resourceActionsContract.functions.setCompaniesContract(address, overrides);
     }
 
-    public async setPermission(action: Action, companyAddress: string, allow: boolean): Promise<ContractTransaction> {
+    public async setPermission(
+        action: Action, 
+        companyAddress: string, 
+        allow: boolean,
+        overrides?: Overrides
+    ): Promise<ContractTransaction> {
         const resourceActionsContract = await this._getResourceActionsContract();
-        return resourceActionsContract.functions.setPermission(action, companyAddress, allow);
+        return resourceActionsContract.functions.setPermission(action, companyAddress, allow, overrides);
     }
 
-    public async setPermissions(actions: Array<Action>, companyAddress: string, allow: boolean): Promise<ContractTransaction> {
+    public async setPermissions(
+        actions: Array<Action>, 
+        companyAddress: string, 
+        allow: boolean,
+        overrides?: Overrides
+    ): Promise<ContractTransaction> {
         const resourceActionsContract = await this._getResourceActionsContract();
-        return resourceActionsContract.functions.setPermissions(actions, companyAddress, allow);
+        return resourceActionsContract.functions.setPermissions(actions, companyAddress, allow, overrides);
     }
 }
