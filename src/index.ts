@@ -8,6 +8,10 @@ export * from './multisigController';
 export * from './actionsStorageController';
 export * from './companiesController';
 export * from './resourceActionsController';
+export * from './dealRoomController';
+export * from './dealRoomHubController';
+export * from './multisigHashedController';
+
 export * from './ethereum/index';
 
 export * from './types'

@@ -8,6 +8,8 @@ import * as GroupingCompiled  from "../ethereum/abi/Grouping.json"
 import * as ActionsStorageCompiled  from "../ethereum/abi/ActionsStorageV1_1.json"
 import * as CompaniesCompiled  from "../ethereum/abi/CompaniesV1_0.json"
 import * as ResourceActionsCompiled  from "../ethereum/abi/ResourceActionsV1_0.json"
+import * as DealRoomHubCompiled  from "../ethereum/abi/DealRoomHubV1_0.json"
+import * as DealRoomCompiled  from "../ethereum/abi/MultiSigHashed.json"
 
 import { getContract } from "./contractFactory"
 import { 
@@ -17,7 +19,10 @@ import {
     ERC721BeefLedgerV11, 
     ActionsStorageV11,
     CompaniesV10,
-    ResourceActionsV10
+    ResourceActionsV10,
+    DealRoomHubV10,
+    DealRoom,
+    MultiSigHashed
 } from "../types"
 
 export async function getERC20FactoryContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ERC20FactoryV10> {
@@ -50,4 +55,16 @@ export async function getCompaniesContract(address: string, signerIdxOrAddressOr
 
 export async function getResourceActionsContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ResourceActionsV10> {
     return getContract<ResourceActionsV10>(address, ResourceActionsCompiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getDealRoomHubContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<DealRoomHubV10> {
+    return getContract<DealRoomHubV10>(address, DealRoomHubCompiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getDealRoomContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<DealRoom> {
+    return getContract<DealRoom>(address, DealRoomCompiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getMultisigHashedContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<MultiSigHashed> {
+    return getContract<MultiSigHashed>(address, DealRoomCompiled.abi, signerIdxOrAddressOrSigner)
 }

@@ -4,20 +4,6 @@ import { ActionsStorageV10 } from "./types";
 import * as artifact from "./ethereum/abi/ActionsStorageV1_1.json"
 import { encode } from "./ethereum/encodeCall";
 
-interface EntryData {
-    entryType: BigNumberish,
-    company: string,
-    signatorie: string,
-    uids: Array<BigNumberish>,
-    timestamp: BigNumberish,
-    required: BigNumberish,
-    allowedCompanies: Array<string>,
-    requiresMultisig: boolean,
-    approved: boolean,
-    inputOf: BigNumberish,
-    outputOf: BigNumberish
-}
-
 export class ActionsStorageController {
 
     private _actionsStorageAddress: string;
