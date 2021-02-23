@@ -2,7 +2,7 @@ import { ContractTransaction, ethers, Signer, Overrides } from "ethers";
 import { ResourceActionsV10 } from "./types";
 import { getResourceActionsContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/ResourceActionsV1_0.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export enum Action {
     PRODUCE,
@@ -142,10 +142,6 @@ export class ResourceActionsController {
 
 
      /**Setters */
-     public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
-
     public async setCompaniesContract(address: string, overrides?: Overrides): Promise<ContractTransaction> {
         const resourceActionsContract = await this._getResourceActionsContract();
         return resourceActionsContract.functions.setCompaniesContract(address, overrides);
@@ -169,5 +165,14 @@ export class ResourceActionsController {
     ): Promise<ContractTransaction> {
         const resourceActionsContract = await this._getResourceActionsContract();
         return resourceActionsContract.functions.setPermissions(actions, companyAddress, allow, overrides);
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }

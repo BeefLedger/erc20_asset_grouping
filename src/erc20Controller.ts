@@ -2,7 +2,7 @@ import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "et
 import { ERC20ForAssetGrouping } from "./types/ERC20ForAssetGrouping";
 import { getErc20Contract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/ERC20ForAssetGrouping.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export class ERC20Controller {
 
@@ -78,11 +78,7 @@ export class ERC20Controller {
     }
 
 
-    /** Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
-    
+    /** Setters */    
     public async transfer(recipient: string, amount: string, overrides?: Overrides): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
         return contract.functions.transfer(recipient, amount, overrides)
@@ -101,6 +97,15 @@ export class ERC20Controller {
     public async mint(receiver: string, amount: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
         return contract.functions.mint(receiver, amount, overrides)
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 
     

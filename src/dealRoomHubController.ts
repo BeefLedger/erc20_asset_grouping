@@ -3,7 +3,7 @@ import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "et
 import { DealRoomHubV10 } from "./types";
 import { getDealRoomHubContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/DealRoomHubV1_0.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export type DealRoomCreateParams = {
     dealRoomHubAddress: string
@@ -84,10 +84,6 @@ export class DealRoomHubController {
     }
 
     /**Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
-
     public async makeRoom(params: DealRoomCreateParams, overrides?: Overrides): Promise<ContractTransaction> {
         const dealRoomHubContract = await this._getDealRoomHubContract();
         return dealRoomHubContract.functions.makeRoom(params, overrides);
@@ -96,5 +92,14 @@ export class DealRoomHubController {
     public async changeOwner(newOwner: string, overrides?: Overrides): Promise<ContractTransaction> {
         const dealRoomHubContract = await this._getDealRoomHubContract();
         return dealRoomHubContract.functions.changeOwner(newOwner, overrides);
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }

@@ -3,7 +3,7 @@ import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "et
 import { DealRoom } from "./types";
 import { getDealRoomContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/DealRoom.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export type Deal = {
     id: BigNumberish;
@@ -101,10 +101,6 @@ export class DealRoomController {
     }
 
     /**Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
-
     public async makeDeal(
         erc20: string, 
         erc721: string, 
@@ -129,5 +125,14 @@ export class DealRoomController {
     public async withdrawDealCoins(id: BigNumberish): Promise<ContractTransaction> {
         const dealRoomContract = await this._getDealRoomContract();
         return dealRoomContract.functions.withdrawDealCoins(id);
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }

@@ -5,7 +5,7 @@ import { initializeERC721, upgradeERC721 } from './ethereum/deploy/deploy'
 import { ERC721BeefLedgerV10 } from "./types";
 import { ERC721BeefLedgerV11 } from "./types/ERC721BeefLedgerV11";
 import * as artifact from "./ethereum/abi/ERC721BeefLedgerV1_1.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 
 export class ERC721Controller {
@@ -97,10 +97,6 @@ export class ERC721Controller {
     
 
     /**Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
-
     public async setMultisigWallet(newAddress: string, overrides?: Overrides): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
         return erc721Contract.functions.setMultisigWallet(newAddress, overrides);
@@ -144,5 +140,14 @@ export class ERC721Controller {
     ): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
         return erc721Contract.functions.addAssetsToGrouping(tokenIds, groupingAddress, overrides);
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }

@@ -3,7 +3,7 @@ import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer, Overrides
 import { CompaniesV10 } from "./types";
 import { getCompaniesContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/CompaniesV1_0.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 
 export class CompaniesController {
@@ -76,9 +76,6 @@ export class CompaniesController {
 
 
     /**Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
 
     public async addCompany(
         address: string, 
@@ -87,7 +84,7 @@ export class CompaniesController {
         overrides?: Overrides
     ): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
-        return companiesContract.functions.addCompany(address, name, ipfsLink);
+        return companiesContract.functions.addCompany(address, name, ipfsLink, overrides);
     }
 
     public async removeCompany(address: string, overrides?: Overrides): Promise<ContractTransaction> {
@@ -108,5 +105,14 @@ export class CompaniesController {
     public async setCompanyData(name: string, ipfsLink: BytesLike, overrides?: Overrides): Promise<ContractTransaction> {
         const companiesContract = await this._getCompaniesContract();
         return companiesContract.functions.setCompanyData(name, ipfsLink, overrides);
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }

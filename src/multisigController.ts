@@ -4,7 +4,7 @@ import { initializeMultisig } from "./ethereum/deploy/deploy";
 import { MultisigWalletV10 } from "./types";
 
 import * as artifact from "./ethereum/abi/MultisigWalletV1_0.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export class MultisigController {
     private _signer: Signer;
@@ -94,12 +94,7 @@ export class MultisigController {
 
 
 
-     /**Setters */
-     public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
-
-    
+     /**Setters */  
     public async submitTransaction(
         destination: string, 
         value: BigNumberish, 
@@ -125,5 +120,12 @@ export class MultisigController {
         return multisigContract.functions.executeTransaction(transactionId, overrides);
     }
 
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
 
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
+    }
 }

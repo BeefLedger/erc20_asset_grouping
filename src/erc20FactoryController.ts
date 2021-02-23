@@ -4,7 +4,7 @@ import { getERC20FactoryContract } from "./chain/prefabContractFactory";
 import { ERC20FactoryV10 } from "./types/ERC20FactoryV10";
 import { initializeERC20Factory } from './ethereum/deploy/deploy'
 import * as artifact from "./ethereum/abi/ERC20FactoryV1_0.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 
 export class ERC20FactoryController {
@@ -66,8 +66,12 @@ export class ERC20FactoryController {
         return erc20FactoryContract.functions.deploy(chainId, name, symbol)
     }
 
-    /** Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
         return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }

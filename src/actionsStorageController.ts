@@ -2,7 +2,7 @@ import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "et
 import { getActionsStorageContract } from "./chain/prefabContractFactory";
 import { ActionsStorageV10 } from "./types";
 import * as artifact from "./ethereum/abi/ActionsStorageV1_1.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export class ActionsStorageController {
 
@@ -120,9 +120,7 @@ export class ActionsStorageController {
 
 
     /**Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
+    
 
     public async setResourceActionsContract(newAddress: string, overrides?: Overrides): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
@@ -179,5 +177,14 @@ export class ActionsStorageController {
     public async validateEntry(entryNumber: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.functions.validateEntry(entryNumber, overrides);
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }

@@ -3,7 +3,7 @@ import { BigNumberish, BytesLike, ContractTransaction, ethers, Signer, Overrides
 import { MultiSigHashed } from "./types";
 import { getMultisigHashedContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/MultiSigHashed.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export type Transaction = {
     destination: string;
@@ -88,10 +88,6 @@ export class MultisigHashedController {
     }
 
     /**Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
-        return encode(artifact, functionName, args)
-    }
-
     public async submitTransaction(
         destination: string, 
         value: BigNumberish, 
@@ -115,6 +111,15 @@ export class MultisigHashedController {
     public async executeTransaction(hash: BytesLike, overrides?: Overrides): Promise<ContractTransaction> {
         const multisigHashedContract = await this._getMultisigHashedContract();
         return multisigHashedContract.functions.executeTransaction(hash, overrides);
+    }
+
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
+        return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 
 }

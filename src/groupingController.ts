@@ -4,7 +4,7 @@ import { getGroupingContract } from "./chain/prefabContractFactory";
 import { deployGrouping } from "./ethereum/deploy/deploy";
 import { Grouping } from "./types";
 import * as artifact from "./ethereum/abi/Grouping.json"
-import { encode } from "./ethereum/encodeCall";
+import { decode, encode } from "./ethereum/encodeCall";
 
 export class GroupingController {
 
@@ -21,8 +21,6 @@ export class GroupingController {
             this._signer = web3Wrapper.getSigner()
         }
     }
-
-    
 
     public static async deployGroupingContract(signer: Signer, rgTokenAddress: string, erc721Address: string): Promise<Grouping> {
         return deployGrouping(signer, rgTokenAddress, erc721Address)
@@ -71,8 +69,12 @@ export class GroupingController {
         return erc721Contract.getERC721Address();
     }
 
-    /** Setters */
-    public encodeCall(functionName: string, args?: any[]): string {
+    /** Helpers */
+    public static encodeCall(functionName: string, args?: any[]): string {
         return encode(artifact, functionName, args)
+    }
+
+    public static decodeCall(data: string): string {
+        return decode(artifact, data)
     }
 }
