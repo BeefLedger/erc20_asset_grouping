@@ -9,7 +9,8 @@ import * as ActionsStorageCompiled  from "../ethereum/abi/ActionsStorageV1_1.jso
 import * as CompaniesCompiled  from "../ethereum/abi/CompaniesV1_0.json"
 import * as ResourceActionsCompiled  from "../ethereum/abi/ResourceActionsV1_0.json"
 import * as DealRoomHubCompiled  from "../ethereum/abi/DealRoomHubV1_0.json"
-import * as DealRoomCompiled  from "../ethereum/abi/MultiSigHashed.json"
+import * as DealRoomCompiled  from "../ethereum/abi/DealRoom.json"
+import * as MultisigHashedCompiled  from "../ethereum/abi/MultiSigHashed.json"
 
 import { getContract } from "./contractFactory"
 import { 
@@ -66,5 +67,5 @@ export async function getDealRoomContract(address: string, signerIdxOrAddressOrS
 }
 
 export async function getMultisigHashedContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<MultiSigHashed> {
-    return getContract<MultiSigHashed>(address, DealRoomCompiled.abi, signerIdxOrAddressOrSigner)
+    return getContract<MultiSigHashed>(address, MultisigHashedCompiled.abi, signerIdxOrAddressOrSigner)
 }

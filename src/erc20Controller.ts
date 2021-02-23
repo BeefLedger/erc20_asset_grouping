@@ -42,9 +42,9 @@ export class ERC20Controller {
         return erc20Contract
     }
 
-    public async balanceOf(): Promise<BigNumberish> {
+    public async balanceOf(address: string): Promise<BigNumberish> {
         const contract = await this._getERC20Contract();
-        return contract.balanceOf(await this._signer.getAddress());
+        return contract.balanceOf(address);
     }
 
     public async getName(): Promise<string> {

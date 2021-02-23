@@ -3,6 +3,7 @@ import { ethers, Signer } from "ethers";
 import { ERC20FactoryV10 } from "../types/ERC20FactoryV10";
 import { ERC20FactoryV11 } from "../types/ERC20FactoryV11";
 import { ERC20FactoryController } from "../erc20FactoryController";
+import { ERC20Controller } from "../erc20Controller";
 
 let provider: ethers.providers.JsonRpcProvider;
 let signers: Signer[] = []
@@ -57,6 +58,10 @@ describe("Deploy ERC20FactoryV10", () => {
 
                 const allTokens = await erc20Factory.getTokens();
                 expect(allTokens[0].toLowerCase()).toEqual(erc20Address.toLowerCase())
+
+                const erc20Controller = new ERC20Controller(erc20Address, signers[0]);
+                const balance = await erc20Controller.balanceOf();
+                expect(balance.toString()).toEqual("0")
                 
             } else {
                 console.log("aca1")
@@ -69,23 +74,9 @@ describe("Deploy ERC20FactoryV10", () => {
     } 
   })
 
-  it("Upgrades ERC20Factory", async (): Promise<any> => {
-    const [erc20FactoryContract, proxyAddress]: [ERC20FactoryV10, string] = await ERC20FactoryController.deployERC20FactoryContract(signers[0]);
-    const erc20ContractAddress = erc20FactoryContract.address;
-    expect(erc20ContractAddress.length).toEqual(42);
+  
 
-    const erc20Factory = new ERC20FactoryController(erc20ContractAddress, signers[0])
-    
-    await erc20Factory.deployERC20Contract(15122, "RG05", "RG05");
-
-    const upgradedContract: ERC20FactoryV11 = await erc20Factory.upgradeERC20FactoryContractV11(signers[0], proxyAddress);
-    const testvariable = await upgradedContract.functions.getTestVariable();
-    expect(testvariable.toString()).toEqual("745");
-    
-    const allTokens = await upgradedContract.getTokens();
-    expect(allTokens.length).toEqual(1)
-
-  })
+  
 })
 
     
