@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { getActionsStorageContract } from "./chain/prefabContractFactory";
 import { ActionsStorageV10 } from "./types";
 import * as artifact from "./ethereum/abi/ActionsStorageV1_1.json"
@@ -122,61 +122,58 @@ export class ActionsStorageController {
     /**Setters */
     
 
-    public async setResourceActionsContract(newAddress: string, overrides?: Overrides): Promise<ContractTransaction> {
+    public async setResourceActionsContract(newAddress: string): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.setResourceActionsContract(newAddress, overrides);
+        return actionsStorageContract.functions.setResourceActionsContract(newAddress);
     }
 
     /** Overriden in V1_1 */
-    public async setERC721(newAddress: string, overrides?: Overrides): Promise<ContractTransaction> {
+    public async setERC721(newAddress: string): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.setERC721(newAddress, overrides);
+        return actionsStorageContract.functions.setERC721(newAddress);
     }
 
-    public async approveProduce(entryNumber: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
+    public async approveProduce(entryNumber: BigNumberish): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.approveProduce(entryNumber, overrides);
+        return actionsStorageContract.functions.approveProduce(entryNumber);
     }
 
-    public async produce(assetsIds: Array<BigNumberish>, overrides?: Overrides): Promise<ContractTransaction> {
+    public async produce(assetsIds: Array<BigNumberish>): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.produce(assetsIds, overrides);
+        return actionsStorageContract.functions.produce(assetsIds);
     }
 
     public async measure(
         assetsIds: Array<BigNumberish>, 
         requiredSignatures: BigNumberish, 
-        companiesInvolved: Array<string>, 
-        overrides?: Overrides
+        companiesInvolved: Array<string>
     ): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.measure(assetsIds, requiredSignatures, companiesInvolved, overrides);
+        return actionsStorageContract.functions.measure(assetsIds, requiredSignatures, companiesInvolved);
     }
 
     public async pickUp(
         assetsIds: Array<BigNumberish>, 
         requiredSignatures: BigNumberish, 
-        companiesInvolved: Array<string>,
-        overrides?: Overrides
+        companiesInvolved: Array<string>
     ): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.pickUp(assetsIds, requiredSignatures, companiesInvolved, overrides);
+        return actionsStorageContract.functions.pickUp(assetsIds, requiredSignatures, companiesInvolved);
     }
 
     public async dropOff(
         assetsIds: Array<BigNumberish>, 
         requiredSignatures: BigNumberish, 
         companiesInvolved: Array<string>,
-        outputOf: BigNumberish,
-        overrides?: Overrides
+        outputOf: BigNumberish
     ): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.dropOff(assetsIds, requiredSignatures, companiesInvolved, outputOf, overrides);
+        return actionsStorageContract.functions.dropOff(assetsIds, requiredSignatures, companiesInvolved, outputOf);
     }
 
-    public async validateEntry(entryNumber: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
+    public async validateEntry(entryNumber: BigNumberish): Promise<ContractTransaction> {
         const actionsStorageContract = await this._getActionsStorageContract();
-        return actionsStorageContract.functions.validateEntry(entryNumber, overrides);
+        return actionsStorageContract.functions.validateEntry(entryNumber);
     }
 
     /** Helpers */

@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 
 import { DealRoom } from "./types";
 import { getDealRoomContract } from "./chain/prefabContractFactory";
@@ -105,11 +105,10 @@ export class DealRoomController {
         erc20: string, 
         erc721: string, 
         price: BigNumberish, 
-        assets: Array<BigNumberish>, 
-        overrides?: Overrides
+        assets: Array<BigNumberish>
     ): Promise<ContractTransaction> {
         const dealRoomContract = await this._getDealRoomContract();
-        return dealRoomContract.functions.makeDeal(erc20, erc721, price, assets, overrides);
+        return dealRoomContract.functions.makeDeal(erc20, erc721, price, assets);
     }
 
     public async settle(id: BigNumberish): Promise<ContractTransaction> {

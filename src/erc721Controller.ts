@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { getERC721Contract } from "./chain/prefabContractFactory";
 
 import { initializeERC721, upgradeERC721 } from './ethereum/deploy/deploy'
@@ -97,49 +97,47 @@ export class ERC721Controller {
     
 
     /**Setters */
-    public async setMultisigWallet(newAddress: string, overrides?: Overrides): Promise<ContractTransaction> {
+    public async setMultisigWallet(newAddress: string): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
-        return erc721Contract.functions.setMultisigWallet(newAddress, overrides);
+        return erc721Contract.functions.setMultisigWallet(newAddress);
     }
 
-    public async approve(to: string, tokenId: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
+    public async approve(to: string, tokenId: BigNumberish): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
-        return erc721Contract.functions.approve(to, tokenId, overrides);
+        return erc721Contract.functions.approve(to, tokenId);
     }
 
-    public async setApprovalForAll(to: string, approved: boolean, overrides?: Overrides): Promise<ContractTransaction> {
+    public async setApprovalForAll(to: string, approved: boolean): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
-        return erc721Contract.functions.setApprovalForAll(to, approved, overrides);
+        return erc721Contract.functions.setApprovalForAll(to, approved);
     }
 
     public async transferFrom(
         from: string, 
         to: string, 
-        tokenId: BigNumberish, 
-        overrides?: Overrides
+        tokenId: BigNumberish
     ): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
-        return erc721Contract.functions.transferFrom(from, to, tokenId, overrides);
+        return erc721Contract.functions.transferFrom(from, to, tokenId);
     }
 
-    public async mint(to: string, tokenIds: Array<BigNumberish>, overrides?: Overrides): Promise<ContractTransaction> {
+    public async mint(to: string, tokenIds: Array<BigNumberish>): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
-        return erc721Contract.functions.mint(to, tokenIds, overrides);
+        return erc721Contract.functions.mint(to, tokenIds);
     }
 
-    public async burn(tokenId: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
+    public async burn(tokenId: BigNumberish): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
-        return erc721Contract.functions.burn(tokenId, overrides);
+        return erc721Contract.functions.burn(tokenId);
     }
 
     /** Version 1_1 */
     public async addAssetsToGrouping(
         tokenIds: Array<BigNumberish>, 
-        groupingAddress: string,
-        overrides?: Overrides
+        groupingAddress: string
     ): Promise<ContractTransaction> {
         const erc721Contract = await this._getERC721Contract();
-        return erc721Contract.functions.addAssetsToGrouping(tokenIds, groupingAddress, overrides);
+        return erc721Contract.functions.addAssetsToGrouping(tokenIds, groupingAddress);
     }
 
     /** Helpers */

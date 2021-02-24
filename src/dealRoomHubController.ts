@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 
 import { DealRoomHubV10 } from "./types";
 import { getDealRoomHubContract } from "./chain/prefabContractFactory";
@@ -84,14 +84,14 @@ export class DealRoomHubController {
     }
 
     /**Setters */
-    public async makeRoom(params: DealRoomCreateParams, overrides?: Overrides): Promise<ContractTransaction> {
+    public async makeRoom(params: DealRoomCreateParams): Promise<ContractTransaction> {
         const dealRoomHubContract = await this._getDealRoomHubContract();
-        return dealRoomHubContract.functions.makeRoom(params, overrides);
+        return dealRoomHubContract.functions.makeRoom(params);
     }
 
-    public async changeOwner(newOwner: string, overrides?: Overrides): Promise<ContractTransaction> {
+    public async changeOwner(newOwner: string): Promise<ContractTransaction> {
         const dealRoomHubContract = await this._getDealRoomHubContract();
-        return dealRoomHubContract.functions.changeOwner(newOwner, overrides);
+        return dealRoomHubContract.functions.changeOwner(newOwner);
     }
 
     /** Helpers */

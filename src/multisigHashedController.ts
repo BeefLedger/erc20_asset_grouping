@@ -98,19 +98,19 @@ export class MultisigHashedController {
         return multisigHashedContract.functions.submitTransaction(destination, value, data, overrides);
     }
 
-    public async confirmTransaction(hash: BytesLike, overrides?: Overrides): Promise<ContractTransaction> {
+    public async confirmTransaction(hash: BytesLike): Promise<ContractTransaction> {
         const multisigHashedContract = await this._getMultisigHashedContract();
-        return multisigHashedContract.functions.confirmTransaction(hash, overrides);
+        return multisigHashedContract.functions.confirmTransaction(hash);
     }
 
-    public async revokeConfirmation(hash: BytesLike, overrides?: Overrides): Promise<ContractTransaction> {
+    public async revokeConfirmation(hash: BytesLike): Promise<ContractTransaction> {
         const multisigHashedContract = await this._getMultisigHashedContract();
-        return multisigHashedContract.functions.revokeConfirmation(hash, overrides);
+        return multisigHashedContract.functions.revokeConfirmation(hash);
     }
 
-    public async executeTransaction(hash: BytesLike, overrides?: Overrides): Promise<ContractTransaction> {
+    public async executeTransaction(hash: BytesLike): Promise<ContractTransaction> {
         const multisigHashedContract = await this._getMultisigHashedContract();
-        return multisigHashedContract.functions.executeTransaction(hash, overrides);
+        return multisigHashedContract.functions.executeTransaction(hash);
     }
 
     /** Helpers */

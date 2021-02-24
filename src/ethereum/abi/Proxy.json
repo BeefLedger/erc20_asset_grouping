@@ -1691,7 +1691,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-23T17:21:29.556Z",
+  "updatedAt": "2021-02-24T16:22:32.033Z",
   "devdoc": {
     "details": "Gives the possibility to delegate any call to a foreign implementation.",
     "kind": "dev",

@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, ethers, Signer, Overrides } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
 import { ERC20ForAssetGrouping } from "./types/ERC20ForAssetGrouping";
 import { getErc20Contract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/ERC20ForAssetGrouping.json"
@@ -79,24 +79,24 @@ export class ERC20Controller {
 
 
     /** Setters */    
-    public async transfer(recipient: string, amount: string, overrides?: Overrides): Promise<ContractTransaction> {
+    public async transfer(recipient: string, amount: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return contract.functions.transfer(recipient, amount, overrides)
+        return contract.functions.transfer(recipient, amount)
     }
 
-    public async transferOwnership(newOwner: string, overrides?: Overrides): Promise<ContractTransaction> {
+    public async transferOwnership(newOwner: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return  contract.functions.transferOwnership(newOwner, overrides)
+        return  contract.functions.transferOwnership(newOwner)
     }
 
-    public async setGroupingContracts(address: string, overrides?: Overrides): Promise<ContractTransaction> {
+    public async setGroupingContracts(address: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return contract.functions.setAssetGrouping(address, overrides)
+        return contract.functions.setAssetGrouping(address)
     }
 
-    public async mint(receiver: string, amount: BigNumberish, overrides?: Overrides): Promise<ContractTransaction> {
+    public async mint(receiver: string, amount: BigNumberish): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
-        return contract.functions.mint(receiver, amount, overrides)
+        return contract.functions.mint(receiver, amount)
     }
 
     /** Helpers */

@@ -12,8 +12,10 @@ import * as artifactMultisig from "../abi/MultisigWalletV1_0.json"
 
 import * as artifactGrouping from "../abi/Grouping.json"
 
+import * as artifactCompanies from "../abi/CompaniesV1_0.json"
+
 import { ERC20FactoryV10 } from "../../types/ERC20FactoryV10"
-import { ERC20FactoryV11, ERC721BeefLedgerV10, Grouping, MultisigWalletV10 } from "../../types"
+import { CompaniesV10, ERC20FactoryV11, ERC721BeefLedgerV10, Grouping, MultisigWalletV10 } from "../../types"
 import { ERC721BeefLedgerV11 } from "../../types/ERC721BeefLedgerV11"
 
 
@@ -43,6 +45,12 @@ export async function upgradeERC721(signer: Signer, proxyAddress: string): Promi
 /** Multisig */
 export async function initializeMultisig(signer: Signer, owners: Array<string>, requirement: BigNumberish): Promise<[MultisigWalletV10, string]>  {
     const [contract, proxyAddress] = await initializeContract<MultisigWalletV10>(signer, artifactMultisig, "initialize", [owners, requirement]) 
+    return [contract, proxyAddress]
+}
+
+/** Companies */
+export async function initializeCompanies(signer: Signer, owner: string): Promise<[CompaniesV10, string]>  {
+    const [contract, proxyAddress] = await initializeContract<CompaniesV10>(signer, artifactCompanies, "initialize", [owner]) 
     return [contract, proxyAddress]
 }
 
