@@ -673,15 +673,15 @@
     "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ActionsStorageV1_1.sol",
     "exportedSymbols": {
       "ActionsStorageV1_1": [
-        6861
+        6875
       ]
     },
-    "id": 6862,
+    "id": 6876,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6764,
+        "id": 6778,
         "literals": [
           "solidity",
           ">=",
@@ -697,9 +697,9 @@
       {
         "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ActionsStorageV1_0.sol",
         "file": "../V1_0/ActionsStorageV1_0.sol",
-        "id": 6765,
+        "id": 6779,
         "nodeType": "ImportDirective",
-        "scope": 6862,
+        "scope": 6876,
         "sourceUnit": 3238,
         "src": "66:40:13",
         "symbolAliases": [],
@@ -708,10 +708,10 @@
       {
         "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol",
         "file": "./ERC721BeefLedgerV1_1.sol",
-        "id": 6766,
+        "id": 6780,
         "nodeType": "ImportDirective",
-        "scope": 6862,
-        "sourceUnit": 6976,
+        "scope": 6876,
+        "sourceUnit": 6990,
         "src": "107:36:13",
         "symbolAliases": [],
         "unitAlias": ""
@@ -723,7 +723,7 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 6767,
+              "id": 6781,
               "name": "ActionsStorageV1_0",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 3237,
@@ -733,7 +733,7 @@
                 "typeString": "contract ActionsStorageV1_0"
               }
             },
-            "id": 6768,
+            "id": 6782,
             "nodeType": "InheritanceSpecifier",
             "src": "176:18:13"
           }
@@ -745,9 +745,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6861,
+        "id": 6875,
         "linearizedBaseContracts": [
-          6861,
+          6875,
           3237,
           2018
         ],
@@ -756,28 +756,28 @@
         "nodes": [
           {
             "constant": false,
-            "id": 6770,
+            "id": 6784,
             "mutability": "mutable",
             "name": "erc721V1_1",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 6861,
+            "scope": 6875,
             "src": "202:40:13",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
               "contractScope": null,
-              "id": 6769,
+              "id": 6783,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6975,
+              "referencedDeclaration": 6989,
               "src": "202:20:13",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -786,12 +786,12 @@
           },
           {
             "constant": false,
-            "id": 6772,
+            "id": 6786,
             "mutability": "mutable",
             "name": "_initializedV11",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 6861,
+            "scope": 6875,
             "src": "269:29:13",
             "stateVariable": true,
             "storageLocation": "default",
@@ -800,7 +800,7 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 6771,
+              "id": 6785,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
               "src": "269:4:13",
@@ -814,7 +814,7 @@
           },
           {
             "body": {
-              "id": 6803,
+              "id": 6817,
               "nodeType": "Block",
               "src": "354:226:13",
               "statements": [
@@ -824,7 +824,7 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 6779,
+                        "id": 6793,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -835,11 +835,11 @@
                         "src": "372:16:13",
                         "subExpression": {
                           "argumentTypes": null,
-                          "id": 6778,
+                          "id": 6792,
                           "name": "_initializedV11",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6772,
+                          "referencedDeclaration": 6786,
                           "src": "373:15:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -854,7 +854,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "636f6e747261637420616c7265616479207570677261646564",
-                        "id": 6780,
+                        "id": 6794,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -881,7 +881,7 @@
                           "typeString": "literal_string \"contract already upgraded\""
                         }
                       ],
-                      "id": 6777,
+                      "id": 6791,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -895,7 +895,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 6781,
+                    "id": 6795,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -910,7 +910,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6782,
+                  "id": 6796,
                   "nodeType": "ExpressionStatement",
                   "src": "364:54:13"
                 },
@@ -924,18 +924,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 6789,
+                        "id": 6803,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 6784,
+                          "id": 6798,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6774,
+                          "referencedDeclaration": 6788,
                           "src": "436:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -950,7 +950,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 6787,
+                              "id": 6801,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -973,7 +973,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 6786,
+                            "id": 6800,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -985,7 +985,7 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 6785,
+                              "id": 6799,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "447:7:13",
@@ -995,7 +995,7 @@
                               }
                             }
                           },
-                          "id": 6788,
+                          "id": 6802,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1019,7 +1019,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "45524337323120636f6e74726163742063616e6e6f742062652030",
-                        "id": 6790,
+                        "id": 6804,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1046,7 +1046,7 @@
                           "typeString": "literal_string \"ERC721 contract cannot be 0\""
                         }
                       ],
-                      "id": 6783,
+                      "id": 6797,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1060,7 +1060,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 6791,
+                    "id": 6805,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1075,28 +1075,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6792,
+                  "id": 6806,
                   "nodeType": "ExpressionStatement",
                   "src": "428:61:13"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 6797,
+                    "id": 6811,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6793,
+                      "id": 6807,
                       "name": "erc721V1_1",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6770,
+                      "referencedDeclaration": 6784,
                       "src": "499:10:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -1107,11 +1107,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 6795,
+                          "id": 6809,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6774,
+                          "referencedDeclaration": 6788,
                           "src": "533:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1126,18 +1126,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 6794,
+                        "id": 6808,
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6975,
+                        "referencedDeclaration": 6989,
                         "src": "512:20:13",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6975_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6989_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
-                      "id": 6796,
+                      "id": 6810,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1148,35 +1148,35 @@
                       "src": "512:29:13",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "499:42:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
-                  "id": 6798,
+                  "id": 6812,
                   "nodeType": "ExpressionStatement",
                   "src": "499:42:13"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 6801,
+                    "id": 6815,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6799,
+                      "id": 6813,
                       "name": "_initializedV11",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6772,
+                      "referencedDeclaration": 6786,
                       "src": "551:15:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1188,7 +1188,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 6800,
+                      "id": 6814,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1209,7 +1209,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 6802,
+                  "id": 6816,
                   "nodeType": "ExpressionStatement",
                   "src": "551:22:13"
                 }
@@ -1217,7 +1217,7 @@
             },
             "documentation": null,
             "functionSelector": "a6039fbd",
-            "id": 6804,
+            "id": 6818,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1225,17 +1225,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6775,
+              "id": 6789,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6774,
+                  "id": 6788,
                   "mutability": "mutable",
                   "name": "_erc721",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6804,
+                  "scope": 6818,
                   "src": "328:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1244,7 +1244,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6773,
+                    "id": 6787,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "328:7:13",
@@ -1261,12 +1261,12 @@
               "src": "327:17:13"
             },
             "returnParameters": {
-              "id": 6776,
+              "id": 6790,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "354:0:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "305:275:13",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1277,7 +1277,7 @@
               2227
             ],
             "body": {
-              "id": 6828,
+              "id": 6842,
               "nodeType": "Block",
               "src": "656:130:13",
               "statements": [
@@ -1291,18 +1291,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 6818,
+                        "id": 6832,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 6813,
+                          "id": 6827,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6806,
+                          "referencedDeclaration": 6820,
                           "src": "674:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1317,7 +1317,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 6816,
+                              "id": 6830,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -1340,7 +1340,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 6815,
+                            "id": 6829,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1352,7 +1352,7 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 6814,
+                              "id": 6828,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "685:7:13",
@@ -1362,7 +1362,7 @@
                               }
                             }
                           },
-                          "id": 6817,
+                          "id": 6831,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1386,7 +1386,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "45524337323120636f6e74726163742063616e6e6f742062652030",
-                        "id": 6819,
+                        "id": 6833,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1413,7 +1413,7 @@
                           "typeString": "literal_string \"ERC721 contract cannot be 0\""
                         }
                       ],
-                      "id": 6812,
+                      "id": 6826,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1427,7 +1427,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 6820,
+                    "id": 6834,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1442,28 +1442,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6821,
+                  "id": 6835,
                   "nodeType": "ExpressionStatement",
                   "src": "666:61:13"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 6826,
+                    "id": 6840,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6822,
+                      "id": 6836,
                       "name": "erc721V1_1",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6770,
+                      "referencedDeclaration": 6784,
                       "src": "737:10:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -1474,11 +1474,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 6824,
+                          "id": 6838,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6806,
+                          "referencedDeclaration": 6820,
                           "src": "771:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1493,18 +1493,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 6823,
+                        "id": 6837,
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6975,
+                        "referencedDeclaration": 6989,
                         "src": "750:20:13",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6975_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6989_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
-                      "id": 6825,
+                      "id": 6839,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1515,17 +1515,17 @@
                       "src": "750:29:13",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "737:42:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
-                  "id": 6827,
+                  "id": 6841,
                   "nodeType": "ExpressionStatement",
                   "src": "737:42:13"
                 }
@@ -1533,16 +1533,16 @@
             },
             "documentation": null,
             "functionSelector": "094144a5",
-            "id": 6829,
+            "id": 6843,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 6810,
+                "id": 6824,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 6809,
+                  "id": 6823,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
@@ -1560,23 +1560,23 @@
             "name": "setERC721",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 6808,
+              "id": 6822,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "630:8:13"
             },
             "parameters": {
-              "id": 6807,
+              "id": 6821,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6806,
+                  "id": 6820,
                   "mutability": "mutable",
                   "name": "_erc721",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6829,
+                  "scope": 6843,
                   "src": "605:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1585,7 +1585,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6805,
+                    "id": 6819,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "605:7:13",
@@ -1602,12 +1602,12 @@
               "src": "604:17:13"
             },
             "returnParameters": {
-              "id": 6811,
+              "id": 6825,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "656:0:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "586:200:13",
             "stateMutability": "nonpayable",
             "virtual": true,
@@ -1618,7 +1618,7 @@
               3117
             ],
             "body": {
-              "id": 6847,
+              "id": 6861,
               "nodeType": "Block",
               "src": "899:68:13",
               "statements": [
@@ -1632,7 +1632,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 6844,
+                        "id": 6858,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1642,11 +1642,11 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 6841,
+                              "id": 6855,
                               "name": "uid",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6833,
+                              "referencedDeclaration": 6847,
                               "src": "937:3:13",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -1663,32 +1663,32 @@
                             ],
                             "expression": {
                               "argumentTypes": null,
-                              "id": 6839,
+                              "id": 6853,
                               "name": "erc721V1_1",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6770,
+                              "referencedDeclaration": 6784,
                               "src": "917:10:13",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             },
-                            "id": 6840,
+                            "id": 6854,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "getOwner",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5180,
+                            "referencedDeclaration": 5194,
                             "src": "917:19:13",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_address_$",
                               "typeString": "function (uint256) view external returns (address)"
                             }
                           },
-                          "id": 6842,
+                          "id": 6856,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1707,11 +1707,11 @@
                         "operator": "==",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 6843,
+                          "id": 6857,
                           "name": "companyAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6831,
+                          "referencedDeclaration": 6845,
                           "src": "945:14:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1725,7 +1725,7 @@
                         }
                       }
                     ],
-                    "id": 6845,
+                    "id": 6859,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -1738,38 +1738,38 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 6838,
-                  "id": 6846,
+                  "functionReturnParameters": 6852,
+                  "id": 6860,
                   "nodeType": "Return",
                   "src": "909:51:13"
                 }
               ]
             },
             "documentation": null,
-            "id": 6848,
+            "id": 6862,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isCompanyOwner",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 6835,
+              "id": 6849,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "861:8:13"
             },
             "parameters": {
-              "id": 6834,
+              "id": 6848,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6831,
+                  "id": 6845,
                   "mutability": "mutable",
                   "name": "companyAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6848,
+                  "scope": 6862,
                   "src": "816:22:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1778,7 +1778,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6830,
+                    "id": 6844,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "816:7:13",
@@ -1793,12 +1793,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6833,
+                  "id": 6847,
                   "mutability": "mutable",
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6848,
+                  "scope": 6862,
                   "src": "840:11:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1807,7 +1807,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6832,
+                    "id": 6846,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "840:7:13",
@@ -1823,17 +1823,17 @@
               "src": "815:37:13"
             },
             "returnParameters": {
-              "id": 6838,
+              "id": 6852,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6837,
+                  "id": 6851,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6848,
+                  "scope": 6862,
                   "src": "893:4:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1842,7 +1842,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6836,
+                    "id": 6850,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "893:4:13",
@@ -1857,7 +1857,7 @@
               ],
               "src": "892:6:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "792:175:13",
             "stateMutability": "view",
             "virtual": true,
@@ -1868,7 +1868,7 @@
               3139
             ],
             "body": {
-              "id": 6859,
+              "id": 6873,
               "nodeType": "Block",
               "src": "1049:43:13",
               "statements": [
@@ -1878,14 +1878,14 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 6856,
+                        "id": 6870,
                         "name": "erc721V1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6770,
+                        "referencedDeclaration": 6784,
                         "src": "1074:10:13",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -1893,11 +1893,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
-                      "id": 6855,
+                      "id": 6869,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1909,7 +1909,7 @@
                         "typeString": "type(address)"
                       },
                       "typeName": {
-                        "id": 6854,
+                        "id": 6868,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "1066:7:13",
@@ -1919,7 +1919,7 @@
                         }
                       }
                     },
-                    "id": 6857,
+                    "id": 6871,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1934,8 +1934,8 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 6853,
-                  "id": 6858,
+                  "functionReturnParameters": 6867,
+                  "id": 6872,
                   "nodeType": "Return",
                   "src": "1059:26:13"
                 }
@@ -1943,36 +1943,36 @@
             },
             "documentation": null,
             "functionSelector": "612d16b2",
-            "id": 6860,
+            "id": 6874,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getERC721Contract",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 6850,
+              "id": 6864,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "1010:8:13"
             },
             "parameters": {
-              "id": 6849,
+              "id": 6863,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "999:2:13"
             },
             "returnParameters": {
-              "id": 6853,
+              "id": 6867,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6852,
+                  "id": 6866,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6860,
+                  "scope": 6874,
                   "src": "1040:7:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1981,7 +1981,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6851,
+                    "id": 6865,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1040:7:13",
@@ -1997,14 +1997,14 @@
               ],
               "src": "1039:9:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "973:119:13",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 6862,
+        "scope": 6876,
         "src": "145:950:13"
       }
     ],
@@ -2014,15 +2014,15 @@
     "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ActionsStorageV1_1.sol",
     "exportedSymbols": {
       "ActionsStorageV1_1": [
-        6861
+        6875
       ]
     },
-    "id": 6862,
+    "id": 6876,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6764,
+        "id": 6778,
         "literals": [
           "solidity",
           ">=",
@@ -2038,9 +2038,9 @@
       {
         "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ActionsStorageV1_0.sol",
         "file": "../V1_0/ActionsStorageV1_0.sol",
-        "id": 6765,
+        "id": 6779,
         "nodeType": "ImportDirective",
-        "scope": 6862,
+        "scope": 6876,
         "sourceUnit": 3238,
         "src": "66:40:13",
         "symbolAliases": [],
@@ -2049,10 +2049,10 @@
       {
         "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol",
         "file": "./ERC721BeefLedgerV1_1.sol",
-        "id": 6766,
+        "id": 6780,
         "nodeType": "ImportDirective",
-        "scope": 6862,
-        "sourceUnit": 6976,
+        "scope": 6876,
+        "sourceUnit": 6990,
         "src": "107:36:13",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2064,7 +2064,7 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 6767,
+              "id": 6781,
               "name": "ActionsStorageV1_0",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 3237,
@@ -2074,7 +2074,7 @@
                 "typeString": "contract ActionsStorageV1_0"
               }
             },
-            "id": 6768,
+            "id": 6782,
             "nodeType": "InheritanceSpecifier",
             "src": "176:18:13"
           }
@@ -2086,9 +2086,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 6861,
+        "id": 6875,
         "linearizedBaseContracts": [
-          6861,
+          6875,
           3237,
           2018
         ],
@@ -2097,28 +2097,28 @@
         "nodes": [
           {
             "constant": false,
-            "id": 6770,
+            "id": 6784,
             "mutability": "mutable",
             "name": "erc721V1_1",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 6861,
+            "scope": 6875,
             "src": "202:40:13",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
               "contractScope": null,
-              "id": 6769,
+              "id": 6783,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6975,
+              "referencedDeclaration": 6989,
               "src": "202:20:13",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -2127,12 +2127,12 @@
           },
           {
             "constant": false,
-            "id": 6772,
+            "id": 6786,
             "mutability": "mutable",
             "name": "_initializedV11",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 6861,
+            "scope": 6875,
             "src": "269:29:13",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2141,7 +2141,7 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 6771,
+              "id": 6785,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
               "src": "269:4:13",
@@ -2155,7 +2155,7 @@
           },
           {
             "body": {
-              "id": 6803,
+              "id": 6817,
               "nodeType": "Block",
               "src": "354:226:13",
               "statements": [
@@ -2165,7 +2165,7 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 6779,
+                        "id": 6793,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2176,11 +2176,11 @@
                         "src": "372:16:13",
                         "subExpression": {
                           "argumentTypes": null,
-                          "id": 6778,
+                          "id": 6792,
                           "name": "_initializedV11",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6772,
+                          "referencedDeclaration": 6786,
                           "src": "373:15:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -2195,7 +2195,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "636f6e747261637420616c7265616479207570677261646564",
-                        "id": 6780,
+                        "id": 6794,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2222,7 +2222,7 @@
                           "typeString": "literal_string \"contract already upgraded\""
                         }
                       ],
-                      "id": 6777,
+                      "id": 6791,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2236,7 +2236,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 6781,
+                    "id": 6795,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2251,7 +2251,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6782,
+                  "id": 6796,
                   "nodeType": "ExpressionStatement",
                   "src": "364:54:13"
                 },
@@ -2265,18 +2265,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 6789,
+                        "id": 6803,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 6784,
+                          "id": 6798,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6774,
+                          "referencedDeclaration": 6788,
                           "src": "436:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2291,7 +2291,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 6787,
+                              "id": 6801,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -2314,7 +2314,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 6786,
+                            "id": 6800,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2326,7 +2326,7 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 6785,
+                              "id": 6799,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "447:7:13",
@@ -2336,7 +2336,7 @@
                               }
                             }
                           },
-                          "id": 6788,
+                          "id": 6802,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2360,7 +2360,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "45524337323120636f6e74726163742063616e6e6f742062652030",
-                        "id": 6790,
+                        "id": 6804,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2387,7 +2387,7 @@
                           "typeString": "literal_string \"ERC721 contract cannot be 0\""
                         }
                       ],
-                      "id": 6783,
+                      "id": 6797,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2401,7 +2401,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 6791,
+                    "id": 6805,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2416,28 +2416,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6792,
+                  "id": 6806,
                   "nodeType": "ExpressionStatement",
                   "src": "428:61:13"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 6797,
+                    "id": 6811,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6793,
+                      "id": 6807,
                       "name": "erc721V1_1",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6770,
+                      "referencedDeclaration": 6784,
                       "src": "499:10:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -2448,11 +2448,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 6795,
+                          "id": 6809,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6774,
+                          "referencedDeclaration": 6788,
                           "src": "533:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2467,18 +2467,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 6794,
+                        "id": 6808,
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6975,
+                        "referencedDeclaration": 6989,
                         "src": "512:20:13",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6975_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6989_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
-                      "id": 6796,
+                      "id": 6810,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2489,35 +2489,35 @@
                       "src": "512:29:13",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "499:42:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
-                  "id": 6798,
+                  "id": 6812,
                   "nodeType": "ExpressionStatement",
                   "src": "499:42:13"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 6801,
+                    "id": 6815,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6799,
+                      "id": 6813,
                       "name": "_initializedV11",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6772,
+                      "referencedDeclaration": 6786,
                       "src": "551:15:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -2529,7 +2529,7 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "74727565",
-                      "id": 6800,
+                      "id": 6814,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2550,7 +2550,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 6802,
+                  "id": 6816,
                   "nodeType": "ExpressionStatement",
                   "src": "551:22:13"
                 }
@@ -2558,7 +2558,7 @@
             },
             "documentation": null,
             "functionSelector": "a6039fbd",
-            "id": 6804,
+            "id": 6818,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2566,17 +2566,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6775,
+              "id": 6789,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6774,
+                  "id": 6788,
                   "mutability": "mutable",
                   "name": "_erc721",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6804,
+                  "scope": 6818,
                   "src": "328:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2585,7 +2585,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6773,
+                    "id": 6787,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "328:7:13",
@@ -2602,12 +2602,12 @@
               "src": "327:17:13"
             },
             "returnParameters": {
-              "id": 6776,
+              "id": 6790,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "354:0:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "305:275:13",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -2618,7 +2618,7 @@
               2227
             ],
             "body": {
-              "id": 6828,
+              "id": 6842,
               "nodeType": "Block",
               "src": "656:130:13",
               "statements": [
@@ -2632,18 +2632,18 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 6818,
+                        "id": 6832,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "argumentTypes": null,
-                          "id": 6813,
+                          "id": 6827,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6806,
+                          "referencedDeclaration": 6820,
                           "src": "674:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2658,7 +2658,7 @@
                             {
                               "argumentTypes": null,
                               "hexValue": "30",
-                              "id": 6816,
+                              "id": 6830,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -2681,7 +2681,7 @@
                                 "typeString": "int_const 0"
                               }
                             ],
-                            "id": 6815,
+                            "id": 6829,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2693,7 +2693,7 @@
                               "typeString": "type(address)"
                             },
                             "typeName": {
-                              "id": 6814,
+                              "id": 6828,
                               "name": "address",
                               "nodeType": "ElementaryTypeName",
                               "src": "685:7:13",
@@ -2703,7 +2703,7 @@
                               }
                             }
                           },
-                          "id": 6817,
+                          "id": 6831,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2727,7 +2727,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "45524337323120636f6e74726163742063616e6e6f742062652030",
-                        "id": 6819,
+                        "id": 6833,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2754,7 +2754,7 @@
                           "typeString": "literal_string \"ERC721 contract cannot be 0\""
                         }
                       ],
-                      "id": 6812,
+                      "id": 6826,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2768,7 +2768,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 6820,
+                    "id": 6834,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2783,28 +2783,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 6821,
+                  "id": 6835,
                   "nodeType": "ExpressionStatement",
                   "src": "666:61:13"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 6826,
+                    "id": 6840,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6822,
+                      "id": 6836,
                       "name": "erc721V1_1",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6770,
+                      "referencedDeclaration": 6784,
                       "src": "737:10:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -2815,11 +2815,11 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 6824,
+                          "id": 6838,
                           "name": "_erc721",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6806,
+                          "referencedDeclaration": 6820,
                           "src": "771:7:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2834,18 +2834,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 6823,
+                        "id": 6837,
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6975,
+                        "referencedDeclaration": 6989,
                         "src": "750:20:13",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6975_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6989_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
-                      "id": 6825,
+                      "id": 6839,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2856,17 +2856,17 @@
                       "src": "750:29:13",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "737:42:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
-                  "id": 6827,
+                  "id": 6841,
                   "nodeType": "ExpressionStatement",
                   "src": "737:42:13"
                 }
@@ -2874,16 +2874,16 @@
             },
             "documentation": null,
             "functionSelector": "094144a5",
-            "id": 6829,
+            "id": 6843,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
                 "arguments": null,
-                "id": 6810,
+                "id": 6824,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 6809,
+                  "id": 6823,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
@@ -2901,23 +2901,23 @@
             "name": "setERC721",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 6808,
+              "id": 6822,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "630:8:13"
             },
             "parameters": {
-              "id": 6807,
+              "id": 6821,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6806,
+                  "id": 6820,
                   "mutability": "mutable",
                   "name": "_erc721",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6829,
+                  "scope": 6843,
                   "src": "605:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2926,7 +2926,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6805,
+                    "id": 6819,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "605:7:13",
@@ -2943,12 +2943,12 @@
               "src": "604:17:13"
             },
             "returnParameters": {
-              "id": 6811,
+              "id": 6825,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "656:0:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "586:200:13",
             "stateMutability": "nonpayable",
             "virtual": true,
@@ -2959,7 +2959,7 @@
               3117
             ],
             "body": {
-              "id": 6847,
+              "id": 6861,
               "nodeType": "Block",
               "src": "899:68:13",
               "statements": [
@@ -2973,7 +2973,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 6844,
+                        "id": 6858,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2983,11 +2983,11 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 6841,
+                              "id": 6855,
                               "name": "uid",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6833,
+                              "referencedDeclaration": 6847,
                               "src": "937:3:13",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -3004,32 +3004,32 @@
                             ],
                             "expression": {
                               "argumentTypes": null,
-                              "id": 6839,
+                              "id": 6853,
                               "name": "erc721V1_1",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6770,
+                              "referencedDeclaration": 6784,
                               "src": "917:10:13",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             },
-                            "id": 6840,
+                            "id": 6854,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "getOwner",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5180,
+                            "referencedDeclaration": 5194,
                             "src": "917:19:13",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_address_$",
                               "typeString": "function (uint256) view external returns (address)"
                             }
                           },
-                          "id": 6842,
+                          "id": 6856,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3048,11 +3048,11 @@
                         "operator": "==",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 6843,
+                          "id": 6857,
                           "name": "companyAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6831,
+                          "referencedDeclaration": 6845,
                           "src": "945:14:13",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -3066,7 +3066,7 @@
                         }
                       }
                     ],
-                    "id": 6845,
+                    "id": 6859,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -3079,38 +3079,38 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 6838,
-                  "id": 6846,
+                  "functionReturnParameters": 6852,
+                  "id": 6860,
                   "nodeType": "Return",
                   "src": "909:51:13"
                 }
               ]
             },
             "documentation": null,
-            "id": 6848,
+            "id": 6862,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "isCompanyOwner",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 6835,
+              "id": 6849,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "861:8:13"
             },
             "parameters": {
-              "id": 6834,
+              "id": 6848,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6831,
+                  "id": 6845,
                   "mutability": "mutable",
                   "name": "companyAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6848,
+                  "scope": 6862,
                   "src": "816:22:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3119,7 +3119,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6830,
+                    "id": 6844,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "816:7:13",
@@ -3134,12 +3134,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6833,
+                  "id": 6847,
                   "mutability": "mutable",
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6848,
+                  "scope": 6862,
                   "src": "840:11:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3148,7 +3148,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6832,
+                    "id": 6846,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "840:7:13",
@@ -3164,17 +3164,17 @@
               "src": "815:37:13"
             },
             "returnParameters": {
-              "id": 6838,
+              "id": 6852,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6837,
+                  "id": 6851,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6848,
+                  "scope": 6862,
                   "src": "893:4:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3183,7 +3183,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6836,
+                    "id": 6850,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "893:4:13",
@@ -3198,7 +3198,7 @@
               ],
               "src": "892:6:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "792:175:13",
             "stateMutability": "view",
             "virtual": true,
@@ -3209,7 +3209,7 @@
               3139
             ],
             "body": {
-              "id": 6859,
+              "id": 6873,
               "nodeType": "Block",
               "src": "1049:43:13",
               "statements": [
@@ -3219,14 +3219,14 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 6856,
+                        "id": 6870,
                         "name": "erc721V1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6770,
+                        "referencedDeclaration": 6784,
                         "src": "1074:10:13",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -3234,11 +3234,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6975",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
-                      "id": 6855,
+                      "id": 6869,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3250,7 +3250,7 @@
                         "typeString": "type(address)"
                       },
                       "typeName": {
-                        "id": 6854,
+                        "id": 6868,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "1066:7:13",
@@ -3260,7 +3260,7 @@
                         }
                       }
                     },
-                    "id": 6857,
+                    "id": 6871,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3275,8 +3275,8 @@
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 6853,
-                  "id": 6858,
+                  "functionReturnParameters": 6867,
+                  "id": 6872,
                   "nodeType": "Return",
                   "src": "1059:26:13"
                 }
@@ -3284,36 +3284,36 @@
             },
             "documentation": null,
             "functionSelector": "612d16b2",
-            "id": 6860,
+            "id": 6874,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getERC721Contract",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 6850,
+              "id": 6864,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "1010:8:13"
             },
             "parameters": {
-              "id": 6849,
+              "id": 6863,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "999:2:13"
             },
             "returnParameters": {
-              "id": 6853,
+              "id": 6867,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6852,
+                  "id": 6866,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6860,
+                  "scope": 6874,
                   "src": "1040:7:13",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3322,7 +3322,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6851,
+                    "id": 6865,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1040:7:13",
@@ -3338,14 +3338,14 @@
               ],
               "src": "1039:9:13"
             },
-            "scope": 6861,
+            "scope": 6875,
             "src": "973:119:13",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 6862,
+        "scope": 6876,
         "src": "145:950:13"
       }
     ],
@@ -3357,7 +3357,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-24T16:22:32.021Z",
+  "updatedAt": "2021-02-24T17:46:31.563Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

@@ -698,7 +698,7 @@
         "id": 2022,
         "nodeType": "ImportDirective",
         "scope": 3238,
-        "sourceUnit": 6763,
+        "sourceUnit": 6777,
         "src": "91:35:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -720,7 +720,7 @@
         "id": 2024,
         "nodeType": "ImportDirective",
         "scope": 3238,
-        "sourceUnit": 5182,
+        "sourceUnit": 5196,
         "src": "157:36:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -842,7 +842,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
               "typeString": "contract ResourceActionsV1_0"
             },
             "typeName": {
@@ -850,10 +850,10 @@
               "id": 2038,
               "name": "ResourceActionsV1_0",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6762,
+              "referencedDeclaration": 6776,
               "src": "463:19:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                 "typeString": "contract ResourceActionsV1_0"
               }
             },
@@ -872,7 +872,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
               "typeString": "contract ERC721BeefLedgerV1_0"
             },
             "typeName": {
@@ -880,10 +880,10 @@
               "id": 2040,
               "name": "ERC721BeefLedgerV1_0",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5181,
+              "referencedDeclaration": 5195,
               "src": "517:20:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                 "typeString": "contract ERC721BeefLedgerV1_0"
               }
             },
@@ -2382,7 +2382,7 @@
                       "referencedDeclaration": 2041,
                       "src": "2178:10:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
@@ -2416,10 +2416,10 @@
                         "name": "ERC721BeefLedgerV1_0",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5181,
+                        "referencedDeclaration": 5195,
                         "src": "2191:20:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5181_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5195_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_0)"
                         }
                       },
@@ -2434,13 +2434,13 @@
                       "src": "2191:29:6",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
                     "src": "2178:42:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                       "typeString": "contract ERC721BeefLedgerV1_0"
                     }
                   },
@@ -2830,7 +2830,7 @@
                       "referencedDeclaration": 2039,
                       "src": "2477:19:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                         "typeString": "contract ResourceActionsV1_0"
                       }
                     },
@@ -2864,10 +2864,10 @@
                         "name": "ResourceActionsV1_0",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6762,
+                        "referencedDeclaration": 6776,
                         "src": "2499:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ResourceActionsV1_0_$6762_$",
+                          "typeIdentifier": "t_type$_t_contract$_ResourceActionsV1_0_$6776_$",
                           "typeString": "type(contract ResourceActionsV1_0)"
                         }
                       },
@@ -2882,13 +2882,13 @@
                       "src": "2499:37:6",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                         "typeString": "contract ResourceActionsV1_0"
                       }
                     },
                     "src": "2477:59:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                      "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                       "typeString": "contract ResourceActionsV1_0"
                     }
                   },
@@ -2936,7 +2936,7 @@
                               "referencedDeclaration": 2039,
                               "src": "2576:19:6",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                                 "typeString": "contract ResourceActionsV1_0"
                               }
                             },
@@ -2947,7 +2947,7 @@
                             "lValueRequested": false,
                             "memberName": "getCompaniesContract",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 6748,
+                            "referencedDeclaration": 6762,
                             "src": "2576:40:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
@@ -3280,7 +3280,7 @@
                       "referencedDeclaration": 2041,
                       "src": "2774:10:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
@@ -3314,10 +3314,10 @@
                         "name": "ERC721BeefLedgerV1_0",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5181,
+                        "referencedDeclaration": 5195,
                         "src": "2787:20:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5181_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5195_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_0)"
                         }
                       },
@@ -3332,13 +3332,13 @@
                       "src": "2787:29:6",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
                     "src": "2774:42:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                       "typeString": "contract ERC721BeefLedgerV1_0"
                     }
                   },
@@ -15873,7 +15873,7 @@
                               "referencedDeclaration": 2041,
                               "src": "11628:10:6",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                                 "typeString": "contract ERC721BeefLedgerV1_0"
                               }
                             },
@@ -15884,7 +15884,7 @@
                             "lValueRequested": false,
                             "memberName": "getOwner",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5180,
+                            "referencedDeclaration": 5194,
                             "src": "11628:19:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_address_$",
@@ -16080,7 +16080,7 @@
                         "referencedDeclaration": 2039,
                         "src": "11785:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       }
@@ -16088,7 +16088,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       ],
@@ -16212,7 +16212,7 @@
                         "referencedDeclaration": 2041,
                         "src": "11910:10:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                           "typeString": "contract ERC721BeefLedgerV1_0"
                         }
                       }
@@ -16220,7 +16220,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                           "typeString": "contract ERC721BeefLedgerV1_0"
                         }
                       ],
@@ -16481,7 +16481,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12176:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -16492,10 +16492,10 @@
                           "lValueRequested": false,
                           "memberName": "getProduceAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6547,
+                          "referencedDeclaration": 6561,
                           "src": "12176:36:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -16510,7 +16510,7 @@
                         "src": "12176:38:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -16547,7 +16547,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -16564,7 +16564,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12142:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -16575,10 +16575,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12142:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -16683,7 +16683,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12360:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -16694,10 +16694,10 @@
                           "lValueRequested": false,
                           "memberName": "getMeasureAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6607,
+                          "referencedDeclaration": 6621,
                           "src": "12360:36:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -16712,7 +16712,7 @@
                         "src": "12360:38:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -16749,7 +16749,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -16766,7 +16766,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12326:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -16777,10 +16777,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12326:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -16885,7 +16885,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12543:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -16896,10 +16896,10 @@
                           "lValueRequested": false,
                           "memberName": "getPickUpAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6567,
+                          "referencedDeclaration": 6581,
                           "src": "12543:35:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -16914,7 +16914,7 @@
                         "src": "12543:37:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -16951,7 +16951,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -16968,7 +16968,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12509:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -16979,10 +16979,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12509:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -17087,7 +17087,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12726:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -17098,10 +17098,10 @@
                           "lValueRequested": false,
                           "memberName": "getDropOffAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6557,
+                          "referencedDeclaration": 6571,
                           "src": "12726:36:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -17116,7 +17116,7 @@
                         "src": "12726:38:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -17153,7 +17153,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -17170,7 +17170,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12692:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -17181,10 +17181,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12692:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -17645,7 +17645,7 @@
         "id": 2022,
         "nodeType": "ImportDirective",
         "scope": 3238,
-        "sourceUnit": 6763,
+        "sourceUnit": 6777,
         "src": "91:35:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -17667,7 +17667,7 @@
         "id": 2024,
         "nodeType": "ImportDirective",
         "scope": 3238,
-        "sourceUnit": 5182,
+        "sourceUnit": 5196,
         "src": "157:36:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -17789,7 +17789,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
               "typeString": "contract ResourceActionsV1_0"
             },
             "typeName": {
@@ -17797,10 +17797,10 @@
               "id": 2038,
               "name": "ResourceActionsV1_0",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6762,
+              "referencedDeclaration": 6776,
               "src": "463:19:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                 "typeString": "contract ResourceActionsV1_0"
               }
             },
@@ -17819,7 +17819,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
               "typeString": "contract ERC721BeefLedgerV1_0"
             },
             "typeName": {
@@ -17827,10 +17827,10 @@
               "id": 2040,
               "name": "ERC721BeefLedgerV1_0",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5181,
+              "referencedDeclaration": 5195,
               "src": "517:20:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                 "typeString": "contract ERC721BeefLedgerV1_0"
               }
             },
@@ -19329,7 +19329,7 @@
                       "referencedDeclaration": 2041,
                       "src": "2178:10:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
@@ -19363,10 +19363,10 @@
                         "name": "ERC721BeefLedgerV1_0",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5181,
+                        "referencedDeclaration": 5195,
                         "src": "2191:20:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5181_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5195_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_0)"
                         }
                       },
@@ -19381,13 +19381,13 @@
                       "src": "2191:29:6",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
                     "src": "2178:42:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                       "typeString": "contract ERC721BeefLedgerV1_0"
                     }
                   },
@@ -19777,7 +19777,7 @@
                       "referencedDeclaration": 2039,
                       "src": "2477:19:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                         "typeString": "contract ResourceActionsV1_0"
                       }
                     },
@@ -19811,10 +19811,10 @@
                         "name": "ResourceActionsV1_0",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6762,
+                        "referencedDeclaration": 6776,
                         "src": "2499:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ResourceActionsV1_0_$6762_$",
+                          "typeIdentifier": "t_type$_t_contract$_ResourceActionsV1_0_$6776_$",
                           "typeString": "type(contract ResourceActionsV1_0)"
                         }
                       },
@@ -19829,13 +19829,13 @@
                       "src": "2499:37:6",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                        "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                         "typeString": "contract ResourceActionsV1_0"
                       }
                     },
                     "src": "2477:59:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                      "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                       "typeString": "contract ResourceActionsV1_0"
                     }
                   },
@@ -19883,7 +19883,7 @@
                               "referencedDeclaration": 2039,
                               "src": "2576:19:6",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                                "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                                 "typeString": "contract ResourceActionsV1_0"
                               }
                             },
@@ -19894,7 +19894,7 @@
                             "lValueRequested": false,
                             "memberName": "getCompaniesContract",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 6748,
+                            "referencedDeclaration": 6762,
                             "src": "2576:40:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
@@ -20227,7 +20227,7 @@
                       "referencedDeclaration": 2041,
                       "src": "2774:10:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
@@ -20261,10 +20261,10 @@
                         "name": "ERC721BeefLedgerV1_0",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5181,
+                        "referencedDeclaration": 5195,
                         "src": "2787:20:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5181_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_0_$5195_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_0)"
                         }
                       },
@@ -20279,13 +20279,13 @@
                       "src": "2787:29:6",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                         "typeString": "contract ERC721BeefLedgerV1_0"
                       }
                     },
                     "src": "2774:42:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                       "typeString": "contract ERC721BeefLedgerV1_0"
                     }
                   },
@@ -32820,7 +32820,7 @@
                               "referencedDeclaration": 2041,
                               "src": "11628:10:6",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                                 "typeString": "contract ERC721BeefLedgerV1_0"
                               }
                             },
@@ -32831,7 +32831,7 @@
                             "lValueRequested": false,
                             "memberName": "getOwner",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5180,
+                            "referencedDeclaration": 5194,
                             "src": "11628:19:6",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_address_$",
@@ -33027,7 +33027,7 @@
                         "referencedDeclaration": 2039,
                         "src": "11785:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       }
@@ -33035,7 +33035,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       ],
@@ -33159,7 +33159,7 @@
                         "referencedDeclaration": 2041,
                         "src": "11910:10:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                           "typeString": "contract ERC721BeefLedgerV1_0"
                         }
                       }
@@ -33167,7 +33167,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5181",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_0_$5195",
                           "typeString": "contract ERC721BeefLedgerV1_0"
                         }
                       ],
@@ -33428,7 +33428,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12176:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -33439,10 +33439,10 @@
                           "lValueRequested": false,
                           "memberName": "getProduceAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6547,
+                          "referencedDeclaration": 6561,
                           "src": "12176:36:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -33457,7 +33457,7 @@
                         "src": "12176:38:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -33494,7 +33494,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -33511,7 +33511,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12142:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -33522,10 +33522,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12142:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -33630,7 +33630,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12360:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -33641,10 +33641,10 @@
                           "lValueRequested": false,
                           "memberName": "getMeasureAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6607,
+                          "referencedDeclaration": 6621,
                           "src": "12360:36:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -33659,7 +33659,7 @@
                         "src": "12360:38:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -33696,7 +33696,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -33713,7 +33713,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12326:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -33724,10 +33724,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12326:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -33832,7 +33832,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12543:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -33843,10 +33843,10 @@
                           "lValueRequested": false,
                           "memberName": "getPickUpAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6567,
+                          "referencedDeclaration": 6581,
                           "src": "12543:35:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -33861,7 +33861,7 @@
                         "src": "12543:37:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -33898,7 +33898,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -33915,7 +33915,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12509:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -33926,10 +33926,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12509:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -34034,7 +34034,7 @@
                             "referencedDeclaration": 2039,
                             "src": "12726:19:6",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                              "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                               "typeString": "contract ResourceActionsV1_0"
                             }
                           },
@@ -34045,10 +34045,10 @@
                           "lValueRequested": false,
                           "memberName": "getDropOffAction",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6557,
+                          "referencedDeclaration": 6571,
                           "src": "12726:36:6",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6350_$",
+                            "typeIdentifier": "t_function_external_pure$__$returns$_t_enum$_Actions_$6364_$",
                             "typeString": "function () pure external returns (enum ResourceActionsV1_0.Actions)"
                           }
                         },
@@ -34063,7 +34063,7 @@
                         "src": "12726:38:6",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         }
                       },
@@ -34100,7 +34100,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_Actions_$6350",
+                          "typeIdentifier": "t_enum$_Actions_$6364",
                           "typeString": "enum ResourceActionsV1_0.Actions"
                         },
                         {
@@ -34117,7 +34117,7 @@
                         "referencedDeclaration": 2039,
                         "src": "12692:19:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6762",
+                          "typeIdentifier": "t_contract$_ResourceActionsV1_0_$6776",
                           "typeString": "contract ResourceActionsV1_0"
                         }
                       },
@@ -34128,10 +34128,10 @@
                       "lValueRequested": false,
                       "memberName": "getPermission",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6538,
+                      "referencedDeclaration": 6552,
                       "src": "12692:33:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6350_$_t_address_$returns$_t_bool_$",
+                        "typeIdentifier": "t_function_external_view$_t_enum$_Actions_$6364_$_t_address_$returns$_t_bool_$",
                         "typeString": "function (enum ResourceActionsV1_0.Actions,address) view external returns (bool)"
                       }
                     },
@@ -34556,7 +34556,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-24T16:22:31.907Z",
+  "updatedAt": "2021-02-24T17:46:31.509Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

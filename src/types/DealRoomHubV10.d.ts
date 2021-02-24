@@ -22,6 +22,7 @@ import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 
 interface DealRoomHubV10Interface extends ethers.utils.Interface {
   functions: {
+    "initialize()": FunctionFragment;
     "makeRoom(tuple)": FunctionFragment;
     "getUserRooms(address)": FunctionFragment;
     "getAllRooms()": FunctionFragment;
@@ -30,6 +31,10 @@ interface DealRoomHubV10Interface extends ethers.utils.Interface {
     "changeOwner(address)": FunctionFragment;
   };
 
+  encodeFunctionData(
+    functionFragment: "initialize",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "makeRoom",
     values: [
@@ -54,6 +59,7 @@ interface DealRoomHubV10Interface extends ethers.utils.Interface {
   encodeFunctionData(functionFragment: "roomCount", values?: undefined): string;
   encodeFunctionData(functionFragment: "changeOwner", values: [string]): string;
 
+  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "makeRoom", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getUserRooms",
@@ -91,6 +97,10 @@ export class DealRoomHubV10 extends Contract {
   interface: DealRoomHubV10Interface;
 
   functions: {
+    initialize(overrides?: Overrides): Promise<ContractTransaction>;
+
+    "initialize()"(overrides?: Overrides): Promise<ContractTransaction>;
+
     makeRoom(
       params: {
         buyer: string;
@@ -175,6 +185,10 @@ export class DealRoomHubV10 extends Contract {
     ): Promise<ContractTransaction>;
   };
 
+  initialize(overrides?: Overrides): Promise<ContractTransaction>;
+
+  "initialize()"(overrides?: Overrides): Promise<ContractTransaction>;
+
   makeRoom(
     params: {
       buyer: string;
@@ -255,6 +269,10 @@ export class DealRoomHubV10 extends Contract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
+    initialize(overrides?: CallOverrides): Promise<void>;
+
+    "initialize()"(overrides?: CallOverrides): Promise<void>;
+
     makeRoom(
       params: {
         buyer: string;
@@ -337,6 +355,10 @@ export class DealRoomHubV10 extends Contract {
   };
 
   estimateGas: {
+    initialize(overrides?: Overrides): Promise<BigNumber>;
+
+    "initialize()"(overrides?: Overrides): Promise<BigNumber>;
+
     makeRoom(
       params: {
         buyer: string;
@@ -390,6 +412,10 @@ export class DealRoomHubV10 extends Contract {
   };
 
   populateTransaction: {
+    initialize(overrides?: Overrides): Promise<PopulatedTransaction>;
+
+    "initialize()"(overrides?: Overrides): Promise<PopulatedTransaction>;
+
     makeRoom(
       params: {
         buyer: string;

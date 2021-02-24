@@ -38,8 +38,6 @@ contract DealRoomHubV1_0 {
         address agentMultiSig;
     }
 
-    
-
     modifier roomExists(address addr, bool mustExist) {
         DealRoomDetails memory roomDetails = getRoom(addr);
         if (mustExist) {
@@ -55,6 +53,11 @@ contract DealRoomHubV1_0 {
     modifier isOwner() {
         require(msg.sender == owner, "ONLY_OWNER");
         _;
+    }
+
+    function initialize() public {
+        require(!_initialized, "conract already initialized");
+        _initialized = true;
     }
 
     function makeRoom(MakeRoomParams memory params) virtual public returns (address) {

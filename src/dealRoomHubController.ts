@@ -4,6 +4,8 @@ import { DealRoomHubV10 } from "./types";
 import { getDealRoomHubContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/DealRoomHubV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
+import { initializeDealRoomHub } from "./ethereum/deploy/deploy";
+
 
 export type DealRoomCreateParams = {
     dealRoomHubAddress: string
@@ -55,6 +57,10 @@ export class DealRoomHubController {
         catch (e) {
             throw Error(`Failed to get DealRoomHub contract: ${e}`)
         }
+    }
+
+    public static async deployDealRoomHubContract(signer: Signer): Promise<[DealRoomHubV10, string]> {
+        return initializeDealRoomHub(signer)
     }
 
     /**Getters */
