@@ -60,7 +60,7 @@ describe("Deploy ERC20FactoryV10", () => {
                 expect(allTokens[0].toLowerCase()).toEqual(erc20Address.toLowerCase())
 
                 const erc20Controller = new ERC20Controller(erc20Address, signers[0]);
-                const balance = await erc20Controller.balanceOf();
+                const balance = await erc20Controller.balanceOf(signerAddress);
                 expect(balance.toString()).toEqual("0")
                 
             } else {
