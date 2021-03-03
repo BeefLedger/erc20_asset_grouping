@@ -11,6 +11,7 @@ export * from './resourceActionsController';
 export * from './dealRoomController';
 export * from './dealRoomHubController';
 export * from './multisigHashedController';
+export * from './groupingFactoryController';
 
 export * from './ethereum/index';
 

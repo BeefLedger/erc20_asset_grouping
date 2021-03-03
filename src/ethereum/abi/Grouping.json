@@ -112,8 +112,8 @@
   "bytecode": "0x608060405234801561001057600080fd5b5060405161044d38038061044d8339818101604052604081101561003357600080fd5b5080516020909101516001600160a01b038216610097576040805162461bcd60e51b815260206004820152601c60248201527f524720546f6b656e20616464726573732063616e6e6f74206265203000000000604482015290519081900360640190fd5b6001600160a01b0381166100f2576040805162461bcd60e51b815260206004820152601a60248201527f45524337323120616464726573732063616e6e6f742062652030000000000000604482015290519081900360640190fd5b600080546001600160a01b039384166001600160a01b031991821617909155600480549290931691161790556103208061012d6000396000f3fe608060405234801561001057600080fd5b50600436106100615760003560e01c80627ffb78146100665780630b71d2561461008a57806367e4ac2c146100bb57806392206ff514610113578063f110a60e1461011b578063fa3fa5f014610123575b600080fd5b61006e610140565b604080516001600160a01b039092168252519081900360200190f35b6100a7600480360360208110156100a057600080fd5b503561014f565b604080519115158252519081900360200190f35b6100c361025f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100ff5781810151838201526020016100e7565b505050509050019250505060405180910390f35b61006e6102b7565b61006e6102c6565b6100a76004803603602081101561013957600080fd5b50356102d5565b6004546001600160a01b031690565b6004546000906001600160a01b031633146101b1576040805162461bcd60e51b815260206004820152601860248201527f6f70657261746f72206973206e6f7420617070726f7665640000000000000000604482015290519081900360640190fd5b60008281526002602052604090205460ff161561020b576040805162461bcd60e51b8152602060048201526013602482015272105cdcd95d08185b1c9958591e481859191959606a1b604482015290519081900360640190fd5b506000818152600260205260408120805460ff1916600190811790915580548082018255918190527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6909101829055919050565b606060018054806020026020016040519081016040528092919081815260200182805480156102ad57602002820191906000526020600020905b815481526020019060010190808311610299575b5050505050905090565b6000546001600160a01b031690565b6000546001600160a01b031681565b60009081526002602052604090205460ff169056fea2646970667358221220a7ce047b907f03f97562d7966d4303b7cd1b0624c5a7e8ec70e67980f2f7c2fc64736f6c63430007000033",
   "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100615760003560e01c80627ffb78146100665780630b71d2561461008a57806367e4ac2c146100bb57806392206ff514610113578063f110a60e1461011b578063fa3fa5f014610123575b600080fd5b61006e610140565b604080516001600160a01b039092168252519081900360200190f35b6100a7600480360360208110156100a057600080fd5b503561014f565b604080519115158252519081900360200190f35b6100c361025f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100ff5781810151838201526020016100e7565b505050509050019250505060405180910390f35b61006e6102b7565b61006e6102c6565b6100a76004803603602081101561013957600080fd5b50356102d5565b6004546001600160a01b031690565b6004546000906001600160a01b031633146101b1576040805162461bcd60e51b815260206004820152601860248201527f6f70657261746f72206973206e6f7420617070726f7665640000000000000000604482015290519081900360640190fd5b60008281526002602052604090205460ff161561020b576040805162461bcd60e51b8152602060048201526013602482015272105cdcd95d08185b1c9958591e481859191959606a1b604482015290519081900360640190fd5b506000818152600260205260408120805460ff1916600190811790915580548082018255918190527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6909101829055919050565b606060018054806020026020016040519081016040528092919081815260200182805480156102ad57602002820191906000526020600020905b815481526020019060010190808311610299575b5050505050905090565b6000546001600160a01b031690565b6000546001600160a01b031681565b60009081526002602052604090205460ff169056fea2646970667358221220a7ce047b907f03f97562d7966d4303b7cd1b0624c5a7e8ec70e67980f2f7c2fc64736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "109:1288:2:-:0;;;476:278;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;476:278:2;;;;;;;-1:-1:-1;;;;;541:22:2;;533:63;;;;;-1:-1:-1;;;533:63:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;614:21:2;;606:60;;;;;-1:-1:-1;;;606:60:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;676:7;:18;;-1:-1:-1;;;;;676:18:2;;;-1:-1:-1;;;;;;676:18:2;;;;;;;704:11;:43;;;;;;;;;;;109:1288;;;;;;",
-  "deployedSourceMap": "109:1288:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1294:101;;;:::i;:::-;;;;-1:-1:-1;;;;;1294:101:2;;;;;;;;;;;;;;760:228;;;;;;;;;;;;;;;;-1:-1:-1;760:228:2;;:::i;:::-;;;;;;;;;;;;;;;;;;1110:90;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1206:82;;;:::i;134:22::-;;;:::i;994:110::-;;;;;;;;;;;;;;;;-1:-1:-1;994:110:2;;:::i;1294:101::-;1376:11;;-1:-1:-1;;;;;1376:11:2;1294:101;:::o;760:228::-;397:11;;822:4;;-1:-1:-1;;;;;397:11:2;413:10;389:34;381:71;;;;;-1:-1:-1;;;381:71:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;847:21:::1;::::0;;;:13:::1;:21;::::0;;;;;::::1;;846:22;838:54;;;::::0;;-1:-1:-1;;;838:54:2;;::::1;;::::0;::::1;::::0;::::1;::::0;;;;-1:-1:-1;;;838:54:2;;;;;;;;;;;;;::::1;;-1:-1:-1::0;902:21:2::1;::::0;;;:13:::1;:21;::::0;;;;:28;;-1:-1:-1;;902:28:2::1;926:4;902:28:::0;;::::1;::::0;;;940:20;;;;::::1;::::0;;;;;;;;;::::1;::::0;;;760:228;;;:::o;1110:90::-;1151:16;1186:7;1179:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1110:90;:::o;1206:82::-;1248:7;1274;-1:-1:-1;;;;;1274:7:2;1206:82;:::o;134:22::-;;;-1:-1:-1;;;;;134:22:2;;:::o;994:110::-;1052:4;1075:21;;;:13;:21;;;;;;;;;994:110::o",
+  "sourceMap": "109:1288:2:-:0;;;476:278;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;476:278:2;;;;;;;-1:-1:-1;;;;;541:22:2;;533:63;;;;;-1:-1:-1;;;533:63:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;614:21:2;;606:60;;;;;-1:-1:-1;;;606:60:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;676:7;:18;;-1:-1:-1;;;;;676:18:2;;;-1:-1:-1;;;;;;676:18:2;;;;;;704:11;:43;;;;;;;;;;;;;;;-1:-1:-1;;;;109:1288:2;;;;",
+  "deployedSourceMap": "109:1288:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1294:101;;;:::i;:::-;;;;-1:-1:-1;;;;;1294:101:2;;;;;;;;;;;;;;760:228;;;;;;;;;;;;;;;;-1:-1:-1;760:228:2;;:::i;:::-;;;;;;;;;;;;;;;;;;1110:90;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1206:82;;;:::i;134:22::-;;;:::i;994:110::-;;;;;;;;;;;;;;;;-1:-1:-1;994:110:2;;:::i;1294:101::-;1376:11;;-1:-1:-1;;;;;1376:11:2;;1294:101::o;760:228::-;397:11;;822:4;;-1:-1:-1;;;;;397:11:2;413:10;389:34;381:71;;;;;-1:-1:-1;;;381:71:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;847:21:::1;::::0;;;:13:::1;:21;::::0;;;;;::::1;;846:22;838:54;;;::::0;;-1:-1:-1;;;838:54:2;;::::1;;::::0;::::1;::::0;::::1;::::0;;;;-1:-1:-1;;;838:54:2;;;;;;;;;;;;;::::1;;-1:-1:-1::0;902:21:2::1;::::0;;;:13:::1;:21;::::0;;;;:28;;-1:-1:-1;;902:28:2::1;926:4;902:28:::0;;::::1;::::0;;;940:20;;;;::::1;::::0;;;;;;;;;::::1;::::0;;;;926:4;760:228::o;1110:90::-;1151:16;1186:7;1179:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1110:90;:::o;1206:82::-;1248:7;1274;-1:-1:-1;;;;;1274:7:2;;1206:82::o;134:22::-;;;-1:-1:-1;;;;;134:22:2;;:::o;994:110::-;1052:4;1075:21;;;:13;:21;;;;;;;;;994:110::o",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.7.0 <0.8.0;\n\nimport \"./V1_1/ERC721BeefLedgerV1_1.sol\";\n\ncontract Grouping {\n\n    address public rgToken;\n    uint256[] private _assets;\n\n    mapping (uint256 => bool) internal _isAddedAsset;\n    mapping (address => bool) internal _isOperator;\n\n    ERC721BeefLedgerV1_1 internal _erc721V1_1;\n\n    modifier onlyERC721() {\n        require(address(_erc721V1_1) == msg.sender, \"operator is not approved\");\n        _;\n    }\n\n    constructor(address _rgToken, address _erc721) {\n        require(_rgToken != address(0), \"RG Token address cannot be 0\");\n        require(_erc721 != address(0), \"ERC721 address cannot be 0\");\n        rgToken = _rgToken;\n        _erc721V1_1 = ERC721BeefLedgerV1_1(_erc721);\n    }\n\n    function addAsset(uint256 _asset) external onlyERC721 returns(bool) {\n        require(!_isAddedAsset[_asset], \"Asset already added\");\n        _isAddedAsset[_asset] = true;\n        _assets.push(_asset);\n        return true;\n    }\n\n    function isAssetAdded(uint256 _asset) public view returns(bool) {\n        return(_isAddedAsset[_asset]);\n    }\n\n    function getAssets() public view returns(uint256[] memory) {\n        return _assets;\n    }\n\n    function getRGToken() public view returns(address) {\n        return rgToken;\n    }\n\n    function getERC721Address() public view returns(address) {\n        return address(_erc721V1_1);\n    }\n}",
   "sourcePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Grouping.sol",
   "ast": {
@@ -147,7 +147,7 @@
         "id": 703,
         "nodeType": "ImportDirective",
         "scope": 846,
-        "sourceUnit": 6990,
+        "sourceUnit": 7095,
         "src": "66:41:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -340,7 +340,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
@@ -348,10 +348,10 @@
               "id": 717,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6989,
+              "referencedDeclaration": 7094,
               "src": "301:20:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -391,7 +391,7 @@
                               "referencedDeclaration": 718,
                               "src": "397:11:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             }
@@ -399,7 +399,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             ],
@@ -961,7 +961,7 @@
                       "referencedDeclaration": 718,
                       "src": "704:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -995,10 +995,10 @@
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6989,
+                        "referencedDeclaration": 7094,
                         "src": "718:20:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6989_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7094_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
@@ -1013,13 +1013,13 @@
                       "src": "718:29:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "704:43:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
@@ -1875,7 +1875,7 @@
                         "referencedDeclaration": 718,
                         "src": "1376:11:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -1883,7 +1883,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
@@ -2026,7 +2026,7 @@
         "id": 703,
         "nodeType": "ImportDirective",
         "scope": 846,
-        "sourceUnit": 6990,
+        "sourceUnit": 7095,
         "src": "66:41:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2219,7 +2219,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
@@ -2227,10 +2227,10 @@
               "id": 717,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6989,
+              "referencedDeclaration": 7094,
               "src": "301:20:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -2270,7 +2270,7 @@
                               "referencedDeclaration": 718,
                               "src": "397:11:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             }
@@ -2278,7 +2278,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             ],
@@ -2840,7 +2840,7 @@
                       "referencedDeclaration": 718,
                       "src": "704:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -2874,10 +2874,10 @@
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6989,
+                        "referencedDeclaration": 7094,
                         "src": "718:20:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$6989_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7094_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
@@ -2892,13 +2892,13 @@
                       "src": "718:29:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "704:43:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
@@ -3754,7 +3754,7 @@
                         "referencedDeclaration": 718,
                         "src": "1376:11:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -3762,7 +3762,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$6989",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7094",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
@@ -3880,7 +3880,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-24T17:46:31.491Z",
+  "updatedAt": "2021-03-03T03:58:58.906Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

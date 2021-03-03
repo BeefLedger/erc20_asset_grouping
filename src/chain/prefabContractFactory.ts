@@ -5,6 +5,7 @@ import * as Erc20FactoryCompiled  from "../ethereum/abi/ERC20FactoryV1_0.json"
 import * as Erc721Compiled  from "../ethereum/abi/ERC721BeefLedgerV1_1.json"
 import * as MultisigCompiled  from "../ethereum/abi/MultisigWalletV1_0.json"
 import * as GroupingCompiled  from "../ethereum/abi/Grouping.json"
+import * as GroupingFactoryCompiled  from "../ethereum/abi/GroupingFactoryV1_0.json"
 import * as ActionsStorageCompiled  from "../ethereum/abi/ActionsStorageV1_1.json"
 import * as CompaniesCompiled  from "../ethereum/abi/CompaniesV1_0.json"
 import * as ResourceActionsCompiled  from "../ethereum/abi/ResourceActionsV1_0.json"
@@ -23,7 +24,8 @@ import {
     ResourceActionsV10,
     DealRoomHubV10,
     DealRoom,
-    MultiSigHashed
+    MultiSigHashed,
+    GroupingFactoryV10
 } from "../types"
 
 export async function getERC20FactoryContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ERC20FactoryV10> {
@@ -44,6 +46,10 @@ export async function getMultisigContract(address: string, signerIdxOrAddressOrS
 
 export async function getGroupingContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<Grouping> {
     return getContract<Grouping>(address, GroupingCompiled.abi, signerIdxOrAddressOrSigner)
+}
+
+export async function getGroupingFactoryContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<GroupingFactoryV10> {
+    return getContract<GroupingFactoryV10>(address, GroupingFactoryCompiled.abi, signerIdxOrAddressOrSigner)
 }
 
 export async function getActionsStorageContract(address: string, signerIdxOrAddressOrSigner?: number | string | Signer): Promise<ActionsStorageV11> {

@@ -12,6 +12,8 @@ import * as artifactMultisig from "../abi/MultisigWalletV1_0.json"
 
 import * as artifactGrouping from "../abi/Grouping.json"
 
+import * as artifactGroupingFactory from "../abi/GroupingFactoryV1_0.json"
+
 import * as artifactCompanies from "../abi/CompaniesV1_0.json"
 
 import * as artifactDealRoomhub from "../abi/DealRoomHubV1_0.json"
@@ -19,6 +21,7 @@ import * as artifactDealRoomhub from "../abi/DealRoomHubV1_0.json"
 import { ERC20FactoryV10 } from "../../types/ERC20FactoryV10"
 import { CompaniesV10, DealRoomHubV10, ERC20FactoryV11, ERC721BeefLedgerV10, Grouping, MultisigWalletV10 } from "../../types"
 import { ERC721BeefLedgerV11 } from "../../types/ERC721BeefLedgerV11"
+import { GroupingFactoryV10 } from "../../types/GroupingFactoryV10"
 
 
 /**ERC20Factory */
@@ -65,5 +68,11 @@ export async function deployGrouping(signer: Signer, rgTokenAddress: string, erc
 /** DealRoom */
 export async function initializeDealRoomHub(signer: Signer): Promise<[DealRoomHubV10, string]>  {
     const [contract, proxyAddress] = await initializeContract<DealRoomHubV10>(signer, artifactDealRoomhub, "initialize", []) 
+    return [contract, proxyAddress]
+}
+
+/** Grouping */
+export async function initializeGroupingFactory(signer: Signer, owner: string): Promise<[GroupingFactoryV10, string]>  {
+    const [contract, proxyAddress] = await initializeContract<GroupingFactoryV10>(signer, artifactGroupingFactory, owner) 
     return [contract, proxyAddress]
 }

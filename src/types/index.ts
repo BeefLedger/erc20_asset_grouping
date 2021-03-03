@@ -13,6 +13,7 @@ export type { ERC20ForAssetGrouping } from "./ERC20ForAssetGrouping";
 export type { ERC721BeefLedgerV10 } from "./ERC721BeefLedgerV10";
 export type { ERC721BeefLedgerV11 } from "./ERC721BeefLedgerV11";
 export type { Grouping } from "./Grouping";
+export type { GroupingFactoryV10 } from "./GroupingFactoryV10";
 export type { IERC165 } from "./IERC165";
 export type { IERC20 } from "./IERC20";
 export type { IERC721 } from "./IERC721";
@@ -37,6 +38,7 @@ export { ERC20ForAssetGrouping__factory } from "./factories/ERC20ForAssetGroupin
 export { ERC721BeefLedgerV10__factory } from "./factories/ERC721BeefLedgerV10__factory";
 export { ERC721BeefLedgerV11__factory } from "./factories/ERC721BeefLedgerV11__factory";
 export { Grouping__factory } from "./factories/Grouping__factory";
+export { GroupingFactoryV10__factory } from "./factories/GroupingFactoryV10__factory";
 export { IERC165__factory } from "./factories/IERC165__factory";
 export { IERC20__factory } from "./factories/IERC20__factory";
 export { IERC721__factory } from "./factories/IERC721__factory";
