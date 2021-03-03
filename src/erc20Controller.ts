@@ -89,7 +89,7 @@ export class ERC20Controller {
         return  contract.functions.transferOwnership(newOwner)
     }
 
-    public async setGroupingContracts(address: string): Promise<ContractTransaction> {
+    public async setGroupingContract(address: string): Promise<ContractTransaction> {
         const contract = await this._getERC20Contract();
         return contract.functions.setAssetGrouping(address)
     }

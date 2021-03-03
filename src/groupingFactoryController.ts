@@ -48,10 +48,24 @@ export class GroupingFactoryController {
         return groupingFactoryContract
     }
 
-    public async getDeployed(): Promise<Array<string>> {
+    public async getGroupings(): Promise<Array<string>> {
         const groupingFactoryContract = await this._getGroupingFactoryContract();
-        return groupingFactoryContract.getDeployed();
+        return groupingFactoryContract.getGroupings();
+    }
 
+    public async getGroupedTokens(): Promise<Array<string>> {
+        const groupingFactoryContract = await this._getGroupingFactoryContract();
+        return groupingFactoryContract.getGroupedTokens();
+    }
+
+    public async getToken(groupingAddress: string): Promise<string> {
+        const groupingFactoryContract = await this._getGroupingFactoryContract();
+        return groupingFactoryContract.getToken(groupingAddress);
+    }
+
+    public async getGrouping(rgToken: string): Promise<string> {
+        const groupingFactoryContract = await this._getGroupingFactoryContract();
+        return groupingFactoryContract.getGrouping(rgToken);
     }
 
     /**Setters */

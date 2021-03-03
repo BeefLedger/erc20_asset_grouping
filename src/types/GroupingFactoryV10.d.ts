@@ -22,18 +22,16 @@ import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 
 interface GroupingFactoryV10Interface extends ethers.utils.Interface {
   functions: {
-    "deployed(uint256)": FunctionFragment;
     "owner()": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
     "initialize(address)": FunctionFragment;
     "deployGrouping(address,address)": FunctionFragment;
-    "getDeployed()": FunctionFragment;
+    "getGroupings()": FunctionFragment;
+    "getGroupedTokens()": FunctionFragment;
+    "getToken(address)": FunctionFragment;
+    "getGrouping(address)": FunctionFragment;
   };
 
-  encodeFunctionData(
-    functionFragment: "deployed",
-    values: [BigNumberish]
-  ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "transferOwnership",
@@ -45,11 +43,16 @@ interface GroupingFactoryV10Interface extends ethers.utils.Interface {
     values: [string, string]
   ): string;
   encodeFunctionData(
-    functionFragment: "getDeployed",
+    functionFragment: "getGroupings",
     values?: undefined
   ): string;
+  encodeFunctionData(
+    functionFragment: "getGroupedTokens",
+    values?: undefined
+  ): string;
+  encodeFunctionData(functionFragment: "getToken", values: [string]): string;
+  encodeFunctionData(functionFragment: "getGrouping", values: [string]): string;
 
-  decodeFunctionResult(functionFragment: "deployed", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "transferOwnership",
@@ -61,7 +64,16 @@ interface GroupingFactoryV10Interface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getDeployed",
+    functionFragment: "getGroupings",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getGroupedTokens",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "getToken", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "getGrouping",
     data: BytesLike
   ): Result;
 
@@ -88,13 +100,6 @@ export class GroupingFactoryV10 extends Contract {
   interface: GroupingFactoryV10Interface;
 
   functions: {
-    deployed(arg0: BigNumberish, overrides?: CallOverrides): Promise<[string]>;
-
-    "deployed(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<[string]>;
-
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -145,9 +150,27 @@ export class GroupingFactoryV10 extends Contract {
       overrides?: Overrides
     ): Promise<ContractTransaction>;
 
-    getDeployed(overrides?: CallOverrides): Promise<[string[]]>;
+    getGroupings(overrides?: CallOverrides): Promise<[string[]]>;
 
-    "getDeployed()"(overrides?: CallOverrides): Promise<[string[]]>;
+    "getGroupings()"(overrides?: CallOverrides): Promise<[string[]]>;
+
+    getGroupedTokens(overrides?: CallOverrides): Promise<[string[]]>;
+
+    "getGroupedTokens()"(overrides?: CallOverrides): Promise<[string[]]>;
+
+    getToken(_grouping: string, overrides?: CallOverrides): Promise<[string]>;
+
+    "getToken(address)"(
+      _grouping: string,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
+
+    getGrouping(_rgToken: string, overrides?: CallOverrides): Promise<[string]>;
+
+    "getGrouping(address)"(
+      _rgToken: string,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
   };
 
   /**
@@ -200,18 +223,29 @@ export class GroupingFactoryV10 extends Contract {
     overrides?: Overrides
   ): Promise<ContractTransaction>;
 
-  getDeployed(overrides?: CallOverrides): Promise<string[]>;
+  getGroupings(overrides?: CallOverrides): Promise<string[]>;
 
-  "getDeployed()"(overrides?: CallOverrides): Promise<string[]>;
+  "getGroupings()"(overrides?: CallOverrides): Promise<string[]>;
+
+  getGroupedTokens(overrides?: CallOverrides): Promise<string[]>;
+
+  "getGroupedTokens()"(overrides?: CallOverrides): Promise<string[]>;
+
+  getToken(_grouping: string, overrides?: CallOverrides): Promise<string>;
+
+  "getToken(address)"(
+    _grouping: string,
+    overrides?: CallOverrides
+  ): Promise<string>;
+
+  getGrouping(_rgToken: string, overrides?: CallOverrides): Promise<string>;
+
+  "getGrouping(address)"(
+    _rgToken: string,
+    overrides?: CallOverrides
+  ): Promise<string>;
 
   callStatic: {
-    deployed(arg0: BigNumberish, overrides?: CallOverrides): Promise<string>;
-
-    "deployed(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<string>;
-
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -262,9 +296,27 @@ export class GroupingFactoryV10 extends Contract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    getDeployed(overrides?: CallOverrides): Promise<string[]>;
+    getGroupings(overrides?: CallOverrides): Promise<string[]>;
 
-    "getDeployed()"(overrides?: CallOverrides): Promise<string[]>;
+    "getGroupings()"(overrides?: CallOverrides): Promise<string[]>;
+
+    getGroupedTokens(overrides?: CallOverrides): Promise<string[]>;
+
+    "getGroupedTokens()"(overrides?: CallOverrides): Promise<string[]>;
+
+    getToken(_grouping: string, overrides?: CallOverrides): Promise<string>;
+
+    "getToken(address)"(
+      _grouping: string,
+      overrides?: CallOverrides
+    ): Promise<string>;
+
+    getGrouping(_rgToken: string, overrides?: CallOverrides): Promise<string>;
+
+    "getGrouping(address)"(
+      _rgToken: string,
+      overrides?: CallOverrides
+    ): Promise<string>;
   };
 
   filters: {
@@ -278,13 +330,6 @@ export class GroupingFactoryV10 extends Contract {
   };
 
   estimateGas: {
-    deployed(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
-
-    "deployed(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -335,22 +380,33 @@ export class GroupingFactoryV10 extends Contract {
       overrides?: Overrides
     ): Promise<BigNumber>;
 
-    getDeployed(overrides?: CallOverrides): Promise<BigNumber>;
+    getGroupings(overrides?: CallOverrides): Promise<BigNumber>;
 
-    "getDeployed()"(overrides?: CallOverrides): Promise<BigNumber>;
+    "getGroupings()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getGroupedTokens(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getGroupedTokens()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    getToken(_grouping: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    "getToken(address)"(
+      _grouping: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    getGrouping(
+      _rgToken: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "getGrouping(address)"(
+      _rgToken: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
   };
 
   populateTransaction: {
-    deployed(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    "deployed(uint256)"(
-      arg0: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
     /**
      * Tells the address of the owner return the address of the owner
      */
@@ -401,8 +457,34 @@ export class GroupingFactoryV10 extends Contract {
       overrides?: Overrides
     ): Promise<PopulatedTransaction>;
 
-    getDeployed(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    getGroupings(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    "getDeployed()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    "getGroupings()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    getGroupedTokens(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "getGroupedTokens()"(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    getToken(
+      _grouping: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "getToken(address)"(
+      _grouping: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    getGrouping(
+      _rgToken: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "getGrouping(address)"(
+      _rgToken: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
   };
 }
