@@ -130,7 +130,13 @@ contract ActionsStorageV1_0 is Ownable {
         });
     }
 
+// SPDX-License-Identifier: MIT
 
+pragma solidity >=0.7.0 <0.8.0;
+
+import "./V1_1/ERC721BeefLedgerV1_1.sol";
+
+contract Grouping {
     function measure(uint256[] memory _uids, uint256 _required, address[] memory _companies) virtual public authorization(msg.sender) {
         require(getMeasurePermission(), "Not authorized");
         require(_uids.length > 0, "No uids provided");
