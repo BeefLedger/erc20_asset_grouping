@@ -92,6 +92,11 @@ export class MultisigController {
         return multisigContract.required();
     }
 
+    public async isOwner(address: string): Promise<boolean> {
+        const multisigContract = await this._getMultisigContract();
+        return multisigContract.isOwner(address);
+    }
+
 
 
      /**Setters */  

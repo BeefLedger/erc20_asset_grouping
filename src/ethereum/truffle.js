@@ -59,6 +59,14 @@ module.exports = {
       gas: 7500000
     },
 
+    rinkeby: {
+      provider: () => {
+        return new HDWalletProvider(privKey, "https://rinkeby.infura.io/v3/ccef7c32fcd94fb1a7683538e5d18aa2")
+      },
+      port: 80,
+      network_id: 4
+    },
+
     bl: {
       provider: () => {
         return new HDWalletProvider(privKey, "http://localhost:8545")
