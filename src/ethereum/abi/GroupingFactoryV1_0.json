@@ -56,7 +56,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -113,7 +114,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -126,7 +128,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -145,7 +148,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -164,7 +168,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"grouping\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_rgToken\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_erc721\",\"type\":\"address\"}],\"name\":\"DeployGrouping\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_rgToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_erc721\",\"type\":\"address\"}],\"name\":\"deployGrouping\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGroupedTokens\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_rgToken\",\"type\":\"address\"}],\"name\":\"getGrouping\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGroupings\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_grouping\",\"type\":\"address\"}],\"name\":\"getToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_multisigWallet\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Tells the address of the owner return the address of the owner\"},\"transferOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/GroupingFactoryV1_0.sol\":\"GroupingFactoryV1_0\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Grouping.sol\":{\"keccak256\":\"0xd35f6c3e4459b18deffc1a0459170ce233fcdbbe189555d65f35223981abd55f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://72f945c2f8f2ce5ebce6dac942cc8cbf1dcc7815891b2309b1bdee193bc6d742\",\"dweb:/ipfs/QmeekCsezSGUGZ6XzgSC7jc1B9tYqQcH23ZfpKGze5iAdf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Ownable.sol\":{\"keccak256\":\"0x964303431ae2c14ab2872dccd3a47f1ada16eeaa306fc3af3fdd9b7e111ca6a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40d290c1b5ef186710d0ea1b04e584cf083d7aa62fd67cc9c7ce1326854e5438\",\"dweb:/ipfs/QmWPXb9BzihgZU92xVGJxYqELRj36Wbq2tf3kLhWHuaXLc\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/CompaniesV1_0.sol\":{\"keccak256\":\"0xaafe12654f198c20675c643d6297ab8e5dfefd26b391313b6a380ab8d68f4f26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d467b7be4e67c0c3b78f3bde36123098f3690f6b3307da318c65a4c77e1cef90\",\"dweb:/ipfs/QmdmN6ut5X5FD4qTZWAmhcx8QTKBRcawUJFXAnkhrSEnHN\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ERC721BeefLedgerV1_0.sol\":{\"keccak256\":\"0xee0b059fa25e559c7463007fb2c6ff3338e2c5ea277db82181a596229d36c00c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9f6be3b41b225e3a0415ef55044fa9371e420e4f0ee1217b41dcca6ac2961d25\",\"dweb:/ipfs/QmZ5k4kjGxNhJQjre4cfHQoLyt3fzF82LJBtubr4K7u5Ug\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/GroupingFactoryV1_0.sol\":{\"keccak256\":\"0xf879b1fafe2b9d1aa6d251a316b3d30856a0a334a8ce64a2e34206cf543ae98a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49980cfd7defde00c726500e95b5d273779555da2132720d931e4cb9b4374c9c\",\"dweb:/ipfs/QmWascT5o1dcaovEm6uE42Bx5SBySGcuZzdH79E8pwzYGS\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/MultisigWalletV1_0.sol\":{\"keccak256\":\"0x028d206cad0f30356d78720422a2eb31b3f397cb970feba78b3a7633c412857a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b232d48dc22cef22337260588d4a24c2f33c22896b5d444486696e5ebc59dd9f\",\"dweb:/ipfs/QmQw1EaPszfvSnpoNiynD2SNCtE5caojUcRxP8Xsp92DN7\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ResourceActionsV1_0.sol\":{\"keccak256\":\"0x4d17aa3f1f7cc68cd232f2fd46310aa18c350797d4354eec12cbd94e75075859\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1043e4e78ce44bb0ecc04a29b979803fde6206b23eb2fdfca955e69d382f3226\",\"dweb:/ipfs/QmPQEabkPWDn3jeRJAQ2tN7EHXymJqrmkimEjKx3hP1MYf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol\":{\"keccak256\":\"0x6df8f09a6a85e4af9079184eb598247c611810071ae30bd502519ba5e62c7d70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4bb84ae2cf10e18a26e9aa30a4c7327756851dd4caa758daae38326c46bbf3a9\",\"dweb:/ipfs/QmdRxF442cj8JsBpjyVTm6ML6VkXMsZnWkSRArAaVKp2zM\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0x21662e4254ce4ac8570b30cc7ab31435966b3cb778a56ba4d09276881cfb2437\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://acce8fe6adc670f9987a8b6aedc4cc0abcd0dcd2e152d649a12099d735bd7bad\",\"dweb:/ipfs/QmXAk17oK3daBmA8CGyVcU56L496jW3U6Ef1WkfHyB1JAV\"]}},\"version\":1}",
@@ -5291,9 +5296,62 @@
     "name": "solc",
     "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "18122": {
+      "events": {
+        "0xeaf8ebc3e12447995550bcd604928c42c64aae41119317732d8b5677cda1a75f": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "grouping",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_rgToken",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_erc721",
+              "type": "address"
+            }
+          ],
+          "name": "DeployGrouping",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xbe4fdCb8d2D5E2CBA95F5410a04594179Fc568cc",
+      "transactionHash": "0x68f976a210c7f5920f5c931cd2f642cff85d244acf2691dcfd5f240f7bffbd8f"
+    }
+  },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-03-04T20:37:53.436Z",
+  "updatedAt": "2021-03-23T20:53:40.626Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {

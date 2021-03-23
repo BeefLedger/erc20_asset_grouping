@@ -67,9 +67,17 @@ module.exports = {
       network_id: 4
     },
 
+    mainnet: {
+      provider: () => {
+        return new HDWalletProvider(privKey, "https://rinkeby.infura.io/v3/ccef7c32fcd94fb1a7683538e5d18aa2")
+      },
+      port: 80,
+      network_id: 1
+    },
+
     bl: {
       provider: () => {
-        return new HDWalletProvider(privKey, "http://localhost:8545")
+        return new HDWalletProvider(privKey, "https://beefledgerwallet.com:8544")
       },
       gas: 7500000,
       gasPrice: 4000000000,
