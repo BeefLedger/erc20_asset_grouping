@@ -3,14 +3,15 @@ const Proxy = artifacts.require('OwnedUpgradeabilityProxy.sol')
 const encodeCall  = require('./helpers/encodeCall');
 
 module.exports = async deployer => {
-    await deployer.deploy(ERC20Factory);
-    await deployer.deploy(Proxy);
+    // await deployer.deploy(ERC20Factory);
+    // await deployer.deploy(Proxy);
 
 	const initData = encodeCall(
 		'initialize',
 		['address'],
-		["0x3A8E4Cc9deef5c4166f069245F715D15a6dA42ef"]
+		["0xC91935D1FAF6BC5d0Afa28C4078a4878d6115765"]
 	);
-	const proxy = await Proxy.deployed();
-	await proxy.upgradeToAndCall(ERC20Factory.address, initData);
+	console.log(initData)
+	// const proxy = await Proxy.deployed();
+	// await proxy.upgradeToAndCall(ERC20Factory.address, initData);
 }

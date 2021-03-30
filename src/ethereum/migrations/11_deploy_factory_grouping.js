@@ -9,7 +9,7 @@ module.exports = async deployer => {
 	const initData = encodeCall(
 		'initialize',
 		['address'],
-		["0x59A915dAf882de7F79A405976EC82FfC02A52Dd2"]
+		["0xfE208394A4E8e0baE2ded27CF259A81A6fbC6b4B"] //multisig
 	);
 	const proxy = await Proxy.deployed();
 	await proxy.upgradeToAndCall(GroupingFactory.address, initData);

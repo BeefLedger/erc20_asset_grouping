@@ -3953,12 +3953,12 @@
         }
       },
       "links": {},
-      "address": "0xd615CffDD58434ECB6087bb494Ec3E3d73d8B4a1",
-      "transactionHash": "0xe979e679bcb5eb7cceae8884901e7dd8b33e646175b267c9b71bfa1ba6aec553"
+      "address": "0x86E0109b2a4C0fc2bcCC4164c93609E41BDCc976",
+      "transactionHash": "0xb3d100084a23c58fedc7fefeb048df01cba948cd4928ffd1e8b3baefbba4f9e3"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-03-23T20:53:40.633Z",
+  "updatedAt": "2021-03-24T00:12:54.056Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "This contract combines an upgradeability proxy with basic authorization control functionalities",
