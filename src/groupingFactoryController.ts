@@ -5,6 +5,7 @@ import { initializeGroupingFactory } from "./ethereum/deploy/deploy";
 import { GroupingFactoryV10 } from "./types";
 import * as artifact from "./ethereum/abi/GroupingFactoryV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
+import { DecodedCall } from "./abiDecoderController";
 
 export class GroupingFactoryController {
 
@@ -79,7 +80,7 @@ export class GroupingFactoryController {
         return encode(artifact, functionName, args)
     }
 
-    public static decodeCall(data: string): string {
+    public static decodeCall(data: string): DecodedCall | null {
         return decode(artifact, data)
     }
 }

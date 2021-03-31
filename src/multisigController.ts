@@ -5,6 +5,7 @@ import { MultisigWalletV10 } from "./types";
 
 import * as artifact from "./ethereum/abi/MultisigWalletV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
+import { DecodedCall } from "./abiDecoderController";
 
 export class MultisigController {
     private _signer: Signer;
@@ -130,7 +131,7 @@ export class MultisigController {
         return encode(artifact, functionName, args)
     }
 
-    public static decodeCall(data: string): string {
+    public static decodeCall(data: string): DecodedCall | null {
         return decode(artifact, data)
     }
 }

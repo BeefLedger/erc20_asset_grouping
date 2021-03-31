@@ -5,6 +5,7 @@ import { deployGrouping } from "./ethereum/deploy/deploy";
 import { Grouping } from "./types";
 import * as artifact from "./ethereum/abi/Grouping.json"
 import { decode, encode } from "./ethereum/encodeCall";
+import { DecodedCall } from "./abiDecoderController";
 
 export class GroupingController {
 
@@ -74,7 +75,7 @@ export class GroupingController {
         return encode(artifact, functionName, args)
     }
 
-    public static decodeCall(data: string): string {
+    public static decodeCall(data: string): DecodedCall | null {
         return decode(artifact, data)
     }
 }

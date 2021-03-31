@@ -6,6 +6,7 @@ import { ERC721BeefLedgerV10 } from "./types";
 import { ERC721BeefLedgerV11 } from "./types/ERC721BeefLedgerV11";
 import * as artifact from "./ethereum/abi/ERC721BeefLedgerV1_1.json"
 import { decode, encode } from "./ethereum/encodeCall";
+import { DecodedCall } from "./abiDecoderController";
 
 
 export class ERC721Controller {
@@ -145,7 +146,7 @@ export class ERC721Controller {
         return encode(artifact, functionName, args)
     }
 
-    public static decodeCall(data: string): string {
+    public static decodeCall(data: string): DecodedCall | null {
         return decode(artifact, data)
     }
 }

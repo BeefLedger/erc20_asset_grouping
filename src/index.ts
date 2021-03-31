@@ -13,6 +13,8 @@ export * from './dealRoomHubController';
 export * from './multisigHashedController';
 export * from './groupingFactoryController';
 
+export * from './abiDecoderController';
+
 export * from './ethereum/index';
 
 export * from './types'

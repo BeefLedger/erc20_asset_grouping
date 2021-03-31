@@ -147,7 +147,7 @@
         "id": 703,
         "nodeType": "ImportDirective",
         "scope": 846,
-        "sourceUnit": 7187,
+        "sourceUnit": 7288,
         "src": "66:41:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -340,7 +340,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
@@ -348,10 +348,10 @@
               "id": 717,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7186,
+              "referencedDeclaration": 7287,
               "src": "301:20:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -391,7 +391,7 @@
                               "referencedDeclaration": 718,
                               "src": "397:11:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             }
@@ -399,7 +399,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             ],
@@ -961,7 +961,7 @@
                       "referencedDeclaration": 718,
                       "src": "704:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -995,10 +995,10 @@
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7186,
+                        "referencedDeclaration": 7287,
                         "src": "718:20:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7186_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7287_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
@@ -1013,13 +1013,13 @@
                       "src": "718:29:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "704:43:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
@@ -1875,7 +1875,7 @@
                         "referencedDeclaration": 718,
                         "src": "1376:11:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -1883,7 +1883,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
@@ -2026,7 +2026,7 @@
         "id": 703,
         "nodeType": "ImportDirective",
         "scope": 846,
-        "sourceUnit": 7187,
+        "sourceUnit": 7288,
         "src": "66:41:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2219,7 +2219,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
@@ -2227,10 +2227,10 @@
               "id": 717,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7186,
+              "referencedDeclaration": 7287,
               "src": "301:20:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -2270,7 +2270,7 @@
                               "referencedDeclaration": 718,
                               "src": "397:11:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             }
@@ -2278,7 +2278,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             ],
@@ -2840,7 +2840,7 @@
                       "referencedDeclaration": 718,
                       "src": "704:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -2874,10 +2874,10 @@
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7186,
+                        "referencedDeclaration": 7287,
                         "src": "718:20:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7186_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7287_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
@@ -2892,13 +2892,13 @@
                       "src": "718:29:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "704:43:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
@@ -3754,7 +3754,7 @@
                         "referencedDeclaration": 718,
                         "src": "1376:11:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -3762,7 +3762,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7186",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
@@ -3880,7 +3880,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-03-04T21:36:39.823Z",
+  "updatedAt": "2021-03-30T21:00:47.287Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

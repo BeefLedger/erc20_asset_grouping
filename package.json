@@ -1,6 +1,6 @@
 {
   "name": "smart-trade-networks-contracts",
-  "version": "1.4.6",
+  "version": "1.5.4",
   "description": "",
   "main": "lib/index.js",
   "scripts": {

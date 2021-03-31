@@ -5,6 +5,7 @@ import { getDealRoomHubContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/DealRoomHubV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { initializeDealRoomHub } from "./ethereum/deploy/deploy";
+import { DecodedCall } from "./abiDecoderController";
 
 
 export type DealRoomCreateParams = {
@@ -105,7 +106,7 @@ export class DealRoomHubController {
         return encode(artifact, functionName, args)
     }
 
-    public static decodeCall(data: string): string {
+    public static decodeCall(data: string): DecodedCall | null {
         return decode(artifact, data)
     }
 }
