@@ -111,9 +111,9 @@ export class MultisigController {
         return multisigContract.functions.submitTransaction(destination, value, data, overrides);
     }
 
-    public async confirmTransaction(transactionId: BigNumberish): Promise<ContractTransaction> {
+    public async confirmTransaction(transactionId: BigNumberish, overrides: Overrides): Promise<ContractTransaction> {
         const multisigContract = await this._getMultisigContract();
-        return multisigContract.functions.confirmTransaction(transactionId);
+        return multisigContract.functions.confirmTransaction(transactionId, overrides);
     }
 
     public async revokeConfirmation(transactionId: BigNumberish): Promise<ContractTransaction> {
