@@ -5,6 +5,7 @@ import { getCompaniesContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/CompaniesV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { initializeCompanies } from "./ethereum/deploy/deploy";
+import { DecodedCall } from "./abiDecoderController";
 
 
 export class CompaniesController {
@@ -116,7 +117,7 @@ export class CompaniesController {
         return encode(artifact, functionName, args)
     }
 
-    public static decodeCall(data: string): string {
+    public static decodeCall(data: string): DecodedCall | null {
         return decode(artifact, data)
     }
 }

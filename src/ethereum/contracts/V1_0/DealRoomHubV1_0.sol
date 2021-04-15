@@ -56,7 +56,7 @@ contract DealRoomHubV1_0 {
     }
 
     function initialize() public {
-        require(!_initialized, "conract already initialized");
+        require(!_initialized, "contract already initialized");
         _initialized = true;
     }
 

@@ -4,6 +4,7 @@ import { MultiSigHashed } from "./types";
 import { getMultisigHashedContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/MultiSigHashed.json"
 import { decode, encode } from "./ethereum/encodeCall";
+import { DecodedCall } from "./abiDecoderController";
 
 export type Transaction = {
     destination: string;
@@ -118,7 +119,7 @@ export class MultisigHashedController {
         return encode(artifact, functionName, args)
     }
 
-    public static decodeCall(data: string): string {
+    public static decodeCall(data: string): DecodedCall | null {
         return decode(artifact, data)
     }
 

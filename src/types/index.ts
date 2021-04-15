@@ -17,6 +17,7 @@ export type { GroupingFactoryV10 } from "./GroupingFactoryV10";
 export type { IERC165 } from "./IERC165";
 export type { IERC20 } from "./IERC20";
 export type { IERC721 } from "./IERC721";
+export type { IMultisigCall } from "./IMultisigCall";
 export type { Migrations } from "./Migrations";
 export type { MultiSigHashed } from "./MultiSigHashed";
 export type { MultisigWalletV10 } from "./MultisigWalletV10";
@@ -42,6 +43,7 @@ export { GroupingFactoryV10__factory } from "./factories/GroupingFactoryV10__fac
 export { IERC165__factory } from "./factories/IERC165__factory";
 export { IERC20__factory } from "./factories/IERC20__factory";
 export { IERC721__factory } from "./factories/IERC721__factory";
+export { IMultisigCall__factory } from "./factories/IMultisigCall__factory";
 export { Migrations__factory } from "./factories/Migrations__factory";
 export { MultiSigHashed__factory } from "./factories/MultiSigHashed__factory";
 export { MultisigWalletV10__factory } from "./factories/MultisigWalletV10__factory";

@@ -20,6 +20,7 @@ import * as Proxy_ABI from './abi/Proxy.json';
 import * as ResourceActionsV1_0_ABI from './abi/ResourceActionsV1_0.json';
 import * as SafeMath_ABI from './abi/SafeMath.json';
 import * as UpgradeabilityProxy_ABI from './abi/UpgradeabilityProxy.json';
+import * as ABI_Coder from './encodeCall';
 
 export {
     ActionsStorageV1_0_ABI,
@@ -41,5 +42,6 @@ export {
     Proxy_ABI,
     ResourceActionsV1_0_ABI,
     SafeMath_ABI,
-    UpgradeabilityProxy_ABI
+    UpgradeabilityProxy_ABI,
+    ABI_Coder
 }

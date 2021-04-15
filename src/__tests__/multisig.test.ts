@@ -2,7 +2,8 @@ import { BigNumber, ethers, Signer } from "ethers";
 import { getMultisigContract } from "../chain/prefabContractFactory";
 
 import { MultisigController } from "../multisigController";
-import { MultisigWalletV10 } from "../types";
+import { ERC721Controller } from "../erc721Controller";
+import { ERC721BeefLedgerV10, MultisigWalletV10 } from "../types";
 
 let provider: ethers.providers.JsonRpcProvider;
 let signers: Signer[] = []
@@ -20,7 +21,7 @@ describe("Grouping test", () => {
   
     }, 1 * MINUTE_MS)
   
-    it("Deploys MultisigV10 ERC721BeefLedgerV10 and adds owner", async (): Promise<any> => {
+    it("Deploys MultisigV10 ERC721BeefLedgerV11 and adds owner", async (): Promise<any> => {
         
         const owner1 = await signers[0].getAddress(); 
         const owner2 = await signers[1].getAddress(); 
@@ -31,7 +32,7 @@ describe("Grouping test", () => {
 
         /** Multisig contract deployment */
         const [multisigContract, multisigProxyAddress]: [MultisigWalletV10, string] = await MultisigController.deployMultisigContract(signers[0], owners, 1);
-        const multisigContractAddress = multisigContract.address;
+        const multisigContractAddress = multisigProxyAddress;
         expect(multisigContractAddress.length).toEqual(42);
 
         const multisig = new MultisigController(multisigContractAddress, signers[0]);
@@ -41,39 +42,53 @@ describe("Grouping test", () => {
         let required = await multisig.getRequiredSignatures();
         expect(required.toString()).toEqual("1");
 
-        const mSigContract = await getMultisigContract(multisigContractAddress, signers[0]);
-        fetchedOwners = await mSigContract.getOwners()
-        expect(fetchedOwners.length).toEqual(3);
-
-        // let encodedData = multisig.encodeCall("removeOwner", [owner2])
-        // let epa = await mSigContract.functions.submitTransaction(multisigContractAddress, 0, encodedData)
-        // let contractReceipt = await epa.wait()
+        const isOwner = await multisig.isOwner(owner1);
+        expect(isOwner).toEqual(true);
 
 
-        // let events = contractReceipt.events.map(evt => evt.event)
-        // fetchedOwners = await mSigContract.getOwners()
-        // console.log(fetchedOwners)
-        // console.log(events)
-
-
-        const encodedData = multisig.encodeCall("replaceOwner", [owner2, owner4])
-        const epa = await mSigContract.functions.submitTransaction(multisigContractAddress, 0, encodedData, { gasLimit: 6200000})
+        const encodedData = MultisigController.encodeCall("addOwner", [owner4])
+        const epa = await multisig.submitTransaction(multisigContractAddress, 0, encodedData, { gasLimit: 7500000})
         const contractReceipt = await epa.wait()
-        const events = contractReceipt.events.map(evt => evt.event)
-        fetchedOwners = await mSigContract.getOwners()
-        console.log(fetchedOwners)
-        console.log(events)
+        
+        fetchedOwners = await multisig.getOwners()
+        expect(fetchedOwners.length).toEqual(4);
 
         
-      ///////////////////////////////////////////////////
-        // const encodedData = multisig.encodeCall("removeOwner", [owner2])
-        // console.log(encodedData)
-        // const contractTransaction = await multisig.submitTransaction(multisigContractAddress, 0, encodedData);
-        // const contractReceipt = await contractTransaction.wait();
-        // console.log(contractReceipt.events)
-        // fetchedOwners = await multisig.getOwners();
-        // expect(fetchedOwners.length).toEqual(2);
-      
+        // /** ERC721 contract deployment */
+        const [erc721Contract, erc721ProxyAddress]: [ERC721BeefLedgerV10, string] = await ERC721Controller.deployERC721Contract(signers[0], multisigContractAddress);
+        const erc721ContractAddress = erc721ProxyAddress
+        expect(erc721ContractAddress.length).toEqual(42);
+
+        let owner = await erc721Contract.owner();
+        expect(owner).toEqual(multisigProxyAddress);
+
+        const erc721Controller = new ERC721Controller(erc721ContractAddress, signers[0]);
+        owner = await erc721Controller.getOwner();
+        expect(owner).toEqual(multisigProxyAddress);
+
+        //mint
+        const mintTokensTx = await erc721Controller.mint(owner3, [1000, 10001, 10002, 10003, 10004]);
+        await mintTokensTx.wait();
+        
+        let mintedTokens = await erc721Controller.balanceOf(owner3);
+        expect(mintedTokens.toString()).toEqual("5");
+
+        let ownerOf = await erc721Controller.getOwnerOf(1000);
+        expect(ownerOf).toEqual(owner3);
+
+        //upgrade
+        const upgradedERC721 = await erc721Controller.upgradeERC721ContractV11(signers[0], erc721ProxyAddress);
+        const upgradedErc721Controller = new ERC721Controller(upgradedERC721.address, signers[0]);
+
+        mintedTokens = await upgradedErc721Controller.balanceOf(owner3);
+        expect(mintedTokens.toString()).toEqual("5");
+
+        ownerOf = await upgradedErc721Controller.getOwnerOf(1000);
+        expect(ownerOf).toEqual(owner3);
+
+        //Create grouping
+        
+     
     })
 
     const sleep = (ms) => {

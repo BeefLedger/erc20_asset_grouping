@@ -242,7 +242,6 @@ contract ActionsStorageV1_0 is Ownable {
 
 
     /**Getters */
-
     function getEntriesByCompany(address _company) virtual public view returns(uint256[] memory) {
         return entriesByCompany[_company];
     }

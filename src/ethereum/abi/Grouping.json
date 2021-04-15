@@ -108,9 +108,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_rgToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_erc721\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_asset\",\"type\":\"uint256\"}],\"name\":\"addAsset\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAssets\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getERC721Address\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRGToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_asset\",\"type\":\"uint256\"}],\"name\":\"isAssetAdded\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rgToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Grouping.sol\":\"Grouping\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Grouping.sol\":{\"keccak256\":\"0xd35f6c3e4459b18deffc1a0459170ce233fcdbbe189555d65f35223981abd55f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://72f945c2f8f2ce5ebce6dac942cc8cbf1dcc7815891b2309b1bdee193bc6d742\",\"dweb:/ipfs/QmeekCsezSGUGZ6XzgSC7jc1B9tYqQcH23ZfpKGze5iAdf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Ownable.sol\":{\"keccak256\":\"0x964303431ae2c14ab2872dccd3a47f1ada16eeaa306fc3af3fdd9b7e111ca6a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40d290c1b5ef186710d0ea1b04e584cf083d7aa62fd67cc9c7ce1326854e5438\",\"dweb:/ipfs/QmWPXb9BzihgZU92xVGJxYqELRj36Wbq2tf3kLhWHuaXLc\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/CompaniesV1_0.sol\":{\"keccak256\":\"0xaafe12654f198c20675c643d6297ab8e5dfefd26b391313b6a380ab8d68f4f26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d467b7be4e67c0c3b78f3bde36123098f3690f6b3307da318c65a4c77e1cef90\",\"dweb:/ipfs/QmdmN6ut5X5FD4qTZWAmhcx8QTKBRcawUJFXAnkhrSEnHN\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ERC721BeefLedgerV1_0.sol\":{\"keccak256\":\"0xee0b059fa25e559c7463007fb2c6ff3338e2c5ea277db82181a596229d36c00c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9f6be3b41b225e3a0415ef55044fa9371e420e4f0ee1217b41dcca6ac2961d25\",\"dweb:/ipfs/QmZ5k4kjGxNhJQjre4cfHQoLyt3fzF82LJBtubr4K7u5Ug\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/MultisigWalletV1_0.sol\":{\"keccak256\":\"0x5793615459f8bc789c1fcc3a7557fc5cc674ca6b9e2ae1ebd82c63406bc3b22a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://12dc87cdce69f00df11df876d7a88915e91e95e8cc6cffb0d56d988d85ee5772\",\"dweb:/ipfs/QmUc5mSxibSBP9wo1MRQM8KNjZpCF7xiC6PpmcY9MB7uhN\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ResourceActionsV1_0.sol\":{\"keccak256\":\"0x4d17aa3f1f7cc68cd232f2fd46310aa18c350797d4354eec12cbd94e75075859\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1043e4e78ce44bb0ecc04a29b979803fde6206b23eb2fdfca955e69d382f3226\",\"dweb:/ipfs/QmPQEabkPWDn3jeRJAQ2tN7EHXymJqrmkimEjKx3hP1MYf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol\":{\"keccak256\":\"0x6df8f09a6a85e4af9079184eb598247c611810071ae30bd502519ba5e62c7d70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4bb84ae2cf10e18a26e9aa30a4c7327756851dd4caa758daae38326c46bbf3a9\",\"dweb:/ipfs/QmdRxF442cj8JsBpjyVTm6ML6VkXMsZnWkSRArAaVKp2zM\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0x21662e4254ce4ac8570b30cc7ab31435966b3cb778a56ba4d09276881cfb2437\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://acce8fe6adc670f9987a8b6aedc4cc0abcd0dcd2e152d649a12099d735bd7bad\",\"dweb:/ipfs/QmXAk17oK3daBmA8CGyVcU56L496jW3U6Ef1WkfHyB1JAV\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161044d38038061044d8339818101604052604081101561003357600080fd5b5080516020909101516001600160a01b038216610097576040805162461bcd60e51b815260206004820152601c60248201527f524720546f6b656e20616464726573732063616e6e6f74206265203000000000604482015290519081900360640190fd5b6001600160a01b0381166100f2576040805162461bcd60e51b815260206004820152601a60248201527f45524337323120616464726573732063616e6e6f742062652030000000000000604482015290519081900360640190fd5b600080546001600160a01b039384166001600160a01b031991821617909155600480549290931691161790556103208061012d6000396000f3fe608060405234801561001057600080fd5b50600436106100615760003560e01c80627ffb78146100665780630b71d2561461008a57806367e4ac2c146100bb57806392206ff514610113578063f110a60e1461011b578063fa3fa5f014610123575b600080fd5b61006e610140565b604080516001600160a01b039092168252519081900360200190f35b6100a7600480360360208110156100a057600080fd5b503561014f565b604080519115158252519081900360200190f35b6100c361025f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100ff5781810151838201526020016100e7565b505050509050019250505060405180910390f35b61006e6102b7565b61006e6102c6565b6100a76004803603602081101561013957600080fd5b50356102d5565b6004546001600160a01b031690565b6004546000906001600160a01b031633146101b1576040805162461bcd60e51b815260206004820152601860248201527f6f70657261746f72206973206e6f7420617070726f7665640000000000000000604482015290519081900360640190fd5b60008281526002602052604090205460ff161561020b576040805162461bcd60e51b8152602060048201526013602482015272105cdcd95d08185b1c9958591e481859191959606a1b604482015290519081900360640190fd5b506000818152600260205260408120805460ff1916600190811790915580548082018255918190527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6909101829055919050565b606060018054806020026020016040519081016040528092919081815260200182805480156102ad57602002820191906000526020600020905b815481526020019060010190808311610299575b5050505050905090565b6000546001600160a01b031690565b6000546001600160a01b031681565b60009081526002602052604090205460ff169056fea2646970667358221220a7ce047b907f03f97562d7966d4303b7cd1b0624c5a7e8ec70e67980f2f7c2fc64736f6c63430007000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100615760003560e01c80627ffb78146100665780630b71d2561461008a57806367e4ac2c146100bb57806392206ff514610113578063f110a60e1461011b578063fa3fa5f014610123575b600080fd5b61006e610140565b604080516001600160a01b039092168252519081900360200190f35b6100a7600480360360208110156100a057600080fd5b503561014f565b604080519115158252519081900360200190f35b6100c361025f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100ff5781810151838201526020016100e7565b505050509050019250505060405180910390f35b61006e6102b7565b61006e6102c6565b6100a76004803603602081101561013957600080fd5b50356102d5565b6004546001600160a01b031690565b6004546000906001600160a01b031633146101b1576040805162461bcd60e51b815260206004820152601860248201527f6f70657261746f72206973206e6f7420617070726f7665640000000000000000604482015290519081900360640190fd5b60008281526002602052604090205460ff161561020b576040805162461bcd60e51b8152602060048201526013602482015272105cdcd95d08185b1c9958591e481859191959606a1b604482015290519081900360640190fd5b506000818152600260205260408120805460ff1916600190811790915580548082018255918190527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6909101829055919050565b606060018054806020026020016040519081016040528092919081815260200182805480156102ad57602002820191906000526020600020905b815481526020019060010190808311610299575b5050505050905090565b6000546001600160a01b031690565b6000546001600160a01b031681565b60009081526002602052604090205460ff169056fea2646970667358221220a7ce047b907f03f97562d7966d4303b7cd1b0624c5a7e8ec70e67980f2f7c2fc64736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_rgToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_erc721\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_asset\",\"type\":\"uint256\"}],\"name\":\"addAsset\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAssets\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getERC721Address\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRGToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_asset\",\"type\":\"uint256\"}],\"name\":\"isAssetAdded\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rgToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Grouping.sol\":\"Grouping\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Grouping.sol\":{\"keccak256\":\"0xd35f6c3e4459b18deffc1a0459170ce233fcdbbe189555d65f35223981abd55f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://72f945c2f8f2ce5ebce6dac942cc8cbf1dcc7815891b2309b1bdee193bc6d742\",\"dweb:/ipfs/QmeekCsezSGUGZ6XzgSC7jc1B9tYqQcH23ZfpKGze5iAdf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/Ownable.sol\":{\"keccak256\":\"0x964303431ae2c14ab2872dccd3a47f1ada16eeaa306fc3af3fdd9b7e111ca6a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40d290c1b5ef186710d0ea1b04e584cf083d7aa62fd67cc9c7ce1326854e5438\",\"dweb:/ipfs/QmWPXb9BzihgZU92xVGJxYqELRj36Wbq2tf3kLhWHuaXLc\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/CompaniesV1_0.sol\":{\"keccak256\":\"0xaafe12654f198c20675c643d6297ab8e5dfefd26b391313b6a380ab8d68f4f26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d467b7be4e67c0c3b78f3bde36123098f3690f6b3307da318c65a4c77e1cef90\",\"dweb:/ipfs/QmdmN6ut5X5FD4qTZWAmhcx8QTKBRcawUJFXAnkhrSEnHN\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ERC721BeefLedgerV1_0.sol\":{\"keccak256\":\"0xee0b059fa25e559c7463007fb2c6ff3338e2c5ea277db82181a596229d36c00c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9f6be3b41b225e3a0415ef55044fa9371e420e4f0ee1217b41dcca6ac2961d25\",\"dweb:/ipfs/QmZ5k4kjGxNhJQjre4cfHQoLyt3fzF82LJBtubr4K7u5Ug\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/MultisigWalletV1_0.sol\":{\"keccak256\":\"0x028d206cad0f30356d78720422a2eb31b3f397cb970feba78b3a7633c412857a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b232d48dc22cef22337260588d4a24c2f33c22896b5d444486696e5ebc59dd9f\",\"dweb:/ipfs/QmQw1EaPszfvSnpoNiynD2SNCtE5caojUcRxP8Xsp92DN7\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ResourceActionsV1_0.sol\":{\"keccak256\":\"0x4d17aa3f1f7cc68cd232f2fd46310aa18c350797d4354eec12cbd94e75075859\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1043e4e78ce44bb0ecc04a29b979803fde6206b23eb2fdfca955e69d382f3226\",\"dweb:/ipfs/QmPQEabkPWDn3jeRJAQ2tN7EHXymJqrmkimEjKx3hP1MYf\"]},\"/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol\":{\"keccak256\":\"0x6df8f09a6a85e4af9079184eb598247c611810071ae30bd502519ba5e62c7d70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4bb84ae2cf10e18a26e9aa30a4c7327756851dd4caa758daae38326c46bbf3a9\",\"dweb:/ipfs/QmdRxF442cj8JsBpjyVTm6ML6VkXMsZnWkSRArAaVKp2zM\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0x21662e4254ce4ac8570b30cc7ab31435966b3cb778a56ba4d09276881cfb2437\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://acce8fe6adc670f9987a8b6aedc4cc0abcd0dcd2e152d649a12099d735bd7bad\",\"dweb:/ipfs/QmXAk17oK3daBmA8CGyVcU56L496jW3U6Ef1WkfHyB1JAV\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161044d38038061044d8339818101604052604081101561003357600080fd5b5080516020909101516001600160a01b038216610097576040805162461bcd60e51b815260206004820152601c60248201527f524720546f6b656e20616464726573732063616e6e6f74206265203000000000604482015290519081900360640190fd5b6001600160a01b0381166100f2576040805162461bcd60e51b815260206004820152601a60248201527f45524337323120616464726573732063616e6e6f742062652030000000000000604482015290519081900360640190fd5b600080546001600160a01b039384166001600160a01b031991821617909155600480549290931691161790556103208061012d6000396000f3fe608060405234801561001057600080fd5b50600436106100615760003560e01c80627ffb78146100665780630b71d2561461008a57806367e4ac2c146100bb57806392206ff514610113578063f110a60e1461011b578063fa3fa5f014610123575b600080fd5b61006e610140565b604080516001600160a01b039092168252519081900360200190f35b6100a7600480360360208110156100a057600080fd5b503561014f565b604080519115158252519081900360200190f35b6100c361025f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100ff5781810151838201526020016100e7565b505050509050019250505060405180910390f35b61006e6102b7565b61006e6102c6565b6100a76004803603602081101561013957600080fd5b50356102d5565b6004546001600160a01b031690565b6004546000906001600160a01b031633146101b1576040805162461bcd60e51b815260206004820152601860248201527f6f70657261746f72206973206e6f7420617070726f7665640000000000000000604482015290519081900360640190fd5b60008281526002602052604090205460ff161561020b576040805162461bcd60e51b8152602060048201526013602482015272105cdcd95d08185b1c9958591e481859191959606a1b604482015290519081900360640190fd5b506000818152600260205260408120805460ff1916600190811790915580548082018255918190527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6909101829055919050565b606060018054806020026020016040519081016040528092919081815260200182805480156102ad57602002820191906000526020600020905b815481526020019060010190808311610299575b5050505050905090565b6000546001600160a01b031690565b6000546001600160a01b031681565b60009081526002602052604090205460ff169056fea264697066735822122062c4acc1571792f566806be20e8ce589ebe14fa473c970d50c7c7ba9377d0c0f64736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100615760003560e01c80627ffb78146100665780630b71d2561461008a57806367e4ac2c146100bb57806392206ff514610113578063f110a60e1461011b578063fa3fa5f014610123575b600080fd5b61006e610140565b604080516001600160a01b039092168252519081900360200190f35b6100a7600480360360208110156100a057600080fd5b503561014f565b604080519115158252519081900360200190f35b6100c361025f565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100ff5781810151838201526020016100e7565b505050509050019250505060405180910390f35b61006e6102b7565b61006e6102c6565b6100a76004803603602081101561013957600080fd5b50356102d5565b6004546001600160a01b031690565b6004546000906001600160a01b031633146101b1576040805162461bcd60e51b815260206004820152601860248201527f6f70657261746f72206973206e6f7420617070726f7665640000000000000000604482015290519081900360640190fd5b60008281526002602052604090205460ff161561020b576040805162461bcd60e51b8152602060048201526013602482015272105cdcd95d08185b1c9958591e481859191959606a1b604482015290519081900360640190fd5b506000818152600260205260408120805460ff1916600190811790915580548082018255918190527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6909101829055919050565b606060018054806020026020016040519081016040528092919081815260200182805480156102ad57602002820191906000526020600020905b815481526020019060010190808311610299575b5050505050905090565b6000546001600160a01b031690565b6000546001600160a01b031681565b60009081526002602052604090205460ff169056fea264697066735822122062c4acc1571792f566806be20e8ce589ebe14fa473c970d50c7c7ba9377d0c0f64736f6c63430007000033",
   "immutableReferences": {},
   "sourceMap": "109:1288:2:-:0;;;476:278;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;476:278:2;;;;;;;-1:-1:-1;;;;;541:22:2;;533:63;;;;;-1:-1:-1;;;533:63:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;614:21:2;;606:60;;;;;-1:-1:-1;;;606:60:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;676:7;:18;;-1:-1:-1;;;;;676:18:2;;;-1:-1:-1;;;;;;676:18:2;;;;;;704:11;:43;;;;;;;;;;;;;;;-1:-1:-1;;;;109:1288:2;;;;",
   "deployedSourceMap": "109:1288:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1294:101;;;:::i;:::-;;;;-1:-1:-1;;;;;1294:101:2;;;;;;;;;;;;;;760:228;;;;;;;;;;;;;;;;-1:-1:-1;760:228:2;;:::i;:::-;;;;;;;;;;;;;;;;;;1110:90;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1206:82;;;:::i;134:22::-;;;:::i;994:110::-;;;;;;;;;;;;;;;;-1:-1:-1;994:110:2;;:::i;1294:101::-;1376:11;;-1:-1:-1;;;;;1376:11:2;;1294:101::o;760:228::-;397:11;;822:4;;-1:-1:-1;;;;;397:11:2;413:10;389:34;381:71;;;;;-1:-1:-1;;;381:71:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;847:21:::1;::::0;;;:13:::1;:21;::::0;;;;;::::1;;846:22;838:54;;;::::0;;-1:-1:-1;;;838:54:2;;::::1;;::::0;::::1;::::0;::::1;::::0;;;;-1:-1:-1;;;838:54:2;;;;;;;;;;;;;::::1;;-1:-1:-1::0;902:21:2::1;::::0;;;:13:::1;:21;::::0;;;;:28;;-1:-1:-1;;902:28:2::1;926:4;902:28:::0;;::::1;::::0;;;940:20;;;;::::1;::::0;;;;;;;;;::::1;::::0;;;;926:4;760:228::o;1110:90::-;1151:16;1186:7;1179:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1110:90;:::o;1206:82::-;1248:7;1274;-1:-1:-1;;;;;1274:7:2;;1206:82::o;134:22::-;;;-1:-1:-1;;;;;134:22:2;;:::o;994:110::-;1052:4;1075:21;;;:13;:21;;;;;;;;;994:110::o",
@@ -147,7 +147,7 @@
         "id": 703,
         "nodeType": "ImportDirective",
         "scope": 846,
-        "sourceUnit": 7181,
+        "sourceUnit": 7288,
         "src": "66:41:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -340,7 +340,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
@@ -348,10 +348,10 @@
               "id": 717,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7180,
+              "referencedDeclaration": 7287,
               "src": "301:20:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -391,7 +391,7 @@
                               "referencedDeclaration": 718,
                               "src": "397:11:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             }
@@ -399,7 +399,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             ],
@@ -961,7 +961,7 @@
                       "referencedDeclaration": 718,
                       "src": "704:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -995,10 +995,10 @@
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7180,
+                        "referencedDeclaration": 7287,
                         "src": "718:20:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7180_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7287_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
@@ -1013,13 +1013,13 @@
                       "src": "718:29:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "704:43:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
@@ -1875,7 +1875,7 @@
                         "referencedDeclaration": 718,
                         "src": "1376:11:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -1883,7 +1883,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
@@ -2026,7 +2026,7 @@
         "id": 703,
         "nodeType": "ImportDirective",
         "scope": 846,
-        "sourceUnit": 7181,
+        "sourceUnit": 7288,
         "src": "66:41:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2219,7 +2219,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
               "typeString": "contract ERC721BeefLedgerV1_1"
             },
             "typeName": {
@@ -2227,10 +2227,10 @@
               "id": 717,
               "name": "ERC721BeefLedgerV1_1",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7180,
+              "referencedDeclaration": 7287,
               "src": "301:20:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                 "typeString": "contract ERC721BeefLedgerV1_1"
               }
             },
@@ -2270,7 +2270,7 @@
                               "referencedDeclaration": 718,
                               "src": "397:11:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             }
@@ -2278,7 +2278,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                                 "typeString": "contract ERC721BeefLedgerV1_1"
                               }
                             ],
@@ -2840,7 +2840,7 @@
                       "referencedDeclaration": 718,
                       "src": "704:11:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
@@ -2874,10 +2874,10 @@
                         "name": "ERC721BeefLedgerV1_1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 7180,
+                        "referencedDeclaration": 7287,
                         "src": "718:20:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7180_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7287_$",
                           "typeString": "type(contract ERC721BeefLedgerV1_1)"
                         }
                       },
@@ -2892,13 +2892,13 @@
                       "src": "718:29:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                         "typeString": "contract ERC721BeefLedgerV1_1"
                       }
                     },
                     "src": "704:43:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                       "typeString": "contract ERC721BeefLedgerV1_1"
                     }
                   },
@@ -3754,7 +3754,7 @@
                         "referencedDeclaration": 718,
                         "src": "1376:11:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       }
@@ -3762,7 +3762,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7180",
+                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
                           "typeString": "contract ERC721BeefLedgerV1_1"
                         }
                       ],
@@ -3880,7 +3880,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-03-03T19:18:44.019Z",
+  "updatedAt": "2021-03-31T20:59:35.176Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
