@@ -1,5 +1,6 @@
 const HDWalletProvider = require("truffle-hdwallet-provider");
-const privKey = "d26d6afd5a2a4862cc8fb02523bdde5ccf1427159519d9fc9187be7d960beccb"; // private keys
+const fs = require("fs");
+const privKey = fs.readFileSync(".privateKey").toString('utf-8');
 
 /**
  * Use this file to configure your truffle project. It's seeded with some
