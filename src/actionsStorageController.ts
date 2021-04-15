@@ -1,4 +1,4 @@
-import { BigNumberish, ContractTransaction, ethers, Signer } from "ethers";
+import { BigNumberish, ContractTransaction, ethers, Signer, Wallet } from "ethers";
 import { getActionsStorageContract } from "./chain/prefabContractFactory";
 import { ActionsStorageV10 } from "./types";
 import * as artifact from "./ethereum/abi/ActionsStorageV1_1.json"
@@ -12,8 +12,8 @@ export class ActionsStorageController {
 
     constructor(actionsStorageAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
         this._actionsStorageAddress = actionsStorageAddress;
-        if(signerOrProvider instanceof Signer) {
-            this._signer = signerOrProvider;
+        if(signerOrProvider instanceof Signer || (signerOrProvider as any).provider) {
+            this._signer = signerOrProvider as Signer;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 
             this._signer = web3Wrapper.getSigner()
@@ -55,17 +55,17 @@ export class ActionsStorageController {
     public async getEntryData(
         entryNumber: BigNumberish
     ): Promise<[
-      number,
-      string,
-      string,
-      BigNumberish[],
-      BigNumberish,
-      BigNumberish,
-      string[],
-      boolean,
-      boolean,
-      BigNumberish,
-      BigNumberish
+        number,
+        string,
+        string,
+        BigNumberish[],
+        BigNumberish,
+        BigNumberish,
+        string[],
+        boolean,
+        boolean,
+        BigNumberish,
+        BigNumberish
     ]> {
         const actionsStorageContract = await this._getActionsStorageContract();
         return actionsStorageContract.getEntryData(entryNumber);
