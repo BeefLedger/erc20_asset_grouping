@@ -5,6 +5,7 @@ import { getDealRoomContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/DealRoom.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export type Deal = {
     id: BigNumberish;
@@ -29,9 +30,10 @@ export class DealRoomController {
     private _dealRoomAddress : string
     private _dealRoomContract? : DealRoom
 
-    constructor(_dealRoomAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(_dealRoomAddress: string, signerOrProvider: ProviderOrSigner) {
         this._dealRoomAddress = _dealRoomAddress;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

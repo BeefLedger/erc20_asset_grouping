@@ -6,6 +6,7 @@ import { Grouping } from "./types";
 import * as artifact from "./ethereum/abi/Grouping.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export class GroupingController {
 
@@ -13,9 +14,10 @@ export class GroupingController {
     private _groupingAddress : string
     private _groupingContract? : Grouping
 
-    constructor(groupingAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(groupingAddress: string, signerOrProvider: ProviderOrSigner) {
         this._groupingAddress = groupingAddress;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

@@ -6,15 +6,17 @@ import { MultisigWalletV10 } from "./types";
 import * as artifact from "./ethereum/abi/MultisigWalletV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export class MultisigController {
     private _signer: Signer;
     private _multisigAddress : string
     private _multisigContract? : MultisigWalletV10
 
-    constructor(multisigAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(multisigAddress: string, signerOrProvider: ProviderOrSigner) {
         this._multisigAddress = multisigAddress;
-        if(signerOrProvider instanceof Signer) {
+
+       if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider as any) 

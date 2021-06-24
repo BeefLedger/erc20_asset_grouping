@@ -5,6 +5,7 @@ import { getMultisigHashedContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/MultiSigHashed.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export type Transaction = {
     destination: string;
@@ -21,9 +22,10 @@ export class MultisigHashedController {
     private _multisigHashedAddress : string
     private _multisigHashedContract? : MultiSigHashed
 
-    constructor(_multisigHashedAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(_multisigHashedAddress: string, signerOrProvider: ProviderOrSigner) {
         this._multisigHashedAddress = _multisigHashedAddress;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

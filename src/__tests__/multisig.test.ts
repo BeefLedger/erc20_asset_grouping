@@ -47,6 +47,7 @@ describe("Grouping test", () => {
 
 
         const encodedData = MultisigController.encodeCall("addOwner", [owner4])
+        console.log(encodedData)
         const epa = await multisig.submitTransaction(multisigContractAddress, 0, encodedData, { gasLimit: 7500000})
         const contractReceipt = await epa.wait()
         

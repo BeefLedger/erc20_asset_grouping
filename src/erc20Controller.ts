@@ -4,6 +4,7 @@ import { getErc20Contract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/ERC20ForAssetGrouping.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export class ERC20Controller {
 
@@ -11,9 +12,10 @@ export class ERC20Controller {
     private _signer: Signer;
     private _erc20Contract? : ERC20ForAssetGrouping
 
-    constructor(erc20Address: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(erc20Address: string, signerOrProvider: ProviderOrSigner) {
         this._erc20Address = erc20Address;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

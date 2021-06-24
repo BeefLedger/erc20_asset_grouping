@@ -2011,1344 +2011,1465 @@
     "src": "33:1062:15"
   },
   "legacyAST": {
-    "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ActionsStorageV1_1.sol",
-    "exportedSymbols": {
-      "ActionsStorageV1_1": [
-        7173
-      ]
+    "attributes": {
+      "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ActionsStorageV1_1.sol",
+      "exportedSymbols": {
+        "ActionsStorageV1_1": [
+          7173
+        ]
+      },
+      "license": "MIT"
     },
-    "id": 7174,
-    "license": "MIT",
-    "nodeType": "SourceUnit",
-    "nodes": [
+    "children": [
       {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.7",
+            ".0",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
         "id": 7076,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.7",
-          ".0",
-          "<",
-          "0.8",
-          ".0"
-        ],
-        "nodeType": "PragmaDirective",
+        "name": "PragmaDirective",
         "src": "33:31:15"
       },
       {
-        "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ActionsStorageV1_0.sol",
-        "file": "../V1_0/ActionsStorageV1_0.sol",
+        "attributes": {
+          "SourceUnit": 3339,
+          "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_0/ActionsStorageV1_0.sol",
+          "file": "../V1_0/ActionsStorageV1_0.sol",
+          "scope": 7174,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
         "id": 7077,
-        "nodeType": "ImportDirective",
-        "scope": 7174,
-        "sourceUnit": 3339,
-        "src": "66:40:15",
-        "symbolAliases": [],
-        "unitAlias": ""
+        "name": "ImportDirective",
+        "src": "66:40:15"
       },
       {
-        "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol",
-        "file": "./ERC721BeefLedgerV1_1.sol",
+        "attributes": {
+          "SourceUnit": 7288,
+          "absolutePath": "/home/santiago/projects/beefledger/erc20_asset_grouping/src/ethereum/contracts/V1_1/ERC721BeefLedgerV1_1.sol",
+          "file": "./ERC721BeefLedgerV1_1.sol",
+          "scope": 7174,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
         "id": 7078,
-        "nodeType": "ImportDirective",
-        "scope": 7174,
-        "sourceUnit": 7288,
-        "src": "107:36:15",
-        "symbolAliases": [],
-        "unitAlias": ""
+        "name": "ImportDirective",
+        "src": "107:36:15"
       },
       {
-        "abstract": false,
-        "baseContracts": [
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            2119,
+            3338
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            7173,
+            3338,
+            2119
+          ],
+          "name": "ActionsStorageV1_1",
+          "scope": 7174
+        },
+        "children": [
           {
-            "arguments": null,
-            "baseName": {
-              "contractScope": null,
-              "id": 7079,
-              "name": "ActionsStorageV1_0",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3338,
-              "src": "176:18:15",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ActionsStorageV1_0_$3338",
-                "typeString": "contract ActionsStorageV1_0"
-              }
+            "attributes": {
+              "arguments": null
             },
-            "id": 7080,
-            "nodeType": "InheritanceSpecifier",
-            "src": "176:18:15"
-          }
-        ],
-        "contractDependencies": [
-          2119,
-          3338
-        ],
-        "contractKind": "contract",
-        "documentation": null,
-        "fullyImplemented": true,
-        "id": 7173,
-        "linearizedBaseContracts": [
-          7173,
-          3338,
-          2119
-        ],
-        "name": "ActionsStorageV1_1",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "constant": false,
-            "id": 7082,
-            "mutability": "mutable",
-            "name": "erc721V1_1",
-            "nodeType": "VariableDeclaration",
-            "overrides": null,
-            "scope": 7173,
-            "src": "202:40:15",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-              "typeString": "contract ERC721BeefLedgerV1_1"
-            },
-            "typeName": {
-              "contractScope": null,
-              "id": 7081,
-              "name": "ERC721BeefLedgerV1_1",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 7287,
-              "src": "202:20:15",
-              "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                "typeString": "contract ERC721BeefLedgerV1_1"
-              }
-            },
-            "value": null,
-            "visibility": "internal"
-          },
-          {
-            "constant": false,
-            "id": 7084,
-            "mutability": "mutable",
-            "name": "_initializedV11",
-            "nodeType": "VariableDeclaration",
-            "overrides": null,
-            "scope": 7173,
-            "src": "269:29:15",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_bool",
-              "typeString": "bool"
-            },
-            "typeName": {
-              "id": 7083,
-              "name": "bool",
-              "nodeType": "ElementaryTypeName",
-              "src": "269:4:15",
-              "typeDescriptions": {
-                "typeIdentifier": "t_bool",
-                "typeString": "bool"
-              }
-            },
-            "value": null,
-            "visibility": "internal"
-          },
-          {
-            "body": {
-              "id": 7115,
-              "nodeType": "Block",
-              "src": "354:226:15",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "arguments": [
-                      {
-                        "argumentTypes": null,
-                        "id": 7091,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "nodeType": "UnaryOperation",
-                        "operator": "!",
-                        "prefix": true,
-                        "src": "372:16:15",
-                        "subExpression": {
-                          "argumentTypes": null,
-                          "id": 7090,
-                          "name": "_initializedV11",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7084,
-                          "src": "373:15:15",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_bool",
-                            "typeString": "bool"
-                          }
-                        },
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "hexValue": "636f6e747261637420616c7265616479207570677261646564",
-                        "id": 7092,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": true,
-                        "kind": "string",
-                        "lValueRequested": false,
-                        "nodeType": "Literal",
-                        "src": "390:27:15",
-                        "subdenomination": null,
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_5ab0571b7786dadeee51a3c90a7290e49cbd9672e244e5154a47f3773aa6c495",
-                          "typeString": "literal_string \"contract already upgraded\""
-                        },
-                        "value": "contract already upgraded"
-                      }
-                    ],
-                    "expression": {
-                      "argumentTypes": [
-                        {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        },
-                        {
-                          "typeIdentifier": "t_stringliteral_5ab0571b7786dadeee51a3c90a7290e49cbd9672e244e5154a47f3773aa6c495",
-                          "typeString": "literal_string \"contract already upgraded\""
-                        }
-                      ],
-                      "id": 7089,
-                      "name": "require",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
-                      "referencedDeclaration": -18,
-                      "src": "364:7:15",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
-                        "typeString": "function (bool,string memory) pure"
-                      }
-                    },
-                    "id": 7093,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "364:54:15",
-                    "tryCall": false,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
-                    }
-                  },
-                  "id": 7094,
-                  "nodeType": "ExpressionStatement",
-                  "src": "364:54:15"
-                },
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "arguments": [
-                      {
-                        "argumentTypes": null,
-                        "commonType": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        },
-                        "id": 7101,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "leftExpression": {
-                          "argumentTypes": null,
-                          "id": 7096,
-                          "name": "_erc721",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7086,
-                          "src": "436:7:15",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        },
-                        "nodeType": "BinaryOperation",
-                        "operator": "!=",
-                        "rightExpression": {
-                          "argumentTypes": null,
-                          "arguments": [
-                            {
-                              "argumentTypes": null,
-                              "hexValue": "30",
-                              "id": 7099,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "kind": "number",
-                              "lValueRequested": false,
-                              "nodeType": "Literal",
-                              "src": "455:1:15",
-                              "subdenomination": null,
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_rational_0_by_1",
-                                "typeString": "int_const 0"
-                              },
-                              "value": "0"
-                            }
-                          ],
-                          "expression": {
-                            "argumentTypes": [
-                              {
-                                "typeIdentifier": "t_rational_0_by_1",
-                                "typeString": "int_const 0"
-                              }
-                            ],
-                            "id": 7098,
-                            "isConstant": false,
-                            "isLValue": false,
-                            "isPure": true,
-                            "lValueRequested": false,
-                            "nodeType": "ElementaryTypeNameExpression",
-                            "src": "447:7:15",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_address_$",
-                              "typeString": "type(address)"
-                            },
-                            "typeName": {
-                              "id": 7097,
-                              "name": "address",
-                              "nodeType": "ElementaryTypeName",
-                              "src": "447:7:15",
-                              "typeDescriptions": {
-                                "typeIdentifier": null,
-                                "typeString": null
-                              }
-                            }
-                          },
-                          "id": 7100,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "kind": "typeConversion",
-                          "lValueRequested": false,
-                          "names": [],
-                          "nodeType": "FunctionCall",
-                          "src": "447:10:15",
-                          "tryCall": false,
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address_payable",
-                            "typeString": "address payable"
-                          }
-                        },
-                        "src": "436:21:15",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "hexValue": "45524337323120636f6e74726163742063616e6e6f742062652030",
-                        "id": 7102,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": true,
-                        "kind": "string",
-                        "lValueRequested": false,
-                        "nodeType": "Literal",
-                        "src": "459:29:15",
-                        "subdenomination": null,
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_c36e07ed3ebbb1a3fe380c798db305bda266d0f500f544a36e32b4e4621ed8df",
-                          "typeString": "literal_string \"ERC721 contract cannot be 0\""
-                        },
-                        "value": "ERC721 contract cannot be 0"
-                      }
-                    ],
-                    "expression": {
-                      "argumentTypes": [
-                        {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        },
-                        {
-                          "typeIdentifier": "t_stringliteral_c36e07ed3ebbb1a3fe380c798db305bda266d0f500f544a36e32b4e4621ed8df",
-                          "typeString": "literal_string \"ERC721 contract cannot be 0\""
-                        }
-                      ],
-                      "id": 7095,
-                      "name": "require",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
-                      "referencedDeclaration": -18,
-                      "src": "428:7:15",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
-                        "typeString": "function (bool,string memory) pure"
-                      }
-                    },
-                    "id": 7103,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "428:61:15",
-                    "tryCall": false,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
-                    }
-                  },
-                  "id": 7104,
-                  "nodeType": "ExpressionStatement",
-                  "src": "428:61:15"
-                },
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "id": 7109,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "leftHandSide": {
-                      "argumentTypes": null,
-                      "id": 7105,
-                      "name": "erc721V1_1",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 7082,
-                      "src": "499:10:15",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                        "typeString": "contract ERC721BeefLedgerV1_1"
-                      }
-                    },
-                    "nodeType": "Assignment",
-                    "operator": "=",
-                    "rightHandSide": {
-                      "argumentTypes": null,
-                      "arguments": [
-                        {
-                          "argumentTypes": null,
-                          "id": 7107,
-                          "name": "_erc721",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7086,
-                          "src": "533:7:15",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        }
-                      ],
-                      "expression": {
-                        "argumentTypes": [
-                          {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        ],
-                        "id": 7106,
-                        "name": "ERC721BeefLedgerV1_1",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 7287,
-                        "src": "512:20:15",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7287_$",
-                          "typeString": "type(contract ERC721BeefLedgerV1_1)"
-                        }
-                      },
-                      "id": 7108,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "kind": "typeConversion",
-                      "lValueRequested": false,
-                      "names": [],
-                      "nodeType": "FunctionCall",
-                      "src": "512:29:15",
-                      "tryCall": false,
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                        "typeString": "contract ERC721BeefLedgerV1_1"
-                      }
-                    },
-                    "src": "499:42:15",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                      "typeString": "contract ERC721BeefLedgerV1_1"
-                    }
-                  },
-                  "id": 7110,
-                  "nodeType": "ExpressionStatement",
-                  "src": "499:42:15"
-                },
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "id": 7113,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "leftHandSide": {
-                      "argumentTypes": null,
-                      "id": 7111,
-                      "name": "_initializedV11",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 7084,
-                      "src": "551:15:15",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bool",
-                        "typeString": "bool"
-                      }
-                    },
-                    "nodeType": "Assignment",
-                    "operator": "=",
-                    "rightHandSide": {
-                      "argumentTypes": null,
-                      "hexValue": "74727565",
-                      "id": 7112,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "bool",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "569:4:15",
-                      "subdenomination": null,
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bool",
-                        "typeString": "bool"
-                      },
-                      "value": "true"
-                    },
-                    "src": "551:22:15",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "id": 7114,
-                  "nodeType": "ExpressionStatement",
-                  "src": "551:22:15"
-                }
-              ]
-            },
-            "documentation": null,
-            "functionSelector": "a6039fbd",
-            "id": 7116,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "initializeV11",
-            "nodeType": "FunctionDefinition",
-            "overrides": null,
-            "parameters": {
-              "id": 7087,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7086,
-                  "mutability": "mutable",
-                  "name": "_erc721",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 7116,
-                  "src": "328:15:15",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7085,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "328:7:15",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "327:17:15"
-            },
-            "returnParameters": {
-              "id": 7088,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "354:0:15"
-            },
-            "scope": 7173,
-            "src": "305:275:15",
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "external"
-          },
-          {
-            "baseFunctions": [
-              2328
-            ],
-            "body": {
-              "id": 7140,
-              "nodeType": "Block",
-              "src": "656:130:15",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "arguments": [
-                      {
-                        "argumentTypes": null,
-                        "commonType": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        },
-                        "id": 7130,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "leftExpression": {
-                          "argumentTypes": null,
-                          "id": 7125,
-                          "name": "_erc721",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7118,
-                          "src": "674:7:15",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        },
-                        "nodeType": "BinaryOperation",
-                        "operator": "!=",
-                        "rightExpression": {
-                          "argumentTypes": null,
-                          "arguments": [
-                            {
-                              "argumentTypes": null,
-                              "hexValue": "30",
-                              "id": 7128,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "kind": "number",
-                              "lValueRequested": false,
-                              "nodeType": "Literal",
-                              "src": "693:1:15",
-                              "subdenomination": null,
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_rational_0_by_1",
-                                "typeString": "int_const 0"
-                              },
-                              "value": "0"
-                            }
-                          ],
-                          "expression": {
-                            "argumentTypes": [
-                              {
-                                "typeIdentifier": "t_rational_0_by_1",
-                                "typeString": "int_const 0"
-                              }
-                            ],
-                            "id": 7127,
-                            "isConstant": false,
-                            "isLValue": false,
-                            "isPure": true,
-                            "lValueRequested": false,
-                            "nodeType": "ElementaryTypeNameExpression",
-                            "src": "685:7:15",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_address_$",
-                              "typeString": "type(address)"
-                            },
-                            "typeName": {
-                              "id": 7126,
-                              "name": "address",
-                              "nodeType": "ElementaryTypeName",
-                              "src": "685:7:15",
-                              "typeDescriptions": {
-                                "typeIdentifier": null,
-                                "typeString": null
-                              }
-                            }
-                          },
-                          "id": 7129,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "kind": "typeConversion",
-                          "lValueRequested": false,
-                          "names": [],
-                          "nodeType": "FunctionCall",
-                          "src": "685:10:15",
-                          "tryCall": false,
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address_payable",
-                            "typeString": "address payable"
-                          }
-                        },
-                        "src": "674:21:15",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "hexValue": "45524337323120636f6e74726163742063616e6e6f742062652030",
-                        "id": 7131,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": true,
-                        "kind": "string",
-                        "lValueRequested": false,
-                        "nodeType": "Literal",
-                        "src": "697:29:15",
-                        "subdenomination": null,
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_c36e07ed3ebbb1a3fe380c798db305bda266d0f500f544a36e32b4e4621ed8df",
-                          "typeString": "literal_string \"ERC721 contract cannot be 0\""
-                        },
-                        "value": "ERC721 contract cannot be 0"
-                      }
-                    ],
-                    "expression": {
-                      "argumentTypes": [
-                        {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        },
-                        {
-                          "typeIdentifier": "t_stringliteral_c36e07ed3ebbb1a3fe380c798db305bda266d0f500f544a36e32b4e4621ed8df",
-                          "typeString": "literal_string \"ERC721 contract cannot be 0\""
-                        }
-                      ],
-                      "id": 7124,
-                      "name": "require",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        -18,
-                        -18
-                      ],
-                      "referencedDeclaration": -18,
-                      "src": "666:7:15",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
-                        "typeString": "function (bool,string memory) pure"
-                      }
-                    },
-                    "id": 7132,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "666:61:15",
-                    "tryCall": false,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
-                    }
-                  },
-                  "id": 7133,
-                  "nodeType": "ExpressionStatement",
-                  "src": "666:61:15"
-                },
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "id": 7138,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "leftHandSide": {
-                      "argumentTypes": null,
-                      "id": 7134,
-                      "name": "erc721V1_1",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 7082,
-                      "src": "737:10:15",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                        "typeString": "contract ERC721BeefLedgerV1_1"
-                      }
-                    },
-                    "nodeType": "Assignment",
-                    "operator": "=",
-                    "rightHandSide": {
-                      "argumentTypes": null,
-                      "arguments": [
-                        {
-                          "argumentTypes": null,
-                          "id": 7136,
-                          "name": "_erc721",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7118,
-                          "src": "771:7:15",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        }
-                      ],
-                      "expression": {
-                        "argumentTypes": [
-                          {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        ],
-                        "id": 7135,
-                        "name": "ERC721BeefLedgerV1_1",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 7287,
-                        "src": "750:20:15",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC721BeefLedgerV1_1_$7287_$",
-                          "typeString": "type(contract ERC721BeefLedgerV1_1)"
-                        }
-                      },
-                      "id": 7137,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "kind": "typeConversion",
-                      "lValueRequested": false,
-                      "names": [],
-                      "nodeType": "FunctionCall",
-                      "src": "750:29:15",
-                      "tryCall": false,
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                        "typeString": "contract ERC721BeefLedgerV1_1"
-                      }
-                    },
-                    "src": "737:42:15",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                      "typeString": "contract ERC721BeefLedgerV1_1"
-                    }
-                  },
-                  "id": 7139,
-                  "nodeType": "ExpressionStatement",
-                  "src": "737:42:15"
-                }
-              ]
-            },
-            "documentation": null,
-            "functionSelector": "094144a5",
-            "id": 7141,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [
+            "children": [
               {
-                "arguments": null,
-                "id": 7122,
-                "modifierName": {
-                  "argumentTypes": null,
-                  "id": 7121,
-                  "name": "onlyOwner",
-                  "nodeType": "Identifier",
-                  "overloadedDeclarations": [],
-                  "referencedDeclaration": 2059,
-                  "src": "646:9:15",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_modifier$__$",
-                    "typeString": "modifier ()"
-                  }
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ActionsStorageV1_0",
+                  "referencedDeclaration": 3338,
+                  "type": "contract ActionsStorageV1_0"
                 },
-                "nodeType": "ModifierInvocation",
-                "src": "646:9:15"
+                "id": 7079,
+                "name": "UserDefinedTypeName",
+                "src": "176:18:15"
               }
             ],
-            "name": "setERC721",
-            "nodeType": "FunctionDefinition",
-            "overrides": {
-              "id": 7120,
-              "nodeType": "OverrideSpecifier",
-              "overrides": [],
-              "src": "630:8:15"
-            },
-            "parameters": {
-              "id": 7119,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7118,
-                  "mutability": "mutable",
-                  "name": "_erc721",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 7141,
-                  "src": "605:15:15",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7117,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "605:7:15",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "604:17:15"
-            },
-            "returnParameters": {
-              "id": 7123,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "656:0:15"
-            },
-            "scope": 7173,
-            "src": "586:200:15",
-            "stateMutability": "nonpayable",
-            "virtual": true,
-            "visibility": "public"
+            "id": 7080,
+            "name": "InheritanceSpecifier",
+            "src": "176:18:15"
           },
           {
-            "baseFunctions": [
-              3218
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "erc721V1_1",
+              "overrides": null,
+              "scope": 7173,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract ERC721BeefLedgerV1_1",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ERC721BeefLedgerV1_1",
+                  "referencedDeclaration": 7287,
+                  "type": "contract ERC721BeefLedgerV1_1"
+                },
+                "id": 7081,
+                "name": "UserDefinedTypeName",
+                "src": "202:20:15"
+              }
             ],
-            "body": {
-              "id": 7159,
-              "nodeType": "Block",
-              "src": "899:68:15",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "components": [
+            "id": 7082,
+            "name": "VariableDeclaration",
+            "src": "202:40:15"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_initializedV11",
+              "overrides": null,
+              "scope": 7173,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bool",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bool",
+                  "type": "bool"
+                },
+                "id": 7083,
+                "name": "ElementaryTypeName",
+                "src": "269:4:15"
+              }
+            ],
+            "id": 7084,
+            "name": "VariableDeclaration",
+            "src": "269:29:15"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "a6039fbd",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "initializeV11",
+              "overrides": null,
+              "scope": 7173,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_erc721",
+                      "overrides": null,
+                      "scope": 7116,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
                       {
-                        "argumentTypes": null,
-                        "commonType": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
                         },
-                        "id": 7156,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "leftExpression": {
+                        "id": 7085,
+                        "name": "ElementaryTypeName",
+                        "src": "328:7:15"
+                      }
+                    ],
+                    "id": 7086,
+                    "name": "VariableDeclaration",
+                    "src": "328:15:15"
+                  }
+                ],
+                "id": 7087,
+                "name": "ParameterList",
+                "src": "327:17:15"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7088,
+                "name": "ParameterList",
+                "src": "354:0:15"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
                           "argumentTypes": null,
-                          "arguments": [
-                            {
-                              "argumentTypes": null,
-                              "id": 7153,
-                              "name": "uid",
-                              "nodeType": "Identifier",
-                              "overloadedDeclarations": [],
-                              "referencedDeclaration": 7145,
-                              "src": "937:3:15",
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_uint256",
-                                "typeString": "uint256"
-                              }
-                            }
-                          ],
-                          "expression": {
-                            "argumentTypes": [
-                              {
-                                "typeIdentifier": "t_uint256",
-                                "typeString": "uint256"
-                              }
-                            ],
-                            "expression": {
-                              "argumentTypes": null,
-                              "id": 7151,
-                              "name": "erc721V1_1",
-                              "nodeType": "Identifier",
-                              "overloadedDeclarations": [],
-                              "referencedDeclaration": 7082,
-                              "src": "917:10:15",
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                                "typeString": "contract ERC721BeefLedgerV1_1"
-                              }
-                            },
-                            "id": 7152,
-                            "isConstant": false,
-                            "isLValue": false,
-                            "isPure": false,
-                            "lValueRequested": false,
-                            "memberName": "getOwner",
-                            "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5295,
-                            "src": "917:19:15",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_address_$",
-                              "typeString": "function (uint256) view external returns (address)"
-                            }
-                          },
-                          "id": 7154,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
-                          "kind": "functionCall",
+                          "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [],
-                          "nodeType": "FunctionCall",
-                          "src": "917:24:15",
+                          "names": [
+                            null
+                          ],
                           "tryCall": false,
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
+                          "type": "tuple()",
+                          "type_conversion": false
                         },
-                        "nodeType": "BinaryOperation",
-                        "operator": "==",
-                        "rightExpression": {
-                          "argumentTypes": null,
-                          "id": 7155,
-                          "name": "companyAddress",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7143,
-                          "src": "945:14:15",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_5ab0571b7786dadeee51a3c90a7290e49cbd9672e244e5154a47f3773aa6c495",
+                                  "typeString": "literal_string \"contract already upgraded\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                -18,
+                                -18
+                              ],
+                              "referencedDeclaration": -18,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 7089,
+                            "name": "Identifier",
+                            "src": "364:7:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!",
+                              "prefix": true,
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7084,
+                                  "type": "bool",
+                                  "value": "_initializedV11"
+                                },
+                                "id": 7090,
+                                "name": "Identifier",
+                                "src": "373:15:15"
+                              }
+                            ],
+                            "id": 7091,
+                            "name": "UnaryOperation",
+                            "src": "372:16:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "636f6e747261637420616c7265616479207570677261646564",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"contract already upgraded\"",
+                              "value": "contract already upgraded"
+                            },
+                            "id": 7092,
+                            "name": "Literal",
+                            "src": "390:27:15"
                           }
-                        },
-                        "src": "917:42:15",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        }
+                        ],
+                        "id": 7093,
+                        "name": "FunctionCall",
+                        "src": "364:54:15"
                       }
                     ],
-                    "id": 7157,
-                    "isConstant": false,
-                    "isInlineArray": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "nodeType": "TupleExpression",
-                    "src": "916:44:15",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
+                    "id": 7094,
+                    "name": "ExpressionStatement",
+                    "src": "364:54:15"
                   },
-                  "functionReturnParameters": 7150,
-                  "id": 7158,
-                  "nodeType": "Return",
-                  "src": "909:51:15"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 7160,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "isCompanyOwner",
-            "nodeType": "FunctionDefinition",
-            "overrides": {
-              "id": 7147,
-              "nodeType": "OverrideSpecifier",
-              "overrides": [],
-              "src": "861:8:15"
-            },
-            "parameters": {
-              "id": 7146,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7143,
-                  "mutability": "mutable",
-                  "name": "companyAddress",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 7160,
-                  "src": "816:22:15",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_c36e07ed3ebbb1a3fe380c798db305bda266d0f500f544a36e32b4e4621ed8df",
+                                  "typeString": "literal_string \"ERC721 contract cannot be 0\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                -18,
+                                -18
+                              ],
+                              "referencedDeclaration": -18,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 7095,
+                            "name": "Identifier",
+                            "src": "428:7:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7086,
+                                  "type": "address",
+                                  "value": "_erc721"
+                                },
+                                "id": 7096,
+                                "name": "Identifier",
+                                "src": "436:7:15"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "address payable",
+                                  "type_conversion": true
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_rational_0_by_1",
+                                          "typeString": "int_const 0"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "type": "type(address)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "name": "address",
+                                          "type": null
+                                        },
+                                        "id": 7097,
+                                        "name": "ElementaryTypeName",
+                                        "src": "447:7:15"
+                                      }
+                                    ],
+                                    "id": 7098,
+                                    "name": "ElementaryTypeNameExpression",
+                                    "src": "447:7:15"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 7099,
+                                    "name": "Literal",
+                                    "src": "455:1:15"
+                                  }
+                                ],
+                                "id": 7100,
+                                "name": "FunctionCall",
+                                "src": "447:10:15"
+                              }
+                            ],
+                            "id": 7101,
+                            "name": "BinaryOperation",
+                            "src": "436:21:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "45524337323120636f6e74726163742063616e6e6f742062652030",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"ERC721 contract cannot be 0\"",
+                              "value": "ERC721 contract cannot be 0"
+                            },
+                            "id": 7102,
+                            "name": "Literal",
+                            "src": "459:29:15"
+                          }
+                        ],
+                        "id": 7103,
+                        "name": "FunctionCall",
+                        "src": "428:61:15"
+                      }
+                    ],
+                    "id": 7104,
+                    "name": "ExpressionStatement",
+                    "src": "428:61:15"
                   },
-                  "typeName": {
-                    "id": 7142,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "816:7:15",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract ERC721BeefLedgerV1_1"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7082,
+                              "type": "contract ERC721BeefLedgerV1_1",
+                              "value": "erc721V1_1"
+                            },
+                            "id": 7105,
+                            "name": "Identifier",
+                            "src": "499:10:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "contract ERC721BeefLedgerV1_1",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7287,
+                                  "type": "type(contract ERC721BeefLedgerV1_1)",
+                                  "value": "ERC721BeefLedgerV1_1"
+                                },
+                                "id": 7106,
+                                "name": "Identifier",
+                                "src": "512:20:15"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7086,
+                                  "type": "address",
+                                  "value": "_erc721"
+                                },
+                                "id": 7107,
+                                "name": "Identifier",
+                                "src": "533:7:15"
+                              }
+                            ],
+                            "id": 7108,
+                            "name": "FunctionCall",
+                            "src": "512:29:15"
+                          }
+                        ],
+                        "id": 7109,
+                        "name": "Assignment",
+                        "src": "499:42:15"
+                      }
+                    ],
+                    "id": 7110,
+                    "name": "ExpressionStatement",
+                    "src": "499:42:15"
                   },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7145,
-                  "mutability": "mutable",
-                  "name": "uid",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 7160,
-                  "src": "840:11:15",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 7144,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "840:7:15",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "815:37:15"
-            },
-            "returnParameters": {
-              "id": 7150,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7149,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 7160,
-                  "src": "893:4:15",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 7148,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "893:4:15",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "892:6:15"
-            },
-            "scope": 7173,
-            "src": "792:175:15",
-            "stateMutability": "view",
-            "virtual": true,
-            "visibility": "internal"
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7084,
+                              "type": "bool",
+                              "value": "_initializedV11"
+                            },
+                            "id": 7111,
+                            "name": "Identifier",
+                            "src": "551:15:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "74727565",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "bool",
+                              "type": "bool",
+                              "value": "true"
+                            },
+                            "id": 7112,
+                            "name": "Literal",
+                            "src": "569:4:15"
+                          }
+                        ],
+                        "id": 7113,
+                        "name": "Assignment",
+                        "src": "551:22:15"
+                      }
+                    ],
+                    "id": 7114,
+                    "name": "ExpressionStatement",
+                    "src": "551:22:15"
+                  }
+                ],
+                "id": 7115,
+                "name": "Block",
+                "src": "354:226:15"
+              }
+            ],
+            "id": 7116,
+            "name": "FunctionDefinition",
+            "src": "305:275:15"
           },
           {
-            "baseFunctions": [
-              3240
-            ],
-            "body": {
-              "id": 7171,
-              "nodeType": "Block",
-              "src": "1049:43:15",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "arguments": [
+            "attributes": {
+              "baseFunctions": [
+                2328
+              ],
+              "documentation": null,
+              "functionSelector": "094144a5",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "setERC721",
+              "scope": 7173,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 7120,
+                "name": "OverrideSpecifier",
+                "src": "630:8:15"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_erc721",
+                      "overrides": null,
+                      "scope": 7141,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
                       {
-                        "argumentTypes": null,
-                        "id": 7168,
-                        "name": "erc721V1_1",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 7082,
-                        "src": "1074:10:15",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                          "typeString": "contract ERC721BeefLedgerV1_1"
-                        }
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7117,
+                        "name": "ElementaryTypeName",
+                        "src": "605:7:15"
                       }
                     ],
-                    "expression": {
-                      "argumentTypes": [
-                        {
-                          "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
-                          "typeString": "contract ERC721BeefLedgerV1_1"
-                        }
+                    "id": 7118,
+                    "name": "VariableDeclaration",
+                    "src": "605:15:15"
+                  }
+                ],
+                "id": 7119,
+                "name": "ParameterList",
+                "src": "604:17:15"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7123,
+                "name": "ParameterList",
+                "src": "656:0:15"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
                       ],
-                      "id": 7167,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "lValueRequested": false,
-                      "nodeType": "ElementaryTypeNameExpression",
-                      "src": "1066:7:15",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_address_$",
-                        "typeString": "type(address)"
-                      },
-                      "typeName": {
-                        "id": 7166,
-                        "name": "address",
-                        "nodeType": "ElementaryTypeName",
-                        "src": "1066:7:15",
-                        "typeDescriptions": {
-                          "typeIdentifier": null,
-                          "typeString": null
-                        }
-                      }
+                      "referencedDeclaration": 2059,
+                      "type": "modifier ()",
+                      "value": "onlyOwner"
                     },
-                    "id": 7169,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "typeConversion",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "1066:19:15",
-                    "tryCall": false,
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
+                    "id": 7121,
+                    "name": "Identifier",
+                    "src": "646:9:15"
+                  }
+                ],
+                "id": 7122,
+                "name": "ModifierInvocation",
+                "src": "646:9:15"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_c36e07ed3ebbb1a3fe380c798db305bda266d0f500f544a36e32b4e4621ed8df",
+                                  "typeString": "literal_string \"ERC721 contract cannot be 0\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                -18,
+                                -18
+                              ],
+                              "referencedDeclaration": -18,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 7124,
+                            "name": "Identifier",
+                            "src": "666:7:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "!=",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7118,
+                                  "type": "address",
+                                  "value": "_erc721"
+                                },
+                                "id": 7125,
+                                "name": "Identifier",
+                                "src": "674:7:15"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "address payable",
+                                  "type_conversion": true
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_rational_0_by_1",
+                                          "typeString": "int_const 0"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "type": "type(address)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "name": "address",
+                                          "type": null
+                                        },
+                                        "id": 7126,
+                                        "name": "ElementaryTypeName",
+                                        "src": "685:7:15"
+                                      }
+                                    ],
+                                    "id": 7127,
+                                    "name": "ElementaryTypeNameExpression",
+                                    "src": "685:7:15"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 7128,
+                                    "name": "Literal",
+                                    "src": "693:1:15"
+                                  }
+                                ],
+                                "id": 7129,
+                                "name": "FunctionCall",
+                                "src": "685:10:15"
+                              }
+                            ],
+                            "id": 7130,
+                            "name": "BinaryOperation",
+                            "src": "674:21:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "45524337323120636f6e74726163742063616e6e6f742062652030",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"ERC721 contract cannot be 0\"",
+                              "value": "ERC721 contract cannot be 0"
+                            },
+                            "id": 7131,
+                            "name": "Literal",
+                            "src": "697:29:15"
+                          }
+                        ],
+                        "id": 7132,
+                        "name": "FunctionCall",
+                        "src": "666:61:15"
+                      }
+                    ],
+                    "id": 7133,
+                    "name": "ExpressionStatement",
+                    "src": "666:61:15"
                   },
-                  "functionReturnParameters": 7165,
-                  "id": 7170,
-                  "nodeType": "Return",
-                  "src": "1059:26:15"
-                }
-              ]
-            },
-            "documentation": null,
-            "functionSelector": "612d16b2",
-            "id": 7172,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "getERC721Contract",
-            "nodeType": "FunctionDefinition",
-            "overrides": {
-              "id": 7162,
-              "nodeType": "OverrideSpecifier",
-              "overrides": [],
-              "src": "1010:8:15"
-            },
-            "parameters": {
-              "id": 7161,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "999:2:15"
-            },
-            "returnParameters": {
-              "id": 7165,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7164,
-                  "mutability": "mutable",
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "overrides": null,
-                  "scope": 7172,
-                  "src": "1040:7:15",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7163,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "1040:7:15",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract ERC721BeefLedgerV1_1"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7082,
+                              "type": "contract ERC721BeefLedgerV1_1",
+                              "value": "erc721V1_1"
+                            },
+                            "id": 7134,
+                            "name": "Identifier",
+                            "src": "737:10:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "contract ERC721BeefLedgerV1_1",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7287,
+                                  "type": "type(contract ERC721BeefLedgerV1_1)",
+                                  "value": "ERC721BeefLedgerV1_1"
+                                },
+                                "id": 7135,
+                                "name": "Identifier",
+                                "src": "750:20:15"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7118,
+                                  "type": "address",
+                                  "value": "_erc721"
+                                },
+                                "id": 7136,
+                                "name": "Identifier",
+                                "src": "771:7:15"
+                              }
+                            ],
+                            "id": 7137,
+                            "name": "FunctionCall",
+                            "src": "750:29:15"
+                          }
+                        ],
+                        "id": 7138,
+                        "name": "Assignment",
+                        "src": "737:42:15"
+                      }
+                    ],
+                    "id": 7139,
+                    "name": "ExpressionStatement",
+                    "src": "737:42:15"
+                  }
+                ],
+                "id": 7140,
+                "name": "Block",
+                "src": "656:130:15"
+              }
+            ],
+            "id": 7141,
+            "name": "FunctionDefinition",
+            "src": "586:200:15"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                3218
               ],
-              "src": "1039:9:15"
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "isCompanyOwner",
+              "scope": 7173,
+              "stateMutability": "view",
+              "virtual": true,
+              "visibility": "internal"
             },
-            "scope": 7173,
-            "src": "973:119:15",
-            "stateMutability": "view",
-            "virtual": true,
-            "visibility": "public"
+            "children": [
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 7147,
+                "name": "OverrideSpecifier",
+                "src": "861:8:15"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "companyAddress",
+                      "overrides": null,
+                      "scope": 7160,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7142,
+                        "name": "ElementaryTypeName",
+                        "src": "816:7:15"
+                      }
+                    ],
+                    "id": 7143,
+                    "name": "VariableDeclaration",
+                    "src": "816:22:15"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "uid",
+                      "overrides": null,
+                      "scope": 7160,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7144,
+                        "name": "ElementaryTypeName",
+                        "src": "840:7:15"
+                      }
+                    ],
+                    "id": 7145,
+                    "name": "VariableDeclaration",
+                    "src": "840:11:15"
+                  }
+                ],
+                "id": 7146,
+                "name": "ParameterList",
+                "src": "815:37:15"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7160,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7148,
+                        "name": "ElementaryTypeName",
+                        "src": "893:4:15"
+                      }
+                    ],
+                    "id": 7149,
+                    "name": "VariableDeclaration",
+                    "src": "893:4:15"
+                  }
+                ],
+                "id": 7150,
+                "name": "ParameterList",
+                "src": "892:6:15"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7150
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isInlineArray": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "==",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "tryCall": false,
+                                  "type": "address",
+                                  "type_conversion": false
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_uint256",
+                                          "typeString": "uint256"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "getOwner",
+                                      "referencedDeclaration": 5295,
+                                      "type": "function (uint256) view external returns (address)"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 7082,
+                                          "type": "contract ERC721BeefLedgerV1_1",
+                                          "value": "erc721V1_1"
+                                        },
+                                        "id": 7151,
+                                        "name": "Identifier",
+                                        "src": "917:10:15"
+                                      }
+                                    ],
+                                    "id": 7152,
+                                    "name": "MemberAccess",
+                                    "src": "917:19:15"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 7145,
+                                      "type": "uint256",
+                                      "value": "uid"
+                                    },
+                                    "id": 7153,
+                                    "name": "Identifier",
+                                    "src": "937:3:15"
+                                  }
+                                ],
+                                "id": 7154,
+                                "name": "FunctionCall",
+                                "src": "917:24:15"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7143,
+                                  "type": "address",
+                                  "value": "companyAddress"
+                                },
+                                "id": 7155,
+                                "name": "Identifier",
+                                "src": "945:14:15"
+                              }
+                            ],
+                            "id": 7156,
+                            "name": "BinaryOperation",
+                            "src": "917:42:15"
+                          }
+                        ],
+                        "id": 7157,
+                        "name": "TupleExpression",
+                        "src": "916:44:15"
+                      }
+                    ],
+                    "id": 7158,
+                    "name": "Return",
+                    "src": "909:51:15"
+                  }
+                ],
+                "id": 7159,
+                "name": "Block",
+                "src": "899:68:15"
+              }
+            ],
+            "id": 7160,
+            "name": "FunctionDefinition",
+            "src": "792:175:15"
+          },
+          {
+            "attributes": {
+              "baseFunctions": [
+                3240
+              ],
+              "documentation": null,
+              "functionSelector": "612d16b2",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getERC721Contract",
+              "scope": 7173,
+              "stateMutability": "view",
+              "virtual": true,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "overrides": [
+                    null
+                  ]
+                },
+                "id": 7162,
+                "name": "OverrideSpecifier",
+                "src": "1010:8:15"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7161,
+                "name": "ParameterList",
+                "src": "999:2:15"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 7172,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7163,
+                        "name": "ElementaryTypeName",
+                        "src": "1040:7:15"
+                      }
+                    ],
+                    "id": 7164,
+                    "name": "VariableDeclaration",
+                    "src": "1040:7:15"
+                  }
+                ],
+                "id": 7165,
+                "name": "ParameterList",
+                "src": "1039:9:15"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 7165
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "address",
+                          "type_conversion": true
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_ERC721BeefLedgerV1_1_$7287",
+                                  "typeString": "contract ERC721BeefLedgerV1_1"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "type": "type(address)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "name": "address",
+                                  "type": null
+                                },
+                                "id": 7166,
+                                "name": "ElementaryTypeName",
+                                "src": "1066:7:15"
+                              }
+                            ],
+                            "id": 7167,
+                            "name": "ElementaryTypeNameExpression",
+                            "src": "1066:7:15"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7082,
+                              "type": "contract ERC721BeefLedgerV1_1",
+                              "value": "erc721V1_1"
+                            },
+                            "id": 7168,
+                            "name": "Identifier",
+                            "src": "1074:10:15"
+                          }
+                        ],
+                        "id": 7169,
+                        "name": "FunctionCall",
+                        "src": "1066:19:15"
+                      }
+                    ],
+                    "id": 7170,
+                    "name": "Return",
+                    "src": "1059:26:15"
+                  }
+                ],
+                "id": 7171,
+                "name": "Block",
+                "src": "1049:43:15"
+              }
+            ],
+            "id": 7172,
+            "name": "FunctionDefinition",
+            "src": "973:119:15"
           }
         ],
-        "scope": 7174,
+        "id": 7173,
+        "name": "ContractDefinition",
         "src": "145:950:15"
       }
     ],
+    "id": 7174,
+    "name": "SourceUnit",
     "src": "33:1062:15"
   },
   "compiler": {
@@ -3356,8 +3477,8 @@
     "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.2",
-  "updatedAt": "2021-04-15T18:08:50.535Z",
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-06-24T19:02:33.257Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

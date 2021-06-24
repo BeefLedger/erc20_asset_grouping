@@ -6,6 +6,7 @@ import * as artifact from "./ethereum/abi/DealRoomHubV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { initializeDealRoomHub } from "./ethereum/deploy/deploy";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 
 export type DealRoomCreateParams = {
@@ -34,9 +35,10 @@ export class DealRoomHubController {
     private _dealRoomHubAddress : string
     private _dealRoomHubContract? : DealRoomHubV10
 
-    constructor(_dealRoomHubAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(_dealRoomHubAddress: string, signerOrProvider: ProviderOrSigner) {
         this._dealRoomHubAddress = _dealRoomHubAddress;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

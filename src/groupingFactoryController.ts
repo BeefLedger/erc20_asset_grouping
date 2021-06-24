@@ -6,6 +6,7 @@ import { GroupingFactoryV10 } from "./types";
 import * as artifact from "./ethereum/abi/GroupingFactoryV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export class GroupingFactoryController {
 
@@ -13,9 +14,10 @@ export class GroupingFactoryController {
     private _groupingFactoryAddress : string
     private _groupingFactoryContract? : GroupingFactoryV10
 
-    constructor(groupingFactoryAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(groupingFactoryAddress: string, signerOrProvider: ProviderOrSigner) {
         this._groupingFactoryAddress = groupingFactoryAddress;
-        if(signerOrProvider instanceof Signer) {
+        
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

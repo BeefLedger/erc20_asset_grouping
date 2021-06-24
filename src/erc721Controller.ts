@@ -7,6 +7,7 @@ import { ERC721BeefLedgerV11 } from "./types/ERC721BeefLedgerV11";
 import * as artifact from "./ethereum/abi/ERC721BeefLedgerV1_1.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 
 export class ERC721Controller {
@@ -15,9 +16,10 @@ export class ERC721Controller {
     private _erc721Address : string
     private _erc721Contract? : ERC721BeefLedgerV11
 
-    constructor(erc721Address: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(erc721Address: string, signerOrProvider: ProviderOrSigner) {
         this._erc721Address = erc721Address;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

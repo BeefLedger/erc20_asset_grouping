@@ -4,6 +4,7 @@ import { ActionsStorageV10 } from "./types";
 import * as artifact from "./ethereum/abi/ActionsStorageV1_1.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export class ActionsStorageController {
 
@@ -11,9 +12,10 @@ export class ActionsStorageController {
     private _signer: Signer;
     private _actionsStorageContract? : ActionsStorageV10
 
-    constructor(actionsStorageAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(actionsStorageAddress: string, signerOrProvider: ProviderOrSigner) {
         this._actionsStorageAddress = actionsStorageAddress;
-        if(signerOrProvider instanceof Signer || (signerOrProvider as any).provider) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider as Signer;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

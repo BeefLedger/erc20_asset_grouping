@@ -6,6 +6,7 @@ import * as artifact from "./ethereum/abi/CompaniesV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { initializeCompanies } from "./ethereum/deploy/deploy";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 
 export class CompaniesController {
@@ -14,9 +15,10 @@ export class CompaniesController {
     private _companiesAddress : string
     private _companiesContract? : CompaniesV10
 
-    constructor(_companiesAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(_companiesAddress: string, signerOrProvider: ProviderOrSigner) {
         this._companiesAddress = _companiesAddress;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

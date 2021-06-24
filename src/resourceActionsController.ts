@@ -4,6 +4,7 @@ import { getResourceActionsContract } from "./chain/prefabContractFactory";
 import * as artifact from "./ethereum/abi/ResourceActionsV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 export enum Action {
     PRODUCE,
@@ -24,9 +25,10 @@ export class ResourceActionsController {
     private _resourceActionsAddress : string
     private _resourceActionsContract? : ResourceActionsV10
 
-    constructor(_resourceActionsAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(_resourceActionsAddress: string, signerOrProvider: ProviderOrSigner) {
         this._resourceActionsAddress = _resourceActionsAddress;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 

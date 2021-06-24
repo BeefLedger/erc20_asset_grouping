@@ -17,4 +17,5 @@ export * from './abiDecoderController';
 
 export * from './ethereum/index';
 
-export * from './types'
+export * from './types';
+export * from './localTypes';

@@ -6,6 +6,7 @@ import { initializeERC20Factory } from './ethereum/deploy/deploy'
 import * as artifact from "./ethereum/abi/ERC20FactoryV1_0.json"
 import { decode, encode } from "./ethereum/encodeCall";
 import { DecodedCall } from "./abiDecoderController";
+import { ProviderOrSigner } from "./localTypes";
 
 
 export class ERC20FactoryController {
@@ -14,9 +15,10 @@ export class ERC20FactoryController {
     private _signer: Signer;
     private _erc20FactoryContract? : ERC20FactoryV10
 
-    constructor(erc20FactoryAddress: string, signerOrProvider: Signer | ethers.providers.ExternalProvider) {
+    constructor(erc20FactoryAddress: string, signerOrProvider: ProviderOrSigner) {
         this._erc20FactoryAddress = erc20FactoryAddress;
-        if(signerOrProvider instanceof Signer) {
+
+        if(signerOrProvider instanceof Signer || signerOrProvider instanceof ethers.providers.JsonRpcSigner) {
             this._signer = signerOrProvider;
         } else {
             const web3Wrapper = new ethers.providers.Web3Provider(signerOrProvider) 
