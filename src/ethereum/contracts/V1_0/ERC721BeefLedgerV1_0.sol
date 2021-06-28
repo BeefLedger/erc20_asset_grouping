@@ -74,7 +74,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenId uint256 ID of the token to query the owner of
      * return address currently marked as the owner of the given token ID
      */
-    function ownerOf(uint256 tokenId) internal view returns (address) {
+    function _ownerOf(uint256 tokenId) internal view returns (address) {
         address owner = _tokenOwner[tokenId];
         require(owner != address(0), "ERC721: owner query for nonexistent token");
 
@@ -90,7 +90,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenId uint256 ID of the token to be approved
      */
     function approve(address to, uint256 tokenId) virtual public {
-        address owner = ownerOf(tokenId);
+        address owner = _ownerOf(tokenId);
         require(to != owner, "ERC721: approval to current owner");
 
         require(msg.sender == owner || isApprovedForAll(owner, msg.sender),
@@ -170,7 +170,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      */
     function _isApprovedOrOwner(address spender, uint256 tokenId) virtual internal view returns (bool) {
         require(exists(tokenId), "ERC721: operator query for nonexistent token");
-        address owner = ownerOf(tokenId);
+        address owner = _ownerOf(tokenId);
         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));
     }
 
@@ -222,7 +222,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenId uint256 ID of the token being burned
      */
     function _burn(address owner, uint256 tokenId) virtual internal {
-        require(ownerOf(tokenId) == owner, "ERC721: burn of token that is not own");
+        require(_ownerOf(tokenId) == owner, "ERC721: burn of token that is not own");
 
         _clearApproval(tokenId);
 
@@ -239,7 +239,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenId uint256 ID of the token being burned
      */
     function _burn(uint256 tokenId) virtual internal {
-        _burn(ownerOf(tokenId), tokenId);
+        _burn(_ownerOf(tokenId), tokenId);
     }
 
     /**
@@ -250,7 +250,7 @@ contract ERC721BeefLedgerV1_0 is Ownable {
      * @param tokenId uint256 ID of the token to be transferred
      */
     function _transferFrom(address from, address to, uint256 tokenId) virtual internal {
-        require(ownerOf(tokenId) == from, "ERC721: transfer of token that is not own");
+        require(_ownerOf(tokenId) == from, "ERC721: transfer of token that is not own");
         require(to != address(0), "ERC721: transfer to the zero address");
 
         _clearApproval(tokenId);
